@@ -80,8 +80,8 @@
 
     <string name="nontifications">Уведомления</string>
     <string name="lichnyechats">Личные сообщения</string>
-    <string name="group">Беседы</string>
-    <string name="profileact">Действия с профилем</string>
+    <string name="group">Групповые чаты</string>
+    <string name="profilereact">Действия с профилем</string>
     <string name="likeandsubs">(Лайки, подписки и т.д.)</string>
     <string name="privacypolicy">Конфиденциальность</string>
     <string name="closeaccount">Закрытый аккаунт</string>
@@ -148,5 +148,7 @@
     <string name="addFr">Добавить </string>
     <string name="rejectFriend">Отказать</string>
     <string name="wantadd">хочет добавить тебя в друзья</string>
+
+    <string name="account">Аккаунт</string>
 
 </resources>
