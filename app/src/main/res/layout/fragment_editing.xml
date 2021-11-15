@@ -41,46 +41,74 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="243dp"
+                android:background="@drawable/corners15dpappcolor"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="12dp"
                 android:text="@string/changeface"
                 android:textColor="@color/white"
-                android:background="@drawable/corners15dpappcolor"
-                android:padding="12dp"
-                android:textSize="14sp"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/usernameediting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_marginTop="368dp"
                 android:layout_marginLeft="24dp"
+                android:layout_marginTop="368dp"
+                android:fontFamily="@font/montserrat_bold"
                 android:text="@string/usernameediting"
                 android:textColor="@color/grey"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/edittextnickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
                 android:layout_below="@+id/usernameediting"
-                android:textColor="@color/app_color"
-                android:textSize="20sp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/montserrat_bold"
                 android:maxLength="24"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:textColor="@color/app_color"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/biography"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/edittextnickname"
-                android:textSize="16sp"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserrat_bold"
                 android:text="@string/bio"
                 android:textColor="@color/grey"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edittextbio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/biography"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:maxLength="24"
+                android:textColor="@color/app_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/edittextbio"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/corners15dpappcolor"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="12dp"
+                android:text="@string/agree"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
 
         </RelativeLayout>

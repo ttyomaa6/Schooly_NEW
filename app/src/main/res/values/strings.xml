@@ -74,9 +74,10 @@
     <string name="susriders">Подписчики</string>
 
     <string name="editing">Редактиовать</string>
-    <string name="changeface">Изменить лицо +</string>
+    <string name="changeface">Изменить лицо</string>
     <string name="usernameediting">Никнейм</string>
-    <string name="bio">Биография</string>
+    <string name="bio">Описание</string>
+    <string name="agree">Подтвердить</string>
 
     <string name="nontifications">Уведомления</string>
     <string name="lichnyechats">Личные сообщения</string>
