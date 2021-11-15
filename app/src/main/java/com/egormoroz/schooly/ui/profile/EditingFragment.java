@@ -74,7 +74,6 @@ public class EditingFragment extends Fragment {
             public void PassUserNick(String nick) {
                 nickEdit.setText(nick);
                 nickname=nick;
-                firebaseModel.getUsersReference().child(nickname).child("bio").setValue("hello)");
                 Query query=firebaseModel.getUsersReference().child(nickname).child("bio");
                 query.addValueEventListener(new ValueEventListener() {
                     @Override

@@ -27,6 +27,7 @@ import com.egormoroz.schooly.ui.main.ChatActivity;
 import com.egormoroz.schooly.ui.main.UserInformation;
 import com.egormoroz.schooly.ui.profile.Wardrobe.WardrobeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.egormoroz.schooly.RecentMethods;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,10 +43,9 @@ import java.util.ArrayList;
 public class ProfileFragment extends Fragment {
     FirebaseModel firebaseModel = new FirebaseModel();
     Context profileContext;
-    String type;
+    String type,nicknameCallback;
     UserInformation info;
-    TextView nickname;
-    TextView message;
+    TextView nickname,message,biographyTextView;
     DatabaseReference user;
     GLSurfaceView glSurfaceView;
 
@@ -107,12 +107,19 @@ public class ProfileFragment extends Fragment {
 //        abl.setVisibility(abl.GONE);
         BottomNavigationView bnv = getActivity().findViewById(R.id.bottomNavigationView);
         bnv.setVisibility(bnv.VISIBLE);
+        firebaseModel.initAll();
         nickname = type.equals("user") ? root.findViewById(R.id.usernick) :
                 root.findViewById(R.id.otherusernick);
         message = type.equals("user") ? null :
                 root.findViewById(R.id.message);
         FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
         StorageReference storageReference = firebaseStorage.getReference().child("3d models").child("untitled.glb");
+        RecentMethods.UserNickByUid(firebaseModel.getUser().getUid(), firebaseModel, new Callbacks.GetUserNickByUid() {
+            @Override
+            public void PassUserNick(String nick) {
+               nicknameCallback=nick;
+            }
+        });
 
 
 
@@ -156,9 +163,18 @@ public class ProfileFragment extends Fragment {
                     }
                 });
                 TextView editing = view.findViewById(R.id.redact);
+                RecentMethods.getBio(nicknameCallback, firebaseModel, new Callbacks.GetBio() {
+                    @Override
+                    public void GetBiography(String bio) {
+                        if(bio.length()==0){
+                            editing.setText("Добавить описание");
+                        }
+                    }
+                });
                 editing.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         ((MainActivity) getActivity()).setCurrentFragment(EditingFragment.newInstance());
                     }
                 });
@@ -166,10 +182,20 @@ public class ProfileFragment extends Fragment {
                 texttowardrobe.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         ((MainActivity) getActivity()).setCurrentFragment(WardrobeFragment.newInstance());
                     }
                 });
-                glSurfaceView=view.findViewById(R.id.mainlookview);
+
+                biographyTextView=view.findViewById(R.id.biography);
+                RecentMethods.getBio(nicknameCallback, firebaseModel, new Callbacks.GetBio() {
+                    @Override
+                    public void GetBiography(String bio) {
+                        biographyTextView.setText(bio);
+                    }
+                });
+
+
 
                 break;
             case "other":
