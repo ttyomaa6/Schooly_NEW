@@ -163,12 +163,17 @@ public class ProfileFragment extends Fragment {
                     }
                 });
                 TextView editing = view.findViewById(R.id.redact);
-                RecentMethods.getBio(nicknameCallback, firebaseModel, new Callbacks.GetBio() {
+                RecentMethods.UserNickByUid(firebaseModel.getUser().getUid(), firebaseModel, new Callbacks.GetUserNickByUid() {
                     @Override
-                    public void GetBiography(String bio) {
-                        if(bio.length()==0){
-                            editing.setText("Добавить описание");
-                        }
+                    public void PassUserNick(String nick) {
+                        RecentMethods.getBio(nick, firebaseModel, new Callbacks.GetBio() {
+                            @Override
+                            public void GetBiography(String bio) {
+                                if(bio.length()==0){
+                                    editing.setText("Добавить описание");
+                                }
+                            }
+                        });
                     }
                 });
                 editing.setOnClickListener(new View.OnClickListener() {
@@ -188,10 +193,15 @@ public class ProfileFragment extends Fragment {
                 });
 
                 biographyTextView=view.findViewById(R.id.biography);
-                RecentMethods.getBio(nicknameCallback, firebaseModel, new Callbacks.GetBio() {
+                RecentMethods.UserNickByUid(firebaseModel.getUser().getUid(), firebaseModel, new Callbacks.GetUserNickByUid() {
                     @Override
-                    public void GetBiography(String bio) {
-                        biographyTextView.setText(bio);
+                    public void PassUserNick(String nick) {
+                        RecentMethods.getBio(nicknameCallback, firebaseModel, new Callbacks.GetBio() {
+                            @Override
+                            public void GetBiography(String bio) {
+                                biographyTextView.setText(bio);
+                            }
+                        });
                     }
                 });
 

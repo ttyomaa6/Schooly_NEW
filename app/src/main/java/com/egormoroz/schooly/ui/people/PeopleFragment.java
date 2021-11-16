@@ -52,7 +52,7 @@ public class PeopleFragment extends Fragment {
 
     public void setPeopleData(){
         listAdapterPeople.add(new UserInformation("nick", "fidjfif", "gk",
-                6, "password", "Helicopter", 1000, "Miners",1,100,0, "", "", ""));
+                6, "password", "Helicopter", 1000, "Miners",1,100,0, "", "", "",""));
     }
     public void initUserEnter(){
         searchUser.addTextChangedListener(new TextWatcher() {

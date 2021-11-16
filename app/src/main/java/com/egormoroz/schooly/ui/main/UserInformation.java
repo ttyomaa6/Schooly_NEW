@@ -18,6 +18,7 @@ public class UserInformation {
     private String friends;
     private String subscribers;
     private String queue;
+    private String bio;
     public UserInformation(){
     }
 
@@ -120,9 +121,18 @@ public class UserInformation {
     public void setQueue(String queue){
         this.queue = queue;
     }
+
+    public String getBio(){
+        return this.bio;
+    }
+
+    public void setBio(String bio){
+        this.bio = bio;
+    }
+
     public UserInformation(String nick, String phone, String uid, long Avatar, String password,
                            String gender, long age,String miners,long level,long money,double todayMining,
-                           String friends, String subscribers, String queue) {
+                           String friends, String subscribers, String queue,String bio) {
         this.Nick = nick;
         this.uid = uid;
         this.phone = phone;
@@ -137,6 +147,7 @@ public class UserInformation {
         this.friends = friends;
         this.subscribers = subscribers;
         this.queue = queue;
+        this.bio=bio;
     }
 
 }

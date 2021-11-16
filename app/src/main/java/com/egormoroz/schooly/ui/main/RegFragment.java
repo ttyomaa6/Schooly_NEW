@@ -300,7 +300,7 @@ public class RegFragment extends Fragment {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = AuthenticationBase.getCurrentUser();
                             UserInformation res = new UserInformation(nick, RecentMethods.getPhone(email), user.getUid(),
-                                    6, password, "Helicopter", 1000, "Miners",1,100,0, "", "", "");
+                                    6, password, "Helicopter", 1000, "Miners",1,100,0, "", "", "","");
                             reference.child(nick).setValue(res);
                             RecentMethods.setCurrentFragment(MainFragment.newInstance(), getActivity());
                         } else {
