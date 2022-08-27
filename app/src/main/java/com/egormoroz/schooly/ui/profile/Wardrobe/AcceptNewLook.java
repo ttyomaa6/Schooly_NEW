@@ -271,7 +271,7 @@ public class AcceptNewLook extends Fragment {
                                                 case "hair":
                                                     person.setHair(facePart);
                                                     break;
-                                                case "lips":
+                                                case "mouth":
                                                     person.setLips(facePart);
                                                     break;
                                                 case "nose":

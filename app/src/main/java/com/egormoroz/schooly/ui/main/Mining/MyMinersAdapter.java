@@ -62,49 +62,49 @@ public class MyMinersAdapter extends RecyclerView.Adapter<MyMinersAdapter.ViewHo
         holder.inHour.setText("+"+String.valueOf(miner.getInHour())+"S");
         holder.minerImage.setVisibility(View.VISIBLE);
         switch ((int) miner.getInHour()){
-            case 5:
+            case 10:
                 holder.minerImage.setBackgroundResource(R.drawable.weak0);
                 break;
-            case 7:
+            case 11:
                 holder.minerImage.setBackgroundResource(R.drawable.weak1);
                 break;
-            case 13:
+            case 12:
                 holder.minerImage.setBackgroundResource(R.drawable.weak2);
                 break;
-            case 17:
+            case 13:
                 holder.minerImage.setBackgroundResource(R.drawable.weak3);
                 break;
-            case 20:
+            case 14:
                 holder.minerImage.setBackgroundResource(R.drawable.weak4);
                 break;
-            case 24:
+            case 20:
                 holder.minerImage.setBackgroundResource(R.drawable.medium0);
                 break;
-            case 28:
+            case 22:
                 holder.minerImage.setBackgroundResource(R.drawable.medium1);
                 break;
-            case 32:
+            case 24:
                 holder.minerImage.setBackgroundResource(R.drawable.medium2);
                 break;
-            case 35:
+            case 26:
                 holder.minerImage.setBackgroundResource(R.drawable.madium3);
                 break;
-            case 38:
+            case 28:
                 holder.minerImage.setBackgroundResource(R.drawable.medium4);
                 break;
-            case 42:
+            case 30:
                 holder.minerImage.setBackgroundResource(R.drawable.strong0);
                 break;
-            case 45:
+            case 33:
                 holder.minerImage.setBackgroundResource(R.drawable.strong1);
                 break;
-            case 48:
+            case 36:
                 holder.minerImage.setBackgroundResource(R.drawable.strong2);
                 break;
-            case 52:
+            case 39:
                 holder.minerImage.setBackgroundResource(R.drawable.strong3);
                 break;
-            case 56:
+            case 42:
                 holder.minerImage.setBackgroundResource(R.drawable.strong4);
                 break;
         }
@@ -125,7 +125,7 @@ public class MyMinersAdapter extends RecyclerView.Adapter<MyMinersAdapter.ViewHo
                 if(holder.use.getText().toString().equals(holder.use.getContext().getResources().getText(R.string.used))){
 
                 }else{
-                    if(userInformation.getMiners().size()==5){
+                    if(userInformation.getMiners().size()==3){
                         holder.use.setBackgroundResource(R.drawable.corners14grey);
                         Toast.makeText(v.getContext(), v.getContext().getResources().getText(R.string.fiveminersarealreadyactive),Toast.LENGTH_SHORT).show();
                     }else {

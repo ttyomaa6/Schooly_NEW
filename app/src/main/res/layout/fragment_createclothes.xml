@@ -159,15 +159,18 @@
                 android:layout_marginTop="20dp"
                 android:src="@drawable/ic_addfile" />
 
-            <SurfaceView
+            <TextView
                 android:id="@+id/modelFile"
-                android:layout_width="280dp"
-                android:layout_height="280dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/addModelFile"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:background="@color/white"
-                android:visibility="gone" />
+                android:layout_marginTop="40dp"
+                android:textColor="@color/app_color"
+                android:textSize="18sp"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:text="@string/fileAdded"
+                 />
 
 
         </RelativeLayout>

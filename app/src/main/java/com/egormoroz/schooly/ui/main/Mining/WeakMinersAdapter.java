@@ -66,19 +66,19 @@ public class WeakMinersAdapter extends RecyclerView.Adapter<WeakMinersAdapter.Vi
         String minerPriceText= (String) holder.minerPrice.getText();
         holder.minerImage.setVisibility(View.VISIBLE);
         switch ((int) miner.getInHour()){
-            case 5:
+            case 10:
                 holder.minerImage.setBackgroundResource(R.drawable.weak0);
                 break;
-            case 7:
+            case 11:
                 holder.minerImage.setBackgroundResource(R.drawable.weak1);
                 break;
-            case 13:
+            case 12:
                 holder.minerImage.setBackgroundResource(R.drawable.weak2);
                 break;
-            case 17:
+            case 13:
                 holder.minerImage.setBackgroundResource(R.drawable.weak3);
                 break;
-            case 20:
+            case 14:
                 holder.minerImage.setBackgroundResource(R.drawable.weak4);
                 break;
         }

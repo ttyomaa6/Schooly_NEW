@@ -355,6 +355,8 @@
     <string name="noClothesTitle">Название не введено</string>
 
     <string name="noFile">Добавь файл модели</string>
+    <string name="fileAdded">Файл добавлен</string>
+
     <string name="noPhoto">Добавь фото модели</string>
     <string name="noSum">Введи цену одежды</string>
 
@@ -445,7 +447,7 @@
     <string name="notenoughcoins">Не хватает коинов</string>
     <string name="addactiveminers">Добавь активные майнеры!</string>
     <string name="used">Используется</string>
-    <string name="fiveminersarealreadyactive">Пять майнеров уже активны</string>
+    <string name="fiveminersarealreadyactive">Три майнера уже активны</string>
     <string name="incorrectlyenteredclothingprice">Неправильно введена цена одежды</string>
     <string name="applicationsent">Заявка отправлена</string>
     <string name="givetext"></string>

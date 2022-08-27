@@ -3,6 +3,7 @@ package com.egormoroz.schooly.ui.main.Mining;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -248,13 +250,15 @@ public class MiningFragment extends Fragment {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     public void getActiveMinersFromBase(){
         if(userInformation.getMiners()==null){
             RecentMethods.GetActiveMiner(nick, firebaseModel,
                     new Callbacks.GetActiveMiners() {
+                        @RequiresApi(api = Build.VERSION_CODES.P)
                         @Override
                         public void GetActiveMiners(ArrayList<Miner> activeMinersFromBase) {
-                            numderOfActiveMiners.setText(String.valueOf(activeMinersFromBase.size())+"/5");
+                            numderOfActiveMiners.setText(String.valueOf(activeMinersFromBase.size())+"/3");
                             userInformation.setMiners(activeMinersFromBase);
                             if(activeMinersFromBase.size()==0) {
                                 emptyActiveMiners.setVisibility(View.VISIBLE);
@@ -278,7 +282,7 @@ public class MiningFragment extends Fragment {
                         }
                     });
         }else {
-            numderOfActiveMiners.setText(String.valueOf(userInformation.getMiners().size())+"/5");
+            numderOfActiveMiners.setText(String.valueOf(userInformation.getMiners().size())+"/3");
             if(userInformation.getMiners().size()==0) {
                 emptyActiveMiners.setVisibility(View.VISIBLE);
                 addActiveMiners.setVisibility(View.VISIBLE);

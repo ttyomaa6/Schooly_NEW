@@ -686,14 +686,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ImageViewHolde
         recyclerView.setAdapter(commentAdapter);
     }
 
-    public void loadLookClothes(NewsItem newsItem){
-        ArrayList<Clothes> clothesArrayListWithBuffers=newsItem.getClothesCreators();
-        for(int i=0;i<clothesArrayListWithBuffers.size();i++){
-            Clothes clothes=clothesArrayListWithBuffers.get(i);
-            filamentModel.populateScene(clothes.getBuffer(), clothes);
-        }
-    }
-
     private void showBottomSheetDialogClothesCreators(NewsItem newsItem,View v) {
 
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(v.getContext());
@@ -1132,14 +1124,45 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ImageViewHolde
                 progressIndicator.setVisibility(View.GONE);
                 filamentModel.postFrameCallback();
                 try {
-                    Log.d("#####", "WTF");
                     filamentModel.initNewsFilament(surfaceView,newsItem.getPerson().getBody().getBuffer(),true,null,"regularRender",true);
+                    if(newsItem.getPerson().getBody().getColorX()!=null){
+                        com.egormoroz.schooly.Color color=new com.egormoroz.schooly.Color();
+                        color.setColorX(newsItem.getPerson().getBody().getColorX());
+                        color.setColorY(newsItem.getPerson().getBody().getColorY());
+                        color.setColorZ(newsItem.getPerson().getBody().getColorZ());
+                        filamentModel.changeColor(newsItem.getPerson().getBody().getPartType(),color );
+                    }
                     loadClothesInScene(newsItem.getClothesCreators());
                     if(newsItem.getPerson().getBrows()!=null){
                         filamentModel.populateSceneFacePart(newsItem.getPerson().getBrows().getBuffer());
+                        if(newsItem.getPerson().getBrows().getColorX()!=null){
+                            com.egormoroz.schooly.Color color=new com.egormoroz.schooly.Color();
+                            color.setColorX(newsItem.getPerson().getBrows().getColorX());
+                            color.setColorY(newsItem.getPerson().getBrows().getColorY());
+                            color.setColorZ(newsItem.getPerson().getBrows().getColorZ());
+                            filamentModel.changeColor(newsItem.getPerson().getBrows().getPartType(),color );
+                        }
                     }
                     if(newsItem.getPerson().getHair()!=null){
                         filamentModel.populateSceneFacePart(newsItem.getPerson().getHair().getBuffer());
+                        if(newsItem.getPerson().getHair().getColorX()!=null){
+                            com.egormoroz.schooly.Color color=new com.egormoroz.schooly.Color();
+                            color.setColorX(newsItem.getPerson().getHair().getColorX());
+                            color.setColorY(newsItem.getPerson().getHair().getColorY());
+                            color.setColorZ(newsItem.getPerson().getHair().getColorZ());
+                            filamentModel.changeColor(newsItem.getPerson().getHair().getPartType(),color );
+                        }
+
+                    }
+                    if(newsItem.getPerson().getLips().getBuffer()!=null){
+                        filamentModel.populateSceneFacePart(newsItem.getPerson().getLips().getBuffer());
+                        if(newsItem.getPerson().getLips().getColorX()!=null){
+                            com.egormoroz.schooly.Color color=new com.egormoroz.schooly.Color();
+                            color.setColorX(newsItem.getPerson().getLips().getColorX());
+                            color.setColorY(newsItem.getPerson().getLips().getColorY());
+                            color.setColorZ(newsItem.getPerson().getLips().getColorZ());
+                            filamentModel.changeColor(newsItem.getPerson().getLips().getPartType(),color );
+                        }
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

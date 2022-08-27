@@ -11,7 +11,7 @@ import com.google.firebase.database.DataSnapshot;
 import java.util.ArrayList;
 import java.util.Random;
 public class PerfomanceTests {
-   /* public static void generate_users(int amount, FirebaseModel firebaseModel){
+   public static void generate_users(int amount, FirebaseModel firebaseModel){
         for(int i = 0; i < amount; i++){
             UserInformation user = getRandomUser();
             firebaseModel.getUsersReference().child(user.getNick()).setValue(user);
@@ -25,8 +25,8 @@ public class PerfomanceTests {
                 , new ArrayList<>(), ""," ","open","open","open","open",
                 new ArrayList<>(),"regular", new ArrayList<>(),0,new ArrayList<>(),new ArrayList<>()
                 ,new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>()
-                ,new ArrayList<Clothes>(),new Person("", "", "", "", "", "", "", "https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/3d%20models%2Fma.glb?alt=media&token=f7430695-13cb-4365-8910-c61b59a96acf",
-                "", ""), new ArrayList<>()
+                ,new ArrayList<Clothes>(),new Person(new FacePart(), new FacePart(), new FacePart(), new FacePart(), new FacePart(), new FacePart(), new FacePart(),new FacePart(),
+                new FacePart(), new FacePart()), new ArrayList<>(),new ArrayList<>(),"","",new ArrayList<>()
         );
         user.setNick("fake");
         Random random = new Random();
@@ -108,5 +108,5 @@ public class PerfomanceTests {
             deleteFakeUsers(firebaseModel);
             addUsersWithBehaviour(i * 100, firebaseModel);
         }
-    }*/
+    }
 }

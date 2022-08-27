@@ -806,6 +806,7 @@
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_clothesrequest.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_coins.xml" value="0.25407608695652173" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_create_group.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_createclothes.xml" value="0.2504528985507246" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_editing.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_groupinfo.xml" value="0.24954710144927536" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_reg.xml" value="0.2504528985507246" />
@@ -814,7 +815,7 @@
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/item_news_image.xml" value="0.25407608695652173" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/layoutwiewpagershop.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/messages_types.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/messages_types_groups.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/messages_types_groups.xml" value="0.176" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/peoplerecyclerview_item.xml" value="0.8800000000000001" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/rvitem_alreadysearch.xml" value="0.24954710144927536" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/rvitem_brows.xml" value="0.25" />

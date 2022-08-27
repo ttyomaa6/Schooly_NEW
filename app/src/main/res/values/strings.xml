@@ -355,6 +355,7 @@
     <string name="noClothesTitle">Title not entered</string>
 
     <string name="noFile">Add model file</string>
+    <string name="fileAdded">File added</string>
     <string name="noPhoto">Add model photo</string>
     <string name="noSum">Enter the price of the clothes</string>
 
@@ -445,7 +446,7 @@
     <string name="notenoughcoins">Not enough coins</string>
     <string name="addactiveminers">Add active miners!</string>
     <string name="used">Used</string>
-    <string name="fiveminersarealreadyactive">Five miners are already active</string>
+    <string name="fiveminersarealreadyactive">Three miners are already active</string>
     <string name="incorrectlyenteredclothingprice">Incorrectly entered clothing price</string>
     <string name="applicationsent">Application sent</string>
     <string name="givetext"> to </string>

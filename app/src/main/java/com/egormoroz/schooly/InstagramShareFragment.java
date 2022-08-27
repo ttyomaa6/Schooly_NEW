@@ -27,7 +27,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
-import com.egormoroz.schooly.ui.main.MyClothes.ViewingMyClothes;
 import com.egormoroz.schooly.ui.main.Shop.Clothes;
 import com.egormoroz.schooly.ui.main.UserInformation;
 import com.egormoroz.schooly.ui.news.NewsAdapter;
@@ -36,19 +35,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.squareup.picasso.Picasso;
 
-import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
@@ -146,11 +141,44 @@ public class InstagramShareFragment extends Fragment {
                     try {
                         filamentModel.initShareFilament(surfaceView,newsItem.getPerson().getBody().getBuffer(),true,null,"regularRender",true);
                         loadClothesInScene(newsItem.getClothesCreators());
+                        if(newsItem.getPerson().getBody().getColorX()!=null){
+                            com.egormoroz.schooly.Color color=new com.egormoroz.schooly.Color();
+                            color.setColorX(newsItem.getPerson().getBody().getColorX());
+                            color.setColorY(newsItem.getPerson().getBody().getColorY());
+                            color.setColorZ(newsItem.getPerson().getBody().getColorZ());
+                            filamentModel.changeColor(newsItem.getPerson().getBody().getPartType(),color );
+                        }
+                        loadClothesInScene(newsItem.getClothesCreators());
                         if(newsItem.getPerson().getBrows()!=null){
                             filamentModel.populateSceneFacePart(newsItem.getPerson().getBrows().getBuffer());
+                            if(newsItem.getPerson().getBrows().getColorX()!=null){
+                                com.egormoroz.schooly.Color color=new com.egormoroz.schooly.Color();
+                                color.setColorX(newsItem.getPerson().getBrows().getColorX());
+                                color.setColorY(newsItem.getPerson().getBrows().getColorY());
+                                color.setColorZ(newsItem.getPerson().getBrows().getColorZ());
+                                filamentModel.changeColor(newsItem.getPerson().getBrows().getPartType(),color );
+                            }
                         }
                         if(newsItem.getPerson().getHair()!=null){
                             filamentModel.populateSceneFacePart(newsItem.getPerson().getHair().getBuffer());
+                            if(newsItem.getPerson().getHair().getColorX()!=null){
+                                com.egormoroz.schooly.Color color=new com.egormoroz.schooly.Color();
+                                color.setColorX(newsItem.getPerson().getHair().getColorX());
+                                color.setColorY(newsItem.getPerson().getHair().getColorY());
+                                color.setColorZ(newsItem.getPerson().getHair().getColorZ());
+                                filamentModel.changeColor(newsItem.getPerson().getHair().getPartType(),color );
+                            }
+
+                        }
+                        if(newsItem.getPerson().getLips().getBuffer()!=null){
+                            filamentModel.populateSceneFacePart(newsItem.getPerson().getLips().getBuffer());
+                            if(newsItem.getPerson().getLips().getColorX()!=null){
+                                com.egormoroz.schooly.Color color=new com.egormoroz.schooly.Color();
+                                color.setColorX(newsItem.getPerson().getLips().getColorX());
+                                color.setColorY(newsItem.getPerson().getLips().getColorY());
+                                color.setColorZ(newsItem.getPerson().getLips().getColorZ());
+                                filamentModel.changeColor(newsItem.getPerson().getLips().getPartType(),color );
+                            }
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -308,17 +336,6 @@ public class InstagramShareFragment extends Fragment {
         }, new Handler(Looper.getMainLooper()));
     }
 
-    public static void loadBuffer(String model){
-        ExecutorService executorService= Executors.newCachedThreadPool();
-        future = executorService.submit(new Callable(){
-            public Buffer call() throws Exception {
-                uri = new URI(model);
-                buffer = RecentMethods.getBytes(uri.toURL());
-                buffer1= ByteBuffer.wrap(buffer);
-                return buffer1;
-            }
-        });
-    }
 
     public void loadClothesInScene(ArrayList<Clothes> clothesArrayList){
         for(int i=0;i<clothesArrayList.size();i++){
@@ -335,6 +352,62 @@ public class InstagramShareFragment extends Fragment {
         String s=firebaseModel.getUsersReference().push().getKey();
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, s, null);
         return Uri.parse(path);
+    }
+
+    public static Buffer loadS(String model){
+        try {
+            uri = new URI(model);
+            buffer = RecentMethods.getBytes(uri.toURL());
+            buffer1= ByteBuffer.wrap(buffer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        return buffer1;
+    }
+
+    static class LongRunningTask implements Callable<Buffer> {
+        private String model;
+
+        public LongRunningTask(String model) {
+            this.model = model;
+        }
+
+        @Override
+        public Buffer call() {
+            return loadS(model);
+        }
+    }
+
+    public static class TaskRunner {
+        private final Executor executor = Executors.newSingleThreadExecutor();
+        private final Handler handler = new Handler(Looper.getMainLooper());
+
+        public interface Callback<String> {
+            void onComplete(Buffer result) throws IOException, URISyntaxException;
+        }
+
+        public <Buffer> void executeAsync(Callable<Buffer> callable, com.egormoroz.schooly.TaskRunner.Callback<Buffer> callback) {
+            executor.execute(() -> {
+                Buffer result = null;
+                try {
+                    result = callable.call();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                Buffer finalResult = result;
+                handler.post(() -> {
+                    try {
+                        callback.onComplete((Buffer) finalResult);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (URISyntaxException e) {
+                        e.printStackTrace();
+                    }
+                });
+            });
+        }
     }
 
     @Override

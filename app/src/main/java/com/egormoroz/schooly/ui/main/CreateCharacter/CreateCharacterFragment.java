@@ -192,7 +192,6 @@ public class CreateCharacterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (loadValue==0)
-
                 showDialog();
             }
         });
@@ -209,6 +208,7 @@ public class CreateCharacterFragment extends Fragment {
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
+                if (loadValue==0)
                 RecentMethods.setCurrentFragment(fragment,getActivity());
             }
         };
@@ -312,6 +312,7 @@ public class CreateCharacterFragment extends Fragment {
             activeFacePartsString.add(newFacePart.getUid());
             filamentModel.populateSceneFacePart(newFacePart.getBuffer());
             if(newFacePart.getPartType().equals("hair") && colorHair!=null){
+                Log.d("######", "CHANGECOLOR");
                 filamentModel.changeColor("hair", colorHair);
             }
             if(newFacePart.getPartType().equals("brows") && colorBrows!=null){
@@ -643,6 +644,28 @@ public class CreateCharacterFragment extends Fragment {
                             color[0] = new com.egormoroz.schooly.Color(facePart.getColorX(),
                                     facePart.getColorY(), facePart.getColorZ()
                                     , 0, 0, 0);
+                            switch (facePart.getPartType()) {
+                                case "body":
+                                    colorBody=new com.egormoroz.schooly.Color();
+                                    colorBody.setColorX(facePart.getColorX());
+                                    colorBody.setColorY(facePart.getColorY());
+                                    colorBody.setColorZ(facePart.getColorZ());
+                                    Log.d("######", "CHANGECOLORBPDY");
+                                    break;
+                                case "hair":
+                                    colorHair=new com.egormoroz.schooly.Color();
+                                    colorHair.setColorX(facePart.getColorX());
+                                    colorHair.setColorY(facePart.getColorY());
+                                    colorHair.setColorZ(facePart.getColorZ());
+                                    Log.d("######", "CHANGECOLORHAIR");
+                                    break;
+                                case "brows":
+                                    colorBrows=new com.egormoroz.schooly.Color();
+                                    colorBrows.setColorX(facePart.getColorX());
+                                    colorBrows.setColorY(facePart.getColorY());
+                                    colorBrows.setColorZ(facePart.getColorZ());
+                                    break;
+                            }
                         }
                         if(i==0){
                                 filamentModel.initFilamentForPersonCustom(surfaceView, facePart.getBuffer());
@@ -653,6 +676,9 @@ public class CreateCharacterFragment extends Fragment {
                             if(color[0].getColorX() !=null)
                                 filamentModel.changeColor(facePart.getPartType(),color[0] );
                         }
+                    }
+                    if(i==facePartArrayList.size()-1){
+                        loadValue=0;
                     }
                 }
             }
@@ -677,16 +703,19 @@ public class CreateCharacterFragment extends Fragment {
                                         , 0, 0, 0);
                                 switch (facePart.getPartType()) {
                                     case "body":
+                                        colorBody=new com.egormoroz.schooly.Color();
                                         colorBody.setColorX(facePart.getColorX());
                                         colorBody.setColorY(facePart.getColorY());
                                         colorBody.setColorZ(facePart.getColorZ());
                                         break;
                                     case "hair":
+                                        colorHair=new com.egormoroz.schooly.Color();
                                         colorHair.setColorX(facePart.getColorX());
                                         colorHair.setColorY(facePart.getColorY());
                                         colorHair.setColorZ(facePart.getColorZ());
                                         break;
                                     case "brows":
+                                        colorBrows=new com.egormoroz.schooly.Color();
                                         colorBrows.setColorX(facePart.getColorX());
                                         colorBrows.setColorY(facePart.getColorY());
                                         colorBrows.setColorZ(facePart.getColorZ());
@@ -701,6 +730,9 @@ public class CreateCharacterFragment extends Fragment {
                                 filamentModel.populateSceneFacePart(facePart.getBuffer());
                                 if(color[0].getColorX() !=null )
                                     filamentModel.changeColor(facePart.getPartType(), color[0]);
+                            }
+                            if(i==facePartsArrayList.size()-1){
+                                loadValue=0;
                             }
                         }
                         userInformation.setPerson(RecentMethods.setAllPerson(facePartsArrayList,"not",colorBody,colorHair,colorBrows));

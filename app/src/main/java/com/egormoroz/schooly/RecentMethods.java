@@ -1518,7 +1518,7 @@ public class RecentMethods {
         userInformation.setAccountType(snapshot.child("accountType").getValue(String.class));
         userInformation.setmoney(snapshot.child("money").getValue(Long.class));
         userInformation.setTodayMining(snapshot.child("todayMining").getValue(Double.class));
-        //userInformation.setPerson(snapshot.child("person").getValue(Person.class));
+        userInformation.setPersonImage(snapshot.child("personImage").getValue(String.class));
         return userInformation;
     }
     public static UserPeopleAdapter validateUserInformationToUserPeopleAdapter(UserInformation user){
@@ -1715,6 +1715,42 @@ public class RecentMethods {
             if (is != null) { is.close(); }
         }
         return  baos.toByteArray();
+    }
+
+    public static void loadClothesCreators(String nick,String newsId,FirebaseModel firebaseModel,Callbacks.loadClothesArrayList callback){
+        firebaseModel.initNewsDatabase();
+        firebaseModel.getReference().child(nick).child(newsId).child("clothesCreators").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(task.isSuccessful()){
+                    Log.d("AAAAA", "CONTINUE AFTER0 ");
+                    DataSnapshot snapshot= task.getResult();
+                    ArrayList<Clothes> clothesArrayList=new ArrayList<>();
+                    for(DataSnapshot snap:snapshot.getChildren()){
+                        Clothes clothes = new Clothes();
+                        clothes.setClothesImage(snap.child("clothesImage").getValue(String.class));
+                        clothes.setClothesPrice(snap.child("clothesPrice").getValue(Long.class));
+                        clothes.setPurchaseNumber(snap.child("purchaseNumber").getValue(Long.class));
+                        clothes.setClothesType(snap.child("clothesType").getValue(String.class));
+                        clothes.setClothesTitle(snap.child("clothesTitle").getValue(String.class));
+                        clothes.setCreator(snap.child("creator").getValue(String.class));
+                        clothes.setCurrencyType(snap.child("currencyType").getValue(String.class));
+                        clothes.setDescription(snap.child("description").getValue(String.class));
+                        clothes.setPurchaseToday(snap.child("purchaseToday").getValue(Long.class));
+                        clothes.setModel(snap.child("model").getValue(String.class));
+                        clothes.setBodyType(snap.child("bodyType").getValue(String.class));
+                        clothes.setUid(snap.child("uid").getValue(String.class));
+                        clothes.setExclusive(snap.child("exclusive").getValue(String.class));
+                        clothes.setX(snap.child("x").getValue(Float.class));
+                        clothes.setY(snap.child("y").getValue(Float.class));
+                        clothes.setZ(snap.child("z").getValue(Float.class));
+                        clothes.setTransformRatio(snap.child("transformRatio").getValue(Float.class));
+                        clothesArrayList.add(clothes);
+                    }
+                    callback.LoadClothes(clothesArrayList);
+                }
+            }
+        });
     }
 
     public static void startLoadPerson(String nick,FirebaseModel firebaseModel,Callbacks.loadPerson callback){

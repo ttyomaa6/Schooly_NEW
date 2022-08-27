@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -48,7 +49,7 @@ public class CreateClothesFragment extends Fragment {
     EditText editTextClothes,editClothesPrice,addDescriptionEdit;
     ImageView addModelFile,addModelImage,modelPhoto;
     TextView before,criteria
-            ,noTitle,noModel,noPhoto,noSum,exclusivePremium;
+            ,noTitle,noModel,noPhoto,noSum,exclusivePremium,modelFile;
     RelativeLayout publish;
     RadioGroup radioGroup,radioGroupCurrency,radioGroupExclusive;
     private String checker = "", myUrl = "";
@@ -59,7 +60,6 @@ public class CreateClothesFragment extends Fragment {
             ,radioButton9,radioButton10,radioButton11
             ,radioButton12,radioButton13,radioButtonCoin,radioButtonDollar
             ,radioButtonExclusiveYes,radioButtonExclusiveNo;
-
     Fragment fragment;
     UserInformation userInformation;
     Bundle bundle;
@@ -127,6 +127,7 @@ public class CreateClothesFragment extends Fragment {
         noModel=view.findViewById(R.id.noFile);
         noSum=view.findViewById(R.id.noSum);
         exclusivePremium=view.findViewById(R.id.exclusivePremium);
+        modelFile=view.findViewById(R.id.modelFile);
         noTitle=view.findViewById(R.id.noEnterTitleText);
         before.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -251,12 +252,6 @@ public class CreateClothesFragment extends Fragment {
                 }else {
                     noPhoto.setVisibility(View.GONE);
                 }
-//                if(modelScene.getVisibility()==View.GONE){
-//                    noModel.setVisibility(View.VISIBLE);
-//                }
-//                else {
- //                   noModel.setVisibility(View.GONE);
- //               }
                 if(editTextClothes.getText().toString().length()>0 && editClothesPrice.getText().toString().length()>0 &&
                         !editClothesPrice.getText().toString().equals("0")&& modelPhoto.getVisibility()==View.VISIBLE
                         &&  !editClothesPrice.getText().toString().contains("-")
@@ -280,7 +275,7 @@ public class CreateClothesFragment extends Fragment {
                 DatabaseReference userMessageKeyRef = firebaseModel.getUsersReference().child(nick).child("imageApplication").push();
                 final String messagePushID = userMessageKeyRef.getKey();
 
-                final StorageReference filePath = storageReference.child(messagePushID + "." + "jpg");
+                final StorageReference filePath = storageReference.child(messagePushID + "." + "png");
                 uploadTask = filePath.putFile(fileUri);
                 uploadTask.continueWithTask(new Continuation() {
                     @Override
@@ -343,10 +338,9 @@ public class CreateClothesFragment extends Fragment {
                             public void onComplete(@NonNull Task<DataSnapshot> task) {
                                 if(task.isSuccessful()){
                                     DataSnapshot snapshot= task.getResult();
-                                   // modelScene.setVisibility(View.VISIBLE);
                                     modelApplication=snapshot.getValue(String.class);
-                                   // loadModels(Uri.parse(modelApplication), modelScene, CreateClothesFragment.this, 0.25f);
                                     noModel.setVisibility(View.GONE);
+                                    modelFile.setVisibility(View.VISIBLE);
                                 }
                             }
                         });
@@ -399,44 +393,6 @@ public class CreateClothesFragment extends Fragment {
 
         dialog.show();
     }
-
-//    @RequiresApi(api = Build.VERSION_CODES.N)
-//    public void loadModels(Uri url, SceneView sceneView, Fragment fragment, float scale) {
-//        ModelRenderable.builder()
-//                .setSource(
-//                        fragment.getContext(), new RenderableSource.Builder().setSource(
-//                                fragment.getContext(),
-//                                url,
-//                                RenderableSource.SourceType.GLB
-//                        ).setScale(scale)
-//                                .setRecenterMode(RenderableSource.RecenterMode.CENTER)
-//                                .build()
-//                )
-//                .setRegistryId(url)
-//                .build()
-//                .thenAccept(new Consumer<ModelRenderable>() {
-//                    @Override
-//                    public void accept(ModelRenderable modelRenderable) {
-//                        addNode(modelRenderable, sceneView);
-//                    }
-//                });
-//    }
-//
-//    public void addNode(ModelRenderable modelRenderable, SceneView sceneView) {
-//        Node modelNode1 = new Node();
-//        modelNode1.setRenderable(modelRenderable);
-//        modelNode1.setLocalScale(new Vector3(0.3f, 0.3f, 0.3f));
-////        modelNode1.setLocalRotation(Quaternion.multiply(
-////                Quaternion.axisAngle(new Vector3(1f, 0f, 0f), 45),
-////                Quaternion.axisAngle(new Vector3(0f, 1f, 0f), 75)));
-//        modelNode1.setLocalPosition(new Vector3(0f, 0f, -0.9f));
-//        sceneView.getScene().addChild(modelNode1);
-//        try {
-//            sceneView.resume();
-//        } catch (CameraNotAvailableException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public void showDialogSendClothes(){
 

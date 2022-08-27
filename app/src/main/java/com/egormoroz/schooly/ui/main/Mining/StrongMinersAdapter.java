@@ -62,19 +62,19 @@ public class StrongMinersAdapter extends RecyclerView.Adapter<StrongMinersAdapte
         String minerPriceText= (String) holder.minerPrice.getText();
         holder.minerImage.setVisibility(View.VISIBLE);
         switch ((int) miner.getInHour()){
-            case 42:
+            case 30:
                 holder.minerImage.setBackgroundResource(R.drawable.strong0);
                 break;
-            case 45:
+            case 33:
                 holder.minerImage.setBackgroundResource(R.drawable.strong1);
                 break;
-            case 48:
+            case 36:
                 holder.minerImage.setBackgroundResource(R.drawable.strong2);
                 break;
-            case 52:
+            case 39:
                 holder.minerImage.setBackgroundResource(R.drawable.strong3);
                 break;
-            case 56:
+            case 42:
                 holder.minerImage.setBackgroundResource(R.drawable.strong4);
                 break;
         }

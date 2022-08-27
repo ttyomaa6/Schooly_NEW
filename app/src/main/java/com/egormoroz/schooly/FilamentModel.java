@@ -181,20 +181,20 @@ public class FilamentModel {
     }
 
     public void loadPointLights(){
-        float[] float1 = Colors.cct(5_500.0f);
         int light=EntityManager.get().create();
-        new LightManager.Builder(LightManager.Type.POINT)
+        float[] float1 = Colors.cct(5_500.0f);
+        new LightManager.Builder(LightManager.Type.DIRECTIONAL)
                 .color(float1[0], float1[1], float1[2])
-                .intensity(250_000_000.0f)
-                .falloff(20)
-                .position(-8.0f, 6.0f, 8.0f)
+                .intensity(120_000.0f)
+                .direction(0.0f, -0.5f, -1.0f)
+                .castShadows(false)
                 .build(engine, light);
         int light1=EntityManager.get().create();
-        new LightManager.Builder(LightManager.Type.POINT)
+        new LightManager.Builder(LightManager.Type.DIRECTIONAL)
                 .color(float1[0], float1[1], float1[2])
-                .intensity(250_000_000.0f)
-                .falloff(20)
-                .position(8.0f, 6.0f, 8.0f)
+                .intensity(120_000.0f)
+                .direction(0.0f, -0.5f, -1.0f)
+                .castShadows(false)
                 .build(engine, light1);
         int light2=EntityManager.get().create();
         new LightManager.Builder(LightManager.Type.POINT)
@@ -220,9 +220,9 @@ public class FilamentModel {
         int light5=EntityManager.get().create();
         new LightManager.Builder(LightManager.Type.POINT)
                 .color(float1[0], float1[1], float1[2])
-                .intensity(90_000_000.0f)
-                .falloff(20)
-                .position(0.0f, 17.0f, -8.0f)
+                .intensity(80_000_000.0f)
+                .falloff(30)
+                .position(0.0f, 24.0f, -8.0f)
                 .build(engine, light5);
         int light6=EntityManager.get().create();
         new LightManager.Builder(LightManager.Type.POINT)
@@ -238,7 +238,7 @@ public class FilamentModel {
                 .falloff(20)
                 .position(-8.0f, 17.0f, 0.0f)
                 .build(engine, light7);
-        int[] lights={light,light1,light2,light3,light4,light5,light6,light7};
+        int[] lights={light,light2,light3,light4,light5,light6,light7};
         modelViewer.getScene().addEntities(lights);
     }
 
@@ -280,6 +280,19 @@ public class FilamentModel {
         }
     }
 
+    public void populateSceneS(Buffer buffer,float x,float y,float z,float tr){
+        FilamentAsset filamentAsset=assetLoader.createAssetFromBinary(buffer);
+        filamentAssets.add(filamentAsset);
+        resourceLoader.asyncBeginLoad(filamentAsset);
+        filamentAsset.releaseSourceData();
+        resourceLoader.asyncUpdateLoad();
+        modelViewer.populateScene(filamentAsset);
+        if(tr!=0){
+            Float3 float3=new Float3(z,y,x);
+            modelViewer.transformToUnitCube(float3,filamentAsset,tr);
+        }
+    }
+
     public void populateSceneFacePart(Buffer buffer) {
         FilamentAsset filamentAsset=assetLoader.createAssetFromBinary(buffer);
         filamentAssets.add(filamentAsset);
@@ -295,6 +308,7 @@ public class FilamentModel {
             int[] entities=filamentAsset.getEntitiesByName(clothes.getClothesTitle());
             if(entities.length!=0){
                 modelViewer.getScene().removeEntity(entities[0]);
+                filamentAssets.remove(i);
             }
         }
     }
@@ -337,7 +351,7 @@ public class FilamentModel {
         Gltfio.init();
         Utils.INSTANCE.init();
         cameraManipulator=new Manipulator.Builder()
-                .targetPosition(0.7f, 19.5f, 0.0f)
+                .targetPosition(0.8f, 19.5f, 0.0f)
                 .orbitHomePosition(3.0f, 19.5f, 4.0f)
                 .viewport(surfaceView.getWidth(), surfaceView.getHeight())
                 .zoomSpeed(0.07f)
@@ -357,12 +371,12 @@ public class FilamentModel {
     }
 
     public void setMaskOnFacePart(FacePart facePart){
-        RenderableManager renderableManager=engine.getRenderableManager();
         for(int i=0;i<filamentAssets.size();i++){
             FilamentAsset filamentAsset=filamentAssets.get(i);
             int[] entities=filamentAsset.getEntitiesByName(facePart.getPartTitle());
             if(entities.length!=0){
                 modelViewer.getScene().removeEntity(entities[0]);
+                filamentAssets.remove(i);
             }
         }
     }

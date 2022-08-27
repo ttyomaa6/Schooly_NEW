@@ -62,19 +62,19 @@ public class AverageMinersAdapter extends RecyclerView.Adapter<AverageMinersAdap
         String minerPriceText= (String) holder.minerPrice.getText();
         holder.minerImage.setVisibility(View.VISIBLE);
         switch ((int) miner.getInHour()){
-            case 24:
+            case 20:
                 holder.minerImage.setBackgroundResource(R.drawable.medium0);
                 break;
-            case 28:
+            case 22:
                 holder.minerImage.setBackgroundResource(R.drawable.medium1);
                 break;
-            case 32:
+            case 24:
                 holder.minerImage.setBackgroundResource(R.drawable.medium2);
                 break;
-            case 35:
+            case 26:
                 holder.minerImage.setBackgroundResource(R.drawable.madium3);
                 break;
-            case 38:
+            case 28:
                 holder.minerImage.setBackgroundResource(R.drawable.medium4);
                 break;
         }
