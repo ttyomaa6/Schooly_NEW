@@ -69,7 +69,8 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
         if(comment.getType().equals("reply"))
             resultPath = nick + "/" + newsId + "/comments/" + comment.getParentId() +
                     "/reply/" + comment.getCommentId() + "/likes_count";
-        /*firebaseNewsModel.getReference(resultPath).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        String finalResultPath = resultPath;
+        firebaseNewsModel.getReference(resultPath).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if(task.isSuccessful()){
@@ -92,7 +93,13 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
                         }
                     });
-
+                    if(!comment.getType().equals("reply"))
+                         holder.answer.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                 NewsAdapter.CommentReply(comment.getCommentId(), comment.getNick(), newsItem);
+                            }
+                        });
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -105,14 +112,14 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
                                         holder.like.setImageResource(R.drawable.ic_heart40dp);
                                         holder.likesCount.setText(String.valueOf(value[0]));
                                         firebaseModel.getUsersReference().child(userInformation.getNick()).child("likedComm").child(comment.getCommentId()).removeValue();
-                                        firebaseNewsModel.getReference().child(nick).child(newsId).child("comments").child(comment.getCommentId()).child("likes_count").setValue(value[0]);
+                                        firebaseNewsModel.getReference(finalResultPath).setValue(value[0]);
                                     }
                                     else {
                                         value[0] += 1;
                                         holder.likesCount.setText(String.valueOf(value[0]));
                                         holder.like.setImageResource(R.drawable.ic_pressedheart40dp);
                                         firebaseModel.getUsersReference().child(userInformation.getNick()).child("likedComm").child(comment.getCommentId()).setValue("liked");
-                                        firebaseNewsModel.getReference().child(nick).child(newsId).child("comments").child(comment.getCommentId()).child("likes_count").setValue(value[0]);
+                                        firebaseNewsModel.getReference(finalResultPath).setValue(value[0]);
                                     }
                                 }
 
@@ -126,7 +133,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
                     });
                 }
             }
-        });*/
+        });
     }
 
 
