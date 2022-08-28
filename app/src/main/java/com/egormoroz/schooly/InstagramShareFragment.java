@@ -188,61 +188,61 @@ public class InstagramShareFragment extends Fragment {
                     loadValue=0;
                 }
             });
-            if (loadValue==0){
                 share.setOnClickListener(new View.OnClickListener() {
                     @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onClick(View v) {
-                        if(socialMediaType.equals("instagram")){
-                            getBitmapFormSurfaceView(surfaceView, getActivity(), new NewsAdapter.Callback<Bitmap>() {
-                                @Override
-                                public void onResult1(Bitmap bitmap) {
-                                    Uri backgroundAssetUri = getImageUri(getActivity(), bitmap);
-                                    String sourceApplication = "com.egormoroz.schooly";
+                        if (loadValue==0) {
+                            if (socialMediaType.equals("instagram")) {
+                                getBitmapFormSurfaceView(surfaceView, getActivity(), new NewsAdapter.Callback<Bitmap>() {
+                                    @Override
+                                    public void onResult1(Bitmap bitmap) {
+                                        Uri backgroundAssetUri = getImageUri(getActivity(), bitmap);
+                                        String sourceApplication = "com.egormoroz.schooly";
 
-                                    Intent intent = new Intent("com.instagram.share.ADD_TO_STORY");
-                                    intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                                        Intent intent = new Intent("com.instagram.share.ADD_TO_STORY");
+                                        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-                                    intent.setDataAndType(backgroundAssetUri, "image/*");
+                                        intent.setDataAndType(backgroundAssetUri, "image/*");
 
 
-                                    Activity activity = getActivity();
-                                    if (activity.getPackageManager().resolveActivity(intent, 0) != null) {
-                                        activity.startActivityForResult(intent, 0);
+                                        Activity activity = getActivity();
+                                        if (activity.getPackageManager().resolveActivity(intent, 0) != null) {
+                                            activity.startActivityForResult(intent, 0);
+                                        }
                                     }
-                                }
-                            });
-                        }else if(socialMediaType.equals("telegram")){
-                            getBitmapFormSurfaceView(surfaceView, getActivity(), new NewsAdapter.Callback<Bitmap>() {
-                                @Override
-                                public void onResult1(Bitmap bitmap) {
-                                    String TelegramName = "org.telegram.messenger";
-                                    Intent shareIntent = new Intent();
-                                    shareIntent.setAction(Intent.ACTION_SEND);
-                                    shareIntent.putExtra(Intent.EXTRA_STREAM, getImageUri(getActivity(),bitmap));
-                                    shareIntent.setType("image/png");
-                                    shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                                    shareIntent.setPackage(TelegramName);
-                                    startActivity(Intent.createChooser(shareIntent, null));
-                                }
-                            });
-                        }else if(socialMediaType.equals("all")){
-                            getBitmapFormSurfaceView(surfaceView, getActivity(), new NewsAdapter.Callback<Bitmap>() {
-                                @Override
-                                public void onResult1(Bitmap bitmap) {
-                                    Intent sendIntent = new Intent();
-                                    sendIntent.setAction(Intent.ACTION_SEND);
-                                    sendIntent.putExtra(Intent.EXTRA_STREAM, getImageUri(getActivity(),bitmap));
-                                    sendIntent.setType("image/png");
-                                    sendIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                                    Intent shareIntent = Intent.createChooser(sendIntent, null);
-                                    startActivity(shareIntent);
-                                }
-                            });
+                                });
+                            } else if (socialMediaType.equals("telegram")) {
+                                getBitmapFormSurfaceView(surfaceView, getActivity(), new NewsAdapter.Callback<Bitmap>() {
+                                    @Override
+                                    public void onResult1(Bitmap bitmap) {
+                                        String TelegramName = "org.telegram.messenger";
+                                        Intent shareIntent = new Intent();
+                                        shareIntent.setAction(Intent.ACTION_SEND);
+                                        shareIntent.putExtra(Intent.EXTRA_STREAM, getImageUri(getActivity(), bitmap));
+                                        shareIntent.setType("image/png");
+                                        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                                        shareIntent.setPackage(TelegramName);
+                                        startActivity(Intent.createChooser(shareIntent, null));
+                                    }
+                                });
+                            } else if (socialMediaType.equals("all")) {
+                                getBitmapFormSurfaceView(surfaceView, getActivity(), new NewsAdapter.Callback<Bitmap>() {
+                                    @Override
+                                    public void onResult1(Bitmap bitmap) {
+                                        Intent sendIntent = new Intent();
+                                        sendIntent.setAction(Intent.ACTION_SEND);
+                                        sendIntent.putExtra(Intent.EXTRA_STREAM, getImageUri(getActivity(), bitmap));
+                                        sendIntent.setType("image/png");
+                                        sendIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                                        Intent shareIntent = Intent.createChooser(sendIntent, null);
+                                        startActivity(shareIntent);
+                                    }
+                                });
+                            }
                         }
                     }
                 });
-            }
         }else{
             surfaceView.setVisibility(View.GONE);
             progressIndicator.setVisibility(View.GONE);

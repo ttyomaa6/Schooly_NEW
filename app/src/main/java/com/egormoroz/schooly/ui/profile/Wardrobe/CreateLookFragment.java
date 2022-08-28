@@ -75,7 +75,6 @@ public class CreateLookFragment extends Fragment {
     ArrayList<Clothes> clothesFromBase;
     WardrodeClothesAdapter.ItemClickListener itemClickListener;
     static String type, nick;
-    static ArrayList<Buffer> buffers;
     Fragment fragment;
     int tabLayoutPosition;
     static UserInformation userInformation;
@@ -84,7 +83,7 @@ public class CreateLookFragment extends Fragment {
     static String lookType;
     static byte[] buffer;
     static URI uri;
-    static Buffer buffer1,bufferToFilament,b;
+    static Buffer bufferToFilament,b;
     static FilamentModel filamentModel=new FilamentModel();
     static ArrayList<Clothes> clothesList=new ArrayList<>();
     static ArrayList<String> clothesUid=new ArrayList<>();
@@ -139,6 +138,7 @@ public class CreateLookFragment extends Fragment {
         tabLayout = view.findViewById(R.id.tabLayoutWardrobe);
         viewPager = view.findViewById(R.id.frcontwardrobe);
         surfaceView=view.findViewById(R.id.surfaceViewCreateClothes);
+        Log.d("####", type);
         itemClickListener=new WardrodeClothesAdapter.ItemClickListener() {
             @Override
             public void onItemClick(Clothes clothes,String type,String fragmentType) {
@@ -261,6 +261,7 @@ public class CreateLookFragment extends Fragment {
         backfromwardrobe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("####", type);
                 if(loadValue==0) {
                     RecentMethods.setCurrentFragment(ProfileFragment.newInstance(type, nick, fragment, userInformation, bundle)
                             , getActivity());
@@ -540,7 +541,7 @@ public class CreateLookFragment extends Fragment {
 
     public static void sentToViewingFrag(String type, Fragment fragment, UserInformation userInformation, Bundle bundle, Activity activity){
         if(loadValue==0){
-            RecentMethods.setCurrentFragment(ViewingClothesWardrobe.newInstance(type,CreateLookFragment.newInstance(type, fragment, userInformation, bundle,lookType),userInformation,bundle), activity);
+            RecentMethods.setCurrentFragment(ViewingClothesWardrobe.newInstance(type,fragment,userInformation,bundle), activity);
         }
     }
 
@@ -673,15 +674,12 @@ public class CreateLookFragment extends Fragment {
         RecentMethods.startLoadPerson(userInformation.getNick(), firebaseModel, new Callbacks.loadPerson() {
             @Override
             public void LoadPerson(Person person,ArrayList<FacePart> facePartArrayList) {
-                Log.d("AAA","ss  "+person.getHair().getColorY());
                 LoadBodyParts.loadPersonBuffers(facePartArrayList, new Callbacks.loadFaceParts() {
                     @Override
                     public void LoadFaceParts(ArrayList<FacePart> facePartsArrayList) {
-                        Log.d("AAAAA","ss11  "+facePartsArrayList.get(0).getColorZ()+"   "+facePartsArrayList.get(0).getUid());
                         for(int i=0;i<facePartsArrayList.size();i++){
                             FacePart facePart=facePartsArrayList.get(i);
                             com.egormoroz.schooly.Color[] color = {new com.egormoroz.schooly.Color()};
-                            Log.d("AAAAA","ss22  "+facePartsArrayList.get(i).getColorY()+"   "+facePart.getUid()+"   "+i);
                             if(facePart.getColorX()!=-1f && facePart.getColorY()!=-1f && facePart.getColorZ()!=-1f){
                                 color[0] =new com.egormoroz.schooly.Color(facePartsArrayList.get(i).getColorX(),
                                         facePartsArrayList.get(i).getColorY(), facePartsArrayList.get(i).getColorZ()

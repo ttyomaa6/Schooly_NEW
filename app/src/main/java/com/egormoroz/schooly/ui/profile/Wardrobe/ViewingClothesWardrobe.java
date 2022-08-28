@@ -131,9 +131,11 @@ public class ViewingClothesWardrobe extends Fragment {
     coinsLinear=view.findViewById(R.id.linearCoins);
     fittingClothes=view.findViewById(R.id.fittingClothes);
     schoolyCoinCV.setText(String.valueOf(userInformation.getmoney()));
+    Log.d("####", type);
     fittingClothes.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+        Log.d("####", type);
         RecentMethods.setCurrentFragment(FittingFragment.newInstance(ViewingClothesWardrobe.newInstance(type,fragment,userInformation,bundle),userInformation,bundle,clothesViewing), getActivity());
       }
     });
@@ -146,7 +148,6 @@ public class ViewingClothesWardrobe extends Fragment {
     OnBackPressedCallback callback = new OnBackPressedCallback(true) {
       @Override
       public void handleOnBackPressed() {
-
         RecentMethods.setCurrentFragment(fragment, getActivity());
       }
     };

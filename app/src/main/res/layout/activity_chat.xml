@@ -42,23 +42,15 @@
         android:background="@drawable/corners14appcolor"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/send_files_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="8dp"
-            android:background="@color/app_color"
-            android:src="@drawable/ic_image" />
-
 
         <EditText
             android:id="@+id/input_message"
             android:layout_width="248dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="0dp"
-            android:layout_toStartOf="@+id/voiceActivityCircle"
-            android:layout_toEndOf="@+id/send_files_btn"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@+id/send_message_btn"
             android:autoLink="all"
             android:background="@color/app_color"
             android:fontFamily="@font/montserrat_bold"
@@ -79,26 +71,6 @@
             android:layout_marginEnd="8dp"
             android:background="@color/app_color"
             android:src="@drawable/ic_send" />
-
-
-        <ImageView
-            android:id="@+id/voiceActivityCircle"
-            android:layout_width="27dp"
-            android:layout_height="34dp"
-            android:layout_marginEnd="13dp"
-            android:layout_toStartOf="@+id/send_message_btn"
-            android:paddingTop="10dp"
-            android:visibility="gone"
-            app:srcCompat="@drawable/red_circle" />
-
-        <ImageView
-            android:id="@+id/voiceinput"
-            android:layout_width="36dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="4dp"
-            android:layout_toLeftOf="@id/send_message_btn"
-            android:src="@drawable/ic_voicemessage" />
 
         <TextView
             android:layout_width="wrap_content"

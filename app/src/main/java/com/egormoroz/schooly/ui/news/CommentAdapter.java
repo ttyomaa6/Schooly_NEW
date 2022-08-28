@@ -69,7 +69,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
         if(comment.getType().equals("reply"))
             resultPath = nick + "/" + newsId + "/comments/" + comment.getParentId() +
                     "/reply/" + comment.getCommentId() + "/likes_count";
-        firebaseNewsModel.getReference(resultPath).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        /*firebaseNewsModel.getReference(resultPath).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if(task.isSuccessful()){
@@ -92,13 +92,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
                         }
                     });
-                    if(!comment.getType().equals("reply"))
-                         holder.answer.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                 NewsAdapter.CommentReply(comment.getCommentId(), comment.getNick(), newsItem);
-                            }
-                        });
+
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -132,7 +126,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
                     });
                 }
             }
-        });
+        });*/
     }
 
 

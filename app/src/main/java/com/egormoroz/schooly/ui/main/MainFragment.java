@@ -70,7 +70,7 @@ public class MainFragment extends Fragment{
     ArrayList<Chat> noViewedChatNots=new ArrayList<>();
     ArrayList<Clothes> popularClothesArrayList=new ArrayList<Clothes>();
     RecyclerView clothesRecyclerMain,myClothesRecycler;
-    String todayMiningFormatted,nick;
+    String todayMiningFormatted,nickname;
     NewClothesAdapter.ItemClickListener itemClickListener;
     private static final int NOTIFY_ID = 101;
     RelativeLayout relativeShop,relativeMining,relativeMyClothes,relativeFirstLayout,createClothes,relativeTodayMining;
@@ -118,7 +118,7 @@ public class MainFragment extends Fragment{
     @Override
     public void onViewCreated(@Nullable View view,@NonNull Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        nick=userInformation.getNick();
+        nickname=userInformation.getNick();
         myClothesRecycler=view.findViewById(R.id.mychlothesmain);
         relativeFirstLayout=view.findViewById(R.id.relativeFirstClothes);
         createClothes=view.findViewById(R.id.createClothes);
@@ -320,29 +320,6 @@ public class MainFragment extends Fragment{
 //            }
 //        });
 
-        if (userInformation.getMiners()==null){
-            RecentMethods.GetActiveMiner(nick, firebaseModel, new Callbacks.GetActiveMiners() {
-                @Override
-                public void GetActiveMiners(ArrayList<Miner> activeMinersFromBase) {
-                    userInformation.setMiners(activeMinersFromBase);
-                    relativeMining.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            RecentMethods.setCurrentFragment(MiningFragment.newInstance(userInformation,bundle), getActivity());
-                        }
-                    });
-                }
-            });
-        }else{
-            relativeMining.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    RecentMethods.setCurrentFragment(MiningFragment.newInstance(userInformation,bundle), getActivity());
-
-                }
-            });
-        }
-
         TextView schoolycoins=view.findViewById(R.id.schoolycoins);
         schoolycoins.setText(String.valueOf(userInformation.getmoney()));
         clothesRecyclerMain=view.findViewById(R.id.newchlothesinshop);
@@ -360,20 +337,88 @@ public class MainFragment extends Fragment{
                 RecentMethods.setCurrentFragment(GenderFragment.newInstance(userInformation,bundle,MainFragment.newInstance(userInformation, bundle),"dd"), getActivity());
             }
         });
-        todayMiningMain=view.findViewById(R.id.todayminingmain);
-        todayMiningFormatted = new DecimalFormat("#0.00").format(userInformation.getTodayMining());
-        todayMiningMain.setText("+"+todayMiningFormatted);
-        RecentMethods.GetTodayMiningValue(nick, firebaseModel, new Callbacks.GetTodayMining() {
-            @Override
-            public void GetTodayMining(double todayMiningFromBase) {
-                todayMiningFormatted = new DecimalFormat("#0.00").format(todayMiningFromBase);
-                todayMiningMain.setText("+"+todayMiningFormatted);
+        if(nickname==null){
+            RecentMethods.UserNickByUid(firebaseModel.getUser().getUid(), firebaseModel, new Callbacks.GetUserNickByUid() {
+                @Override
+                public void PassUserNick(String nick) {
+                    nickname=nick;
+                    userInformation.setNick(nickname);
+                    todayMiningMain=view.findViewById(R.id.todayminingmain);
+                    todayMiningFormatted = new DecimalFormat("#0.00").format(userInformation.getTodayMining());
+                    todayMiningMain.setText("+"+todayMiningFormatted);
+                    RecentMethods.GetTodayMiningValue(nick, firebaseModel, new Callbacks.GetTodayMining() {
+                        @Override
+                        public void GetTodayMining(double todayMiningFromBase) {
+                            todayMiningFormatted = new DecimalFormat("#0.00").format(todayMiningFromBase);
+                            todayMiningMain.setText("+"+todayMiningFormatted);
+                        }
+                    });
+                    if (userInformation.getMiners()==null){
+                        RecentMethods.GetActiveMiner(nick, firebaseModel, new Callbacks.GetActiveMiners() {
+                            @Override
+                            public void GetActiveMiners(ArrayList<Miner> activeMinersFromBase) {
+                                userInformation.setMiners(activeMinersFromBase);
+                                relativeMining.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        RecentMethods.setCurrentFragment(MiningFragment.newInstance(userInformation,bundle), getActivity());
+                                    }
+                                });
+                            }
+                        });
+                    }else{
+                        relativeMining.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                RecentMethods.setCurrentFragment(MiningFragment.newInstance(userInformation,bundle), getActivity());
+
+                            }
+                        });
+                    }
+                    loadClothesFromBase();
+                    checkChatNots();
+                    checkNots();
+                    getMyClothes();
+                }
+            });
+        }else {
+            todayMiningMain=view.findViewById(R.id.todayminingmain);
+            todayMiningFormatted = new DecimalFormat("#0.00").format(userInformation.getTodayMining());
+            todayMiningMain.setText("+"+todayMiningFormatted);
+            RecentMethods.GetTodayMiningValue(nickname, firebaseModel, new Callbacks.GetTodayMining() {
+                @Override
+                public void GetTodayMining(double todayMiningFromBase) {
+                    todayMiningFormatted = new DecimalFormat("#0.00").format(todayMiningFromBase);
+                    todayMiningMain.setText("+"+todayMiningFormatted);
+                }
+            });
+            if (userInformation.getMiners()==null){
+                RecentMethods.GetActiveMiner(nickname, firebaseModel, new Callbacks.GetActiveMiners() {
+                    @Override
+                    public void GetActiveMiners(ArrayList<Miner> activeMinersFromBase) {
+                        userInformation.setMiners(activeMinersFromBase);
+                        relativeMining.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                RecentMethods.setCurrentFragment(MiningFragment.newInstance(userInformation,bundle), getActivity());
+                            }
+                        });
+                    }
+                });
+            }else{
+                relativeMining.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RecentMethods.setCurrentFragment(MiningFragment.newInstance(userInformation,bundle), getActivity());
+
+                    }
+                });
             }
-        });
-        loadClothesFromBase();
-        checkChatNots();
-        checkNots();
-        getMyClothes();
+            loadClothesFromBase();
+            checkChatNots();
+            checkNots();
+            getMyClothes();
+        }
     }
 
     public void checkNots(){
@@ -393,7 +438,7 @@ public class MainFragment extends Fragment{
                 }
             }
         }else {
-            RecentMethods.getNontificationsList(nick, firebaseModel, new Callbacks.getNontificationsList() {
+            RecentMethods.getNontificationsList(nickname, firebaseModel, new Callbacks.getNontificationsList() {
                 @Override
                 public void getNontificationsList(ArrayList<Nontification> nontifications) {
                     userInformation.setNotifications(nontifications);
@@ -484,7 +529,7 @@ public class MainFragment extends Fragment{
                 }
             }
         }else {
-            RecentMethods.getDialogs(nick, firebaseModel, new Callbacks.loadDialogs() {
+            RecentMethods.getDialogs(nickname, firebaseModel, new Callbacks.loadDialogs() {
                 @Override
                 public void LoadData(ArrayList<Chat> dialogs, ArrayList<Chat> talksArrayList) {
                     ArrayList<Chat> allChats=new ArrayList<>();
@@ -513,7 +558,7 @@ public class MainFragment extends Fragment{
 
     public void getMyClothes(){
         if(userInformation.getMyClothes() == null){
-            Query query=firebaseModel.getUsersReference().child(nick)
+            Query query=firebaseModel.getUsersReference().child(nickname)
                     .child("myClothes").orderByKey();
             query.addValueEventListener(new ValueEventListener() {
                 @Override

@@ -123,6 +123,16 @@ public class RecentMethods {
         email += "@gmail.com";
         return email;
     }
+
+    public static void putLists(ArrayList<Clothes> clothesArrayList,String path,String nick){
+        FirebaseModel firebaseModel=new FirebaseModel();
+        firebaseModel.initAll();
+        for(int i=0;i<clothesArrayList.size();i++){
+            Clothes clothes=clothesArrayList.get(i);
+            firebaseModel.getUsersReference().child(nick).child(path)
+                    .child(clothes.getUid()).setValue(clothes);
+        }
+    }
     public static String getPhone(String email) {
         String res = email;
         res = res.replace("schooly", "");
@@ -134,19 +144,23 @@ public class RecentMethods {
 
         UserInformation res = new UserInformation(nick, "unknown", user.getUid(),
                 "6", "unknown", "Helicopter", 1000
-                , new ArrayList<>(),new ArrayList<>(), 1,1000,0, new ArrayList<>(),new ArrayList<>(),
+                , new ArrayList<>(),new ArrayList<>(), 1,200,0, new ArrayList<>(),new ArrayList<>(),
                 "","","open","open","open",
-                "open",new ArrayList<>(),"regular", new ArrayList<>(),0,mainLookClothes,defaultClothes,new ArrayList<>()
-                ,new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),mainLookClothes,person
+                "open",new ArrayList<>(),"regular", new ArrayList<>(),0,new ArrayList<>(),new ArrayList<>(),new ArrayList<>()
+                ,new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),person
         ,new ArrayList<>(),new ArrayList<>(),"",personImage,new ArrayList<>());
         ref.child(nick).setValue(res).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
+                putLists(defaultClothes,"clothes",nick);
+                putLists(mainLookClothes,"lookClothes",nick);
+                putLists(mainLookClothes,"mainLook",nick);
                 FirebaseModel firebaseModel=new FirebaseModel();
                 firebaseModel.initAll();
                 firebaseModel.getReference("usersNicks")
                         .child(nick).setValue(new UserPeopleAdapter(nick,personImage," "));
                 RecentMethods.setCurrentFragment(MainFragment.newInstance(res, bundle),activity );
+
                 ((MainActivity)activity).IsEntered();
                 ((MainActivity)activity).checkMining();
             }
@@ -537,19 +551,21 @@ public class RecentMethods {
     }
     public static void GetTodayMiningValue(String nick,FirebaseModel model,Callbacks.GetTodayMining callback){
         model.initAll();
-        model.getUsersReference().child(nick)
-                .child("todayMining").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.getValue(Double.class) != null)
-                    callback.GetTodayMining(snapshot.getValue(Double.class));
-            }
+        if(nick!=null){
+            model.getUsersReference().child(nick)
+                    .child("todayMining").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.getValue(Double.class) != null)
+                                callback.GetTodayMining(snapshot.getValue(Double.class));
+                        }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+                        }
+                    });
+        }
     }
     public static void GetTimesTamp(String nick, FirebaseModel firebaseModel,Callbacks.GetTimesTamp callback){
         firebaseModel.initAll();
@@ -834,6 +850,7 @@ public class RecentMethods {
                 for (DataSnapshot snap : snapshot.getChildren()) {
                     Clothes clothes = new Clothes();
                     clothes.setClothesImage(snap.child("clothesImage").getValue(String.class));
+                    clothes.setBodyType(snap.child("bodyType").getValue(String.class));
                     clothes.setClothesPrice(snap.child("clothesPrice").getValue(Long.class));
                     clothes.setPurchaseNumber(snap.child("purchaseNumber").getValue(Long.class));
                     clothes.setClothesType(snap.child("clothesType").getValue(String.class));

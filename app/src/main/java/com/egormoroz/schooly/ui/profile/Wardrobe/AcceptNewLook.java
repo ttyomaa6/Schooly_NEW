@@ -214,6 +214,9 @@ public class AcceptNewLook extends Fragment {
                     lookPriceLong+=clothes.getClothesPrice();
                 }
             }
+            if(lookPriceLong==0){
+                lookPrice.setText("0");
+            }
             if(lookPriceDollarLong>0 || lookPriceLong>0){
                 setTextInLookPrice();
             }
@@ -289,8 +292,7 @@ public class AcceptNewLook extends Fragment {
                                     if(lookType.equals("mainlook")){
                                         firebaseModel.getUsersReference().child(nick).child("mainLook")
                                                 .setValue(userInformation.getLookClothes());
-                                        firebaseModel.getUsersReference().child(nick).child("mainLookImage")
-                                                .child(downloadUrl.toString());
+                                        userInformation.setMainLook(null);
                                     }else {
                                         newsModel.getReference().child(nick).child(lookId)
                                                 .setValue(new NewsItem(downloadUrl.toString(), descriptionLook.getText().toString(), "0", lookId,
@@ -559,15 +561,12 @@ public class AcceptNewLook extends Fragment {
         RecentMethods.startLoadPerson(userInformation.getNick(), firebaseModel, new Callbacks.loadPerson() {
             @Override
             public void LoadPerson(Person person,ArrayList<FacePart> facePartArrayList) {
-                Log.d("AAA","ss  "+person.getHair().getColorY());
                 LoadBodyParts.loadPersonBuffers(facePartArrayList, new Callbacks.loadFaceParts() {
                     @Override
                     public void LoadFaceParts(ArrayList<FacePart> facePartsArrayList) {
-                        Log.d("AAAAA","ss11  "+facePartsArrayList.get(0).getColorZ()+"   "+facePartsArrayList.get(0).getUid());
                         for(int i=0;i<facePartsArrayList.size();i++){
                             FacePart facePart=facePartsArrayList.get(i);
                             com.egormoroz.schooly.Color[] color = {new com.egormoroz.schooly.Color()};
-                            Log.d("AAAAA","ss22  "+facePartsArrayList.get(i).getColorY()+"   "+facePart.getUid()+"   "+i);
                             if(facePart.getColorX()!=-1f && facePart.getColorY()!=-1f && facePart.getColorZ()!=-1f){
                                 color[0] =new com.egormoroz.schooly.Color(facePartsArrayList.get(i).getColorX(),
                                         facePartsArrayList.get(i).getColorY(), facePartsArrayList.get(i).getColorZ()

@@ -55,7 +55,6 @@ public class SettingsFragment extends Fragment {
 
     String type,nick;
     Fragment fragment;
-    GoogleApiClient googleApiClient;
     UserInformation userInformation;
     Bundle bundle;
     GoogleSignInClient signInClient;
@@ -142,7 +141,7 @@ public class SettingsFragment extends Fragment {
         privacyPolicy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://pages.flycricket.io/schooly-1/privacy.html"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/1RXfSdPJy_DcwD45m_u4jJX960wAtixPgwRBK_WGwJLE/edit?usp=sharing"));
                 startActivity(browserIntent);
             }
         });
@@ -150,7 +149,7 @@ public class SettingsFragment extends Fragment {
         rules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://pages.flycricket.io/schooly-1/terms.html"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://pages.flycricket.io/sholly/terms.html"));
                 startActivity(browserIntent);
             }
         });

@@ -229,6 +229,7 @@ public class ProfileFragment extends Fragment {
             root=inflater.inflate(R.layout.fragment_profileback, container, false);
             nickname=root.findViewById(R.id.usernick);
         }
+        Log.d("####", type);
         BottomNavigationView bnv = getActivity().findViewById(R.id.bottomNavigationView);
         bnv.setVisibility(bnv.VISIBLE);
         firebaseModel.initAll();
@@ -1666,17 +1667,14 @@ public class ProfileFragment extends Fragment {
         RecentMethods.startLoadPerson(userInformation.getNick(), firebaseModel, new Callbacks.loadPerson() {
             @Override
             public void LoadPerson(Person person,ArrayList<FacePart> facePartArrayList) {
-                Log.d("AAA","ss  "+person.getHair().getColorY());
                 LoadBodyParts.loadPersonBuffers(facePartArrayList, new Callbacks.loadFaceParts() {
                     @Override
                     public void LoadFaceParts(ArrayList<FacePart> facePartsArrayList) {
-                        Log.d("AAAAA","ss11  "+facePartsArrayList.get(0).getColorZ()+"   "+facePartsArrayList.get(0).getUid());
                         for(int i=0;i<facePartsArrayList.size();i++){
                             FacePart facePart=facePartsArrayList.get(i);
                             com.egormoroz.schooly.Color[] color = {new com.egormoroz.schooly.Color()};
+                            Log.d("####", "dddd  "+facePart);
                             if(facePart.getColorX()!=-1f && facePart.getColorY()!=-1f && facePart.getColorZ()!=-1f){
-                                Log.d("AAAAA","ss22  "+facePartsArrayList.get(i).getColorX()+"   "+facePartsArrayList.get(i).getColorY()
-                                        +"   "+facePartsArrayList.get(i).getColorZ());
                                 color[0] =new com.egormoroz.schooly.Color(facePartsArrayList.get(i).getColorX(),
                                         facePartsArrayList.get(i).getColorY(), facePartsArrayList.get(i).getColorZ()
                                         , 0, 0, 0);

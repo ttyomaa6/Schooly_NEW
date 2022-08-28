@@ -60,12 +60,12 @@ public class LoadNewsTread {
                 @Override
                 public void getFriendsList(ArrayList<Subscriber> friends) {
                     Log.d("AAAAA", "fffff11     "+friends.size());
-                    for(int i=0;i<friends.size();i++){
-                        stringSubscriptionArrayList.add(friends.get(i).getSub());
-                        if(i==userInformation.getSubscription().size()-1){
-                            if(stringSubscriptionArrayList.size()==0){
-                                loadRandomRecommendationNews(loadNewsTread);
-                            }else {
+                    if(friends.size()==0){
+                        loadRandomRecommendationNews(loadNewsTread);
+                    }else {
+                        for(int i=0;i<friends.size();i++){
+                            stringSubscriptionArrayList.add(friends.get(i).getSub());
+                            if(i==userInformation.getSubscription().size()-1){
                                 getNews(stringSubscriptionArrayList, loadNewsTread);
                             }
                         }
@@ -74,14 +74,12 @@ public class LoadNewsTread {
             });
         }else{
             Log.d("AAAAA", "ffff2222     "+userInformation.getSubscription().size());
-            for(int i=0;i<userInformation.getSubscription().size();i++){
-                stringSubscriptionArrayList.add(userInformation.getSubscription().get(i).getSub());
-                if(i==userInformation.getSubscription().size()-1){
-                    if(stringSubscriptionArrayList.size()==0){
-                        loadRandomRecommendationNews(loadNewsTread);
-                    }else {
-                        getNews(stringSubscriptionArrayList, loadNewsTread);
-                    }
+            if(userInformation.getSubscription()==null){
+                loadRandomRecommendationNews(loadNewsTread);
+            }else{
+                for(int i=0;i<userInformation.getSubscription().size();i++){
+                    stringSubscriptionArrayList.add(userInformation.getSubscription().get(i).getSub());
+                    getNews(stringSubscriptionArrayList, loadNewsTread);
                 }
             }
         }

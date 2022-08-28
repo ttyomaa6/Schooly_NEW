@@ -117,7 +117,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/montserratblack"
-            android:text="by Artyom Lysyuk"
+            android:text="by AL and the best team)"
             android:textColor="@color/app_grey"
             android:textSize="12dp" />
 

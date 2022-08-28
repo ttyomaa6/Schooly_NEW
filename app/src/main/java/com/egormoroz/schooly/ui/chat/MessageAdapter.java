@@ -81,16 +81,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder {
-        public TextView senderMessageText, receiverMessageText, senderMessageTime, receiverTimePost,
-                receiverMessageTime, senderTimeVoice, senderTimePost, clothesTitleAndCreator, senderTimeClothes,
+        public TextView senderMessageText, receiverMessageText, senderMessageTime,
+                receiverMessageTime, clothesTitleAndCreator, senderTimeClothes,
                 senderMessageTextClothes, clothesTitleAndCreatorOther, receiverTimeClothesOther,
                 receiverMessageTextClothesOther, lookFrom, senderTimeLook, senderMessageTextLook,
-                lookFromOther, receiverTimeLook, receiverMessageTextLook, receiveTimeVoice;
+                lookFromOther, receiverTimeLook, receiverMessageTextLook;
         //public ImageView receiverProfileImage;
-        public RelativeLayout outMessage, inMessage, outVoice, inVoice, inClothes, outClothes, inLook, outLook;
-        public ImageView messageSenderPicture, senderPlay, senderPause, clothesImage, clothesImageOther;
-        public ImageView messageReceiverPicture, receivePlay, receivePause, watchLookOther, watchLook;
-        public SeekBar senderSeekBar, receiveSeekBar;
+        public RelativeLayout outMessage, inMessage, inClothes, outClothes, inLook, outLook;
+        public ImageView messageSenderPicture,  clothesImage, clothesImageOther;
+        public ImageView messageReceiverPicture,  watchLookOther, watchLook;
 
         private void handleShowView(View view) {
             if (getAdapterPosition() > X - 1) {
@@ -105,21 +104,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             handleShowView(itemView);
             outMessage = itemView.findViewById(R.id.textMessageOutcoming);
             inMessage = itemView.findViewById(R.id.textMessageIncoming);
-            inVoice = itemView.findViewById(R.id.incomingVoice);
             receiverMessageTime = itemView.findViewById(R.id.receiver_time);
-            receivePlay = itemView.findViewById(R.id.receive_imgPlay);
-            receivePause = itemView.findViewById(R.id.receive_imgPause);
             senderMessageTime = itemView.findViewById(R.id.sender_time);
             senderMessageText = (TextView) itemView.findViewById(R.id.sender_message_text);
             receiverMessageText = (TextView) itemView.findViewById(R.id.receiver_message_text);
             //receiverProfileImage = (CircleImageView) itemView.findViewById(R.id.message_profile_image);
             messageReceiverPicture = itemView.findViewById(R.id.message_receiver_image_view);
             messageSenderPicture = itemView.findViewById(R.id.message_sender_image_view);
-            senderPlay = itemView.findViewById(R.id.imgPlay);
-            senderPause = itemView.findViewById(R.id.imgPause);
-            senderSeekBar = itemView.findViewById(R.id.seekBar);
-            senderTimeVoice = itemView.findViewById(R.id.txtTime);
-            outVoice = itemView.findViewById(R.id.outcomingVoice);
             inClothes = itemView.findViewById(R.id.clothesFrom);
             clothesTitleAndCreator = itemView.findViewById(R.id.clothesTitleAndCreator);
             clothesImage = itemView.findViewById(R.id.clothesImage);
@@ -140,10 +131,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             watchLookOther = itemView.findViewById(R.id.watchLookOther);
             receiverTimeLook = itemView.findViewById(R.id.receiver_time_look_other);
             receiverMessageTextLook = itemView.findViewById(R.id.receiver_message_text_look_other);
-            receiverTimePost = itemView.findViewById(R.id.receive_time_voice);
-            senderTimePost = itemView.findViewById(R.id.sender_time_voice);
-            receiveSeekBar = itemView.findViewById(R.id.receive_seekBar);
-            receiveTimeVoice = itemView.findViewById(R.id.receive_txtTime);
         }
     }
 
@@ -205,8 +192,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         fromUserID = messages.getFrom();
         MediaPlayer mediaplayer = MediaPlayer.create(messageViewHolder.itemView.getContext(), Uri.parse(messages.getMessage()));
         String fromMessageType = messages.getType();
-        messageViewHolder.receiverTimePost.setText(messages.getTime());
-        messageViewHolder.senderTimePost.setText(messages.getTime());
         int duration;
         final long[] timeBefore = new long[1];
 
@@ -225,89 +210,24 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
                 return true;
             }
         });
-        messageViewHolder.inVoice.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                messageFragment.showChatFunc(messages);
-                return true;
-            }
-        });
-        messageViewHolder.outVoice.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                messageFragment.showChatFunc(messages);
-                return true;
-            }
-        });
+//        messageViewHolder.inVoice.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                messageFragment.showChatFunc(messages);
+//                return true;
+//            }
+//        });
+//        messageViewHolder.outVoice.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                messageFragment.showChatFunc(messages);
+//                return true;
+//            }
+//        });
 
 
         //VoicePlayer voicePlayer = new VoicePlayer(messageViewHolder.itemView.getContext());
         double voiceDuration = 1;
-        messageViewHolder.senderSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mediaplayer.seekTo(progress * 1000);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-
-            }
-        });
-
-        messageViewHolder.receiveSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mediaplayer.seekTo(progress * 1000);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-
-            }
-        });
-        try {
-            voiceDuration = Double.valueOf(mediaplayer.getDuration()) / 1000;
-            Date date = new Date();
-            date.setTime(mediaplayer.getDuration());
-            SimpleDateFormat formatDate = new SimpleDateFormat("mm:ss");
-            messageViewHolder.receiveTimeVoice.setText(formatDate.format(date));
-            messageViewHolder.senderTimeVoice.setText(formatDate.format(date));
-            messageViewHolder.senderSeekBar.setMin(0);
-            messageViewHolder.senderSeekBar.setMax((int) voiceDuration);
-        } catch (Exception e) {
-        }
-
-        /*voicePlayer.setMediaPlayerListener(new VoicePlayer.MediaPlayerListener() {
-            @Override
-            public void isPlaying(int currentDuration) {
-
-            }
-
-            @Override
-            public void onPause() {
-                messageViewHolder.senderPlay.setVisibility(View.VISIBLE);
-                messageViewHolder.senderPause.setVisibility(View.GONE);
-
-            }
-
-            @Override
-            public void onStart() {
-
-            }
-        });*/
 
         usersRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -327,8 +247,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         messageViewHolder.outMessage.setVisibility(View.GONE);
         messageViewHolder.inMessage.setVisibility(View.GONE);
-        messageViewHolder.outVoice.setVisibility(View.GONE);
-        messageViewHolder.inVoice.setVisibility(View.GONE);
         messageViewHolder.messageSenderPicture.setVisibility(View.GONE);
         messageViewHolder.messageReceiverPicture.setVisibility(View.GONE);
         messageViewHolder.inLook.setVisibility(View.GONE);
@@ -405,84 +323,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
                         }
                     });
                 }
-                break;
-            case "voice":
-                if (fromUserID.equals(messageSenderNick)) {
-                    messageViewHolder.outVoice.setVisibility(View.VISIBLE);
-                    messageViewHolder.senderPause.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            messageViewHolder.senderPlay.setVisibility(View.VISIBLE);
-                            messageViewHolder.senderPause.setVisibility(View.GONE);
-                            mediaplayer.pause();
-                            isMpPlaying = false;
-                        }
-                    });
-                    messageViewHolder.senderPlay.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if (isMpPlaying) {
-                                currentVoice.getMediaPlayer().pause();
-                                currentVoice.getPause().setVisibility(View.GONE);
-                                currentVoice.getPlay().setVisibility(View.VISIBLE);
-                            }
-                            messageViewHolder.senderPlay.setVisibility(View.GONE);
-                            messageViewHolder.senderPause.setVisibility(View.VISIBLE);
-                            currentVoice.setMediaPlayer(mediaplayer);
-                            currentVoice.setPause(messageViewHolder.senderPause);
-                            currentVoice.setPlay(messageViewHolder.senderPlay);
-                            mediaplayer.start();
-                            isMpPlaying = true;
-                            mediaplayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                                @Override
-                                public void onCompletion(MediaPlayer mp) {
-                                    messageViewHolder.senderPlay.setVisibility(View.VISIBLE);
-                                    messageViewHolder.senderPause.setVisibility(View.GONE);
-                                    isMpPlaying = false;
-                                }
-                            });
-
-                        }
-                    });
-                } else {
-                    messageViewHolder.inVoice.setVisibility(View.VISIBLE);
-                    messageViewHolder.receivePause.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            messageViewHolder.receivePlay.setVisibility(View.VISIBLE);
-                            messageViewHolder.receivePause.setVisibility(View.GONE);
-                            currentVoice.setMediaPlayer(mediaplayer);
-                            currentVoice.setPause(messageViewHolder.receivePause);
-                            currentVoice.setPlay(messageViewHolder.receivePlay);
-                            mediaplayer.pause();
-                            isMpPlaying = false;
-                        }
-                    });
-                    messageViewHolder.receivePlay.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if (isMpPlaying) {
-                                currentVoice.getMediaPlayer().pause();
-                                currentVoice.getPause().setVisibility(View.GONE);
-                                currentVoice.getPlay().setVisibility(View.VISIBLE);
-                            }
-                            messageViewHolder.receivePlay.setVisibility(View.GONE);
-                            messageViewHolder.receivePause.setVisibility(View.VISIBLE);
-                            mediaplayer.start();
-                            isMpPlaying = true;
-                            mediaplayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                                @Override
-                                public void onCompletion(MediaPlayer mp) {
-                                    messageViewHolder.receivePlay.setVisibility(View.VISIBLE);
-                                    messageViewHolder.receivePause.setVisibility(View.GONE);
-                                    isMpPlaying = false;
-                                }
-                            });
-                        }
-                    });
-                }
-
-
                 break;
             case "clothes":
                 if (fromUserID.equals(messageSenderNick)) {

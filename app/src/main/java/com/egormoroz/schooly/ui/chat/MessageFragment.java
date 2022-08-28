@@ -112,7 +112,7 @@ public final class MessageFragment extends Fragment {
     private final String[] permissions = {Manifest.permission.RECORD_AUDIO};
     private static final int REQUEST_RECORD_AUDIO_PERMISSION = 200;
 
-    private ImageButton SendMessageButton, SendFilesButton;
+    private ImageButton SendMessageButton;
     private EditText MessageInputText;
 
     private final List<Message> messagesList = new ArrayList<>();
@@ -223,6 +223,16 @@ public final class MessageFragment extends Fragment {
                     }
                 });
         userImage = view.findViewById(R.id.custom_profile_image);
+        firebaseModel.getUsersReference().child(chat.getName()).child("personImage")
+                        .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        if(task.isSuccessful()){
+                            DataSnapshot snapshot=task.getResult();
+                            Picasso.get().load(snapshot.getValue(String.class)).into(userImage);
+                        }
+                    }
+                });
         userImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -234,7 +244,6 @@ public final class MessageFragment extends Fragment {
 
 
         SendMessageButton = view.findViewById(R.id.send_message_btn);
-        SendFilesButton = view.findViewById(R.id.send_files_btn);
         MessageInputText = view.findViewById(R.id.input_message);
 
         messageAdapter = new MessageAdapter(messagesList, messageSenderName, messageReceiverName, itemClickListener, this);
@@ -284,14 +293,11 @@ public final class MessageFragment extends Fragment {
 
             }
         });
-
-        IntializeVoice(view);
         if (chatCheckValue != 0) {
             if (chatCheckValue == -1) {
                 ///////все окей//////
             } else if (chatCheckValue == 1 || chatCheckValue == 2) {
                 MessageInputText.setText("Невозможно отправить сообщение");
-                SendFilesButton.setVisibility(View.GONE);
                 SendMessageButton.setVisibility(View.GONE);
             }
         }
@@ -313,59 +319,59 @@ public final class MessageFragment extends Fragment {
             }
         });
         DisplayLastSeen();
-        SendFilesButton.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("IntentReset")
-            @Override
-            public void onClick(View view) {
-
-                checker = "image";
-                Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                startActivityForResult(intent, 443);
-            }
-
-
-        });
+//        SendFilesButton.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("IntentReset")
+//            @Override
+//            public void onClick(View view) {
+//
+//                checker = "image";
+//                Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                intent.setAction(Intent.ACTION_GET_CONTENT);
+//                intent.setType("image/*");
+//                startActivityForResult(intent, 443);
+//            }
+//
+//
+//        });
     }
 
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 443 && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            fileUri = data.getData();
-            if (checker.equals("image")) {
-                StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Images");
-                final String messageSenderRef = messageReceiverName + "/Chats/" + messageSenderName + "/Messages";
-                final String messageReceiverRef = messageSenderName + "/Chats/" + messageReceiverName + "/Messages";
-
-                DatabaseReference userMessageKeyRef = firebaseModel.getUsersReference().child(messageSenderName).child("Chats").child(messageReceiverName).child("Messages").push();
-                final String messagePushID = userMessageKeyRef.getKey();
-
-                final StorageReference filePath = storageReference.child(messagePushID + "." + "jpg");
-
-                uploadTask = filePath.putFile(fileUri);
-                uploadTask.continueWithTask(new Continuation() {
-                    @Override
-                    public Object then(@NonNull Task task) throws Exception {
-                        if (!task.isSuccessful()) {
-                            throw task.getException();
-                        }
-                        return filePath.getDownloadUrl();
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Uri> task) {
-                        Uri downloadUrl = task.getResult();
-                        myUrl = downloadUrl.toString();
-                        Send(myUrl, "image", 0);
-
-                    }
-                });
-            }
-        }
-    }
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 443 && resultCode == RESULT_OK && data != null && data.getData() != null) {
+//            fileUri = data.getData();
+//            if (checker.equals("image")) {
+//                StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Images");
+//                final String messageSenderRef = messageReceiverName + "/Chats/" + messageSenderName + "/Messages";
+//                final String messageReceiverRef = messageSenderName + "/Chats/" + messageReceiverName + "/Messages";
+//
+//                DatabaseReference userMessageKeyRef = firebaseModel.getUsersReference().child(messageSenderName).child("Chats").child(messageReceiverName).child("Messages").push();
+//                final String messagePushID = userMessageKeyRef.getKey();
+//
+//                final StorageReference filePath = storageReference.child(messagePushID + "." + "jpg");
+//
+//                uploadTask = filePath.putFile(fileUri);
+//                uploadTask.continueWithTask(new Continuation() {
+//                    @Override
+//                    public Object then(@NonNull Task task) throws Exception {
+//                        if (!task.isSuccessful()) {
+//                            throw task.getException();
+//                        }
+//                        return filePath.getDownloadUrl();
+//                    }
+//                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Uri> task) {
+//                        Uri downloadUrl = task.getResult();
+//                        myUrl = downloadUrl.toString();
+//                        Send(myUrl, "image", 0);
+//
+//                    }
+//                });
+//            }
+//        }
+//    }
 
     public void copy(Message message) {
         ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
@@ -473,40 +479,6 @@ public final class MessageFragment extends Fragment {
                     myUrl = downloadUrl.toString();
                     Send(myUrl, "voice", duration);
                 }
-            }
-        });
-    }
-
-
-    @SuppressLint("ClickableViewAccessibility")
-    private void IntializeVoice(View v) {
-        ImageView voice = v.findViewById(R.id.voiceinput);
-        ImageView circleVoice = v.findViewById(R.id.voiceActivityCircle);
-        voice.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            public boolean onTouch(View view, MotionEvent event) {
-                switch (event.getAction() & MotionEvent.ACTION_MASK) {
-
-                    case MotionEvent.ACTION_DOWN:
-                        try {
-                            //circleVoice.setVisibility(View.VISIBLE);
-                            //voice.setVisibility(View.GONE);
-                            startRecording();
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                        break;
-
-                    case MotionEvent.ACTION_UP:
-                        //circleVoice.setVisibility(View.GONE);
-                        //voice.setVisibility(View.VISIBLE);
-                        stopRecording();
-                        break;
-                }
-                return true;
             }
         });
     }

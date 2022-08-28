@@ -435,17 +435,21 @@ public class CreateCharacterFragment extends Fragment {
                                             RecentMethods.getDefaultLookClothes("defaultLook", firebaseModel, new Callbacks.GetClothes() {
                                                 @Override
                                                 public void getClothes(ArrayList<Clothes> allClothes) {
-                                                    ArrayList<Clothes> defaultClothesArrayList=new ArrayList<>(allClothes);
+                                                    ArrayList<Clothes> defaultLookClothesArrayList=new ArrayList<>(allClothes);
                                                     RecentMethods.getDefaultLookClothes("defaultClothes", firebaseModel, new Callbacks.GetClothes() {
                                                         @Override
                                                         public void getClothes(ArrayList<Clothes> allClothes) {
+                                                            ArrayList<Clothes> clothes=new ArrayList<>(allClothes);
                                                             UserInformation res = new UserInformation(nick, RecentMethods.getPhone(email), user.getUid(),
                                                                     "6", password, "Helicopter", 1000, new ArrayList<>(),new ArrayList<>(),1,100,0
                                                                     , new ArrayList<>(), new ArrayList<>(), ""," ","open","open","open","open"
-                                                                    ,new ArrayList<>(),"regular", new ArrayList<>(),0,defaultClothesArrayList,allClothes
+                                                                    ,new ArrayList<>(),"regular", new ArrayList<>(),0,new ArrayList<>(),new ArrayList<>()
                                                                     ,new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<Clothes>(),person,
                                                                     new ArrayList<>(),new ArrayList<>(),"",downloadUrl.toString(),new ArrayList<>());
                                                             reference.child(nick).setValue(res);
+                                                            RecentMethods.putLists(clothes,"clothes",nick);
+                                                            RecentMethods.putLists(defaultLookClothesArrayList,"lookClothes",nick);
+                                                           RecentMethods.putLists(defaultLookClothesArrayList,"mainLook",nick);
                                                             FirebaseModel firebaseModel=new FirebaseModel();
                                                             firebaseModel.initAll();
                                                             firebaseModel.getReference("usersNicks")
@@ -526,9 +530,10 @@ public class CreateCharacterFragment extends Fragment {
                                             RecentMethods.getDefaultLookClothes("defaultClothes", firebaseModel, new Callbacks.GetClothes() {
                                                 @Override
                                                 public void getClothes(ArrayList<Clothes> allClothes) {
+                                                    ArrayList<Clothes> clothes=new ArrayList<>(allClothes);
                                                     RecentMethods.saveData(reference, authenticationDatabase.getCurrentUser()
                                                             , bundle.getString("NICKNAMEFRAGMENT"),bundle,getActivity()
-                                                            ,downloadUrl.toString(),person,defaultClothesArrayList,allClothes);
+                                                            ,downloadUrl.toString(),person,clothes,defaultClothesArrayList);
                                                 }
                                             });
 
@@ -689,11 +694,9 @@ public class CreateCharacterFragment extends Fragment {
         RecentMethods.startLoadPerson(userInformation.getNick(), firebaseModel, new Callbacks.loadPerson() {
             @Override
             public void LoadPerson(Person person,ArrayList<FacePart> facePartArrayList) {
-                Log.d("AAA","ss  "+person.getBody());
                 LoadBodyParts.loadPersonBuffers(facePartArrayList, new Callbacks.loadFaceParts() {
                     @Override
                     public void LoadFaceParts(ArrayList<FacePart> facePartsArrayList) {
-                        Log.d("AAAAA","ss11  "+facePartsArrayList.get(0).getBuffer()+"   "+facePartsArrayList.get(0).getUid());
                         for(int i=0;i<facePartsArrayList.size();i++){
                             FacePart facePart=facePartsArrayList.get(i);
                             com.egormoroz.schooly.Color[] color = {new com.egormoroz.schooly.Color()};

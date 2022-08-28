@@ -22,11 +22,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.egormoroz.schooly.FirebaseModel;
 import com.egormoroz.schooly.R;
+import com.egormoroz.schooly.RecentMethods;
 import com.egormoroz.schooly.ui.chat.holders.ImageViewerActivity;
 import com.egormoroz.schooly.ui.main.Shop.Clothes;
 import com.egormoroz.schooly.ui.main.Shop.NewClothesAdapter;
 import com.egormoroz.schooly.ui.news.NewsItem;
+import com.egormoroz.schooly.ui.people.PeopleFragment;
+import com.egormoroz.schooly.ui.people.UserPeopleAdapter;
+import com.egormoroz.schooly.ui.profile.ProfileFragment;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -51,6 +58,8 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
     private boolean isMpPlaying = false;
     private CurrentVoice currentVoice = new CurrentVoice();
     GroupChatAdapter.ItemClickListener itemClickListener;
+    FirebaseModel firebaseModel=new FirebaseModel();
+
 
 
     public GroupChatAdapter(List<Message> userMessagesList, String messageSenderId, String messageReceiverId, ItemClickListener itemClickListener, GroupChatFragment groupChatFragment) {
@@ -70,23 +79,18 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
     }
 
 
-//    public MessageAdapter(List<Message> userMessagesList, String messageSenderId) {
-//        this.userMessagesList = userMessagesList;
-//        this.messageSenderNick = messageSenderId;
-//    }
-
 
     public static class GroupChatViewHolder extends RecyclerView.ViewHolder {
-        public TextView senderMessageText, receiverMessageText, senderMessageTime, receiverTimePost,
-                receiverMessageTime, senderTimeVoice, senderTimePost, clothesTitleAndCreator, senderTimeClothes,
+        public TextView senderMessageText, receiverMessageText, senderMessageTime,
+                receiverMessageTime,   clothesTitleAndCreator, senderTimeClothes,
                 senderMessageTextClothes, clothesTitleAndCreatorOther, receiverTimeClothesOther,
                 receiverMessageTextClothesOther, lookFrom, senderTimeLook, senderMessageTextLook,
-                lookFromOther, receiverTimeLook, receiverMessageTextLook, receiveTimeVoice;
-        //public ImageView receiverProfileImage;
-        public RelativeLayout outMessage, inMessage, outVoice, inVoice, inClothes, outClothes, inLook, outLook,userIcon;
-        public ImageView messageSenderPicture, senderPlay, senderPause, clothesImage, clothesImageOther;
-        public ImageView messageReceiverPicture, receivePlay, receivePause, watchLookOther, watchLook;
-        public SeekBar senderSeekBar, receiveSeekBar;
+                lookFromOther, receiverTimeLook, receiverMessageTextLook;
+        public RelativeLayout outMessage, inMessage, inClothes, outClothes, inLook, outLook;
+        public ImageView messageSenderPicture, clothesImage, clothesImageOther;
+        public ImageView messageReceiverPicture,  watchLookOther, watchLook;
+        ImageView userAvatarIncomingText,userAvatarIncomingClothes,userAvatarIncomingLook
+                ,userAvatarIncomingImage;
 
         private void handleShowView(View view) {
             if (getAdapterPosition() > X - 1) {
@@ -100,28 +104,19 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
             super(itemView);
             handleShowView(itemView);
             outMessage = itemView.findViewById(R.id.textMessageOutcoming);
-            inMessage = itemView.findViewById(R.id.textMessageIncoming);
-            inVoice = itemView.findViewById(R.id.incomingVoice);
+            inMessage = itemView.findViewById(R.id.allIncomingText);
             receiverMessageTime = itemView.findViewById(R.id.receiver_time);
-            receivePlay = itemView.findViewById(R.id.receive_imgPlay);
-            receivePause = itemView.findViewById(R.id.receive_imgPause);
             senderMessageTime = itemView.findViewById(R.id.sender_time);
             senderMessageText = (TextView) itemView.findViewById(R.id.sender_message_text);
             receiverMessageText = (TextView) itemView.findViewById(R.id.receiver_message_text);
-            //receiverProfileImage = (CircleImageView) itemView.findViewById(R.id.message_profile_image);
             messageReceiverPicture = itemView.findViewById(R.id.message_receiver_image_view);
             messageSenderPicture = itemView.findViewById(R.id.message_sender_image_view);
-            senderPlay = itemView.findViewById(R.id.imgPlay);
-            senderPause = itemView.findViewById(R.id.imgPause);
-            senderSeekBar = itemView.findViewById(R.id.seekBar);
-            senderTimeVoice = itemView.findViewById(R.id.txtTime);
-            outVoice = itemView.findViewById(R.id.outcomingVoice);
             inClothes = itemView.findViewById(R.id.clothesFrom);
             clothesTitleAndCreator = itemView.findViewById(R.id.clothesTitleAndCreator);
             clothesImage = itemView.findViewById(R.id.clothesImage);
             senderTimeClothes = itemView.findViewById(R.id.sender_time_clothes);
             senderMessageTextClothes = itemView.findViewById(R.id.sender_message_text_clothes);
-            outClothes = itemView.findViewById(R.id.clothesFromOther);
+            outClothes = itemView.findViewById(R.id.allClothesIncoming);
             clothesTitleAndCreatorOther = itemView.findViewById(R.id.clothesTitleAndCreatorOther);
             clothesImageOther = itemView.findViewById(R.id.clothesImageOther);
             receiverTimeClothesOther = itemView.findViewById(R.id.receiver_time_clothes);
@@ -131,15 +126,15 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
             watchLook = itemView.findViewById(R.id.watchLook);
             senderTimeLook = itemView.findViewById(R.id.sender_time_look);
             senderMessageTextLook = itemView.findViewById(R.id.sender_message_text_look);
-            outLook = itemView.findViewById(R.id.relativeLookOther);
+            outLook = itemView.findViewById(R.id.allLookIncoming);
             lookFromOther = itemView.findViewById(R.id.lookFromOther);
             watchLookOther = itemView.findViewById(R.id.watchLookOther);
             receiverTimeLook = itemView.findViewById(R.id.receiver_time_look_other);
             receiverMessageTextLook = itemView.findViewById(R.id.receiver_message_text_look_other);
-            receiverTimePost = itemView.findViewById(R.id.receive_time_voice);
-            senderTimePost = itemView.findViewById(R.id.sender_time_voice);
-            receiveSeekBar = itemView.findViewById(R.id.receive_seekBar);
-            receiveTimeVoice = itemView.findViewById(R.id.receive_txtTime);
+            userAvatarIncomingText=itemView.findViewById(R.id.userAvatarIncomingText);
+            userAvatarIncomingImage=itemView.findViewById(R.id.userAvatarIncomingImage);
+            userAvatarIncomingClothes=itemView.findViewById(R.id.userAvatarIncomingClothes);
+            userAvatarIncomingLook=itemView.findViewById(R.id.userAvatarIncomingLook);
         }
     }
 
@@ -151,6 +146,7 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
                 .inflate(R.layout.messages_types_groups, viewGroup, false);
         reference = FirebaseDatabase.getInstance().getReference("users").child(messageSenderNick).child("Chats").child(messageReceiverNick).child("Messages");
         usersRef = FirebaseDatabase.getInstance().getReference().child("users");
+        firebaseModel.initAll();
         return new GroupChatViewHolder(view);
     }
 
@@ -201,8 +197,6 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
         fromUserID = messages.getFrom();
         MediaPlayer mediaplayer = MediaPlayer.create(groupChatViewHolder.itemView.getContext(), Uri.parse(messages.getMessage()));
         String fromMessageType = messages.getType();
-        groupChatViewHolder.receiverTimePost.setText(messages.getTime());
-        groupChatViewHolder.senderTimePost.setText(messages.getTime());
         int duration;
         final long[] timeBefore = new long[1];
 
@@ -220,89 +214,24 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
                 return true;
             }
         });
-        groupChatViewHolder.inVoice.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                groupChatFragment.showChatFunc(messages);
-                return true;
-            }
-        });
-        groupChatViewHolder.outVoice.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                groupChatFragment.showChatFunc(messages);
-                return true;
-            }
-        });
+//        groupChatViewHolder.inVoice.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                groupChatFragment.showChatFunc(messages);
+//                return true;
+//            }
+//        });
+//        groupChatViewHolder.outVoice.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                groupChatFragment.showChatFunc(messages);
+//                return true;
+//            }
+//        });
 
 
         //VoicePlayer voicePlayer = new VoicePlayer(groupChatViewHolder.itemView.getContext());
         double voiceDuration = 1;
-        groupChatViewHolder.senderSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mediaplayer.seekTo(progress * 1000);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-
-            }
-        });
-
-        groupChatViewHolder.receiveSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mediaplayer.seekTo(progress * 1000);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-
-            }
-        });
-        try {
-            voiceDuration = Double.valueOf(mediaplayer.getDuration()) / 1000;
-            Date date = new Date();
-            date.setTime(mediaplayer.getDuration());
-            SimpleDateFormat formatDate = new SimpleDateFormat("mm:ss");
-            groupChatViewHolder.receiveTimeVoice.setText(formatDate.format(date));
-            groupChatViewHolder.senderTimeVoice.setText(formatDate.format(date));
-            groupChatViewHolder.senderSeekBar.setMin(0);
-            groupChatViewHolder.senderSeekBar.setMax((int) voiceDuration);
-        } catch (Exception e) {
-        }
-
-        /*voicePlayer.setMediaPlayerListener(new VoicePlayer.MediaPlayerListener() {
-            @Override
-            public void isPlaying(int currentDuration) {
-
-            }
-
-            @Override
-            public void onPause() {
-                groupChatViewHolder.senderPlay.setVisibility(View.VISIBLE);
-                groupChatViewHolder.senderPause.setVisibility(View.GONE);
-
-            }
-
-            @Override
-            public void onStart() {
-
-            }
-        });*/
 
         usersRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -322,8 +251,6 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
 
         groupChatViewHolder.outMessage.setVisibility(View.GONE);
         groupChatViewHolder.inMessage.setVisibility(View.GONE);
-        groupChatViewHolder.outVoice.setVisibility(View.GONE);
-        groupChatViewHolder.inVoice.setVisibility(View.GONE);
         groupChatViewHolder.messageSenderPicture.setVisibility(View.GONE);
         groupChatViewHolder.messageReceiverPicture.setVisibility(View.GONE);
         groupChatViewHolder.inLook.setVisibility(View.GONE);
@@ -339,10 +266,26 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
                     groupChatViewHolder.senderMessageText.setText(messages.getMessage());
                     groupChatViewHolder.senderMessageTime.setText(messages.getTime());
                 } else {
-                    //groupChatViewHolder.receiverProfileImage.setVisibility(View.VISIBLE);
                     groupChatViewHolder.inMessage.setVisibility(View.VISIBLE);
                     groupChatViewHolder.receiverMessageText.setText(messages.getMessage());
                     groupChatViewHolder.receiverMessageTime.setText(messages.getTime());
+                    firebaseModel.getUsersReference().child(messages.getFrom()).child("personImage")
+                            .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                    if(task.isSuccessful()){
+                                        DataSnapshot snapshot=task.getResult();
+                                        Picasso.get().load(snapshot.getValue(String.class)).into(groupChatViewHolder.userAvatarIncomingText);
+                                    }
+                                }
+                            });
+                    groupChatViewHolder.userAvatarIncomingText.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            RecentMethods.setCurrentFragment(ProfileFragment.newInstance("other", messages.getFrom(), groupChatFragment,groupChatFragment.userInformation,groupChatFragment.bundle),
+                                    groupChatFragment.getActivity());
+                        }
+                    });
                 }
                 break;
             case "image":
@@ -373,6 +316,23 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
                             notifyDataSetChanged();
                         }
                     });
+                    firebaseModel.getUsersReference().child(messages.getFrom()).child("personImage")
+                            .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                    if(task.isSuccessful()){
+                                        DataSnapshot snapshot=task.getResult();
+                                        Picasso.get().load(snapshot.getValue(String.class)).into(groupChatViewHolder.userAvatarIncomingImage);
+                                    }
+                                }
+                            });
+                    groupChatViewHolder.userAvatarIncomingImage.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            RecentMethods.setCurrentFragment(ProfileFragment.newInstance("other", messages.getFrom(), groupChatFragment,groupChatFragment.userInformation,groupChatFragment.bundle),
+                                    groupChatFragment.getActivity());
+                        }
+                    });
                 }
                 break;
             case "pdf":
@@ -399,85 +359,24 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
                             notifyDataSetChanged();
                         }
                     });
-                }
-                break;
-            case "voice":
-                if (fromUserID.equals(messageSenderNick)) {
-                    groupChatViewHolder.outVoice.setVisibility(View.VISIBLE);
-                    groupChatViewHolder.senderPause.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            groupChatViewHolder.senderPlay.setVisibility(View.VISIBLE);
-                            groupChatViewHolder.senderPause.setVisibility(View.GONE);
-                            mediaplayer.pause();
-                            isMpPlaying = false;
-                        }
-                    });
-                    groupChatViewHolder.senderPlay.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if (isMpPlaying) {
-                                currentVoice.getMediaPlayer().pause();
-                                currentVoice.getPause().setVisibility(View.GONE);
-                                currentVoice.getPlay().setVisibility(View.VISIBLE);
-                            }
-                            groupChatViewHolder.senderPlay.setVisibility(View.GONE);
-                            groupChatViewHolder.senderPause.setVisibility(View.VISIBLE);
-                            currentVoice.setMediaPlayer(mediaplayer);
-                            currentVoice.setPause(groupChatViewHolder.senderPause);
-                            currentVoice.setPlay(groupChatViewHolder.senderPlay);
-                            mediaplayer.start();
-                            isMpPlaying = true;
-                            mediaplayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    firebaseModel.getUsersReference().child(messages.getFrom()).child("personImage")
+                            .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
-                                public void onCompletion(MediaPlayer mp) {
-                                    groupChatViewHolder.senderPlay.setVisibility(View.VISIBLE);
-                                    groupChatViewHolder.senderPause.setVisibility(View.GONE);
-                                    isMpPlaying = false;
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                    if(task.isSuccessful()){
+                                        DataSnapshot snapshot=task.getResult();
+                                        Picasso.get().load(snapshot.getValue(String.class)).into(groupChatViewHolder.userAvatarIncomingImage);
+                                    }
                                 }
                             });
-
-                        }
-                    });
-                } else {
-                    groupChatViewHolder.inVoice.setVisibility(View.VISIBLE);
-                    groupChatViewHolder.receivePause.setOnClickListener(new View.OnClickListener() {
+                    groupChatViewHolder.userAvatarIncomingImage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            groupChatViewHolder.receivePlay.setVisibility(View.VISIBLE);
-                            groupChatViewHolder.receivePause.setVisibility(View.GONE);
-                            currentVoice.setMediaPlayer(mediaplayer);
-                            currentVoice.setPause(groupChatViewHolder.receivePause);
-                            currentVoice.setPlay(groupChatViewHolder.receivePlay);
-                            mediaplayer.pause();
-                            isMpPlaying = false;
-                        }
-                    });
-                    groupChatViewHolder.receivePlay.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if (isMpPlaying) {
-                                currentVoice.getMediaPlayer().pause();
-                                currentVoice.getPause().setVisibility(View.GONE);
-                                currentVoice.getPlay().setVisibility(View.VISIBLE);
-                            }
-                            groupChatViewHolder.receivePlay.setVisibility(View.GONE);
-                            groupChatViewHolder.receivePause.setVisibility(View.VISIBLE);
-                            mediaplayer.start();
-                            isMpPlaying = true;
-                            mediaplayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                                @Override
-                                public void onCompletion(MediaPlayer mp) {
-                                    groupChatViewHolder.receivePlay.setVisibility(View.VISIBLE);
-                                    groupChatViewHolder.receivePause.setVisibility(View.GONE);
-                                    isMpPlaying = false;
-                                }
-                            });
+                            RecentMethods.setCurrentFragment(ProfileFragment.newInstance("other", messages.getFrom(), groupChatFragment,groupChatFragment.userInformation,groupChatFragment.bundle),
+                                    groupChatFragment.getActivity());
                         }
                     });
                 }
-
-
                 break;
             case "clothes":
                 if (fromUserID.equals(messageSenderNick)) {
@@ -512,6 +411,23 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
                             trueClothes = userMessagesList.get(groupChatViewHolder.getAdapterPosition()).getClothes();
                         }
                     });
+                    firebaseModel.getUsersReference().child(messages.getFrom()).child("personImage")
+                            .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                    if(task.isSuccessful()){
+                                        DataSnapshot snapshot=task.getResult();
+                                        Picasso.get().load(snapshot.getValue(String.class)).into(groupChatViewHolder.userAvatarIncomingClothes);
+                                    }
+                                }
+                            });
+                    groupChatViewHolder.userAvatarIncomingClothes.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            RecentMethods.setCurrentFragment(ProfileFragment.newInstance("other", messages.getFrom(), groupChatFragment,groupChatFragment.userInformation,groupChatFragment.bundle),
+                                    groupChatFragment.getActivity());
+                        }
+                    });
                 }
                 break;
             case "look":
@@ -541,13 +457,30 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
 
                     groupChatViewHolder.receiverMessageTextLook.setText(messages.getMessage());
                     groupChatViewHolder.receiverTimeLook.setText(messages.getTime());
-                    Picasso.get().load(messages.getNewsItem().getImageUrl()).into(groupChatViewHolder.watchLook);
+                    Picasso.get().load(messages.getNewsItem().getImageUrl()).into(groupChatViewHolder.watchLookOther);
 
                     groupChatViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             itemClickListener.onItemClick(null, userMessagesList.get(groupChatViewHolder.getAdapterPosition()).getNewsItem());
                             newsItemToViewing = userMessagesList.get(groupChatViewHolder.getAdapterPosition()).getNewsItem();
+                        }
+                    });
+                    firebaseModel.getUsersReference().child(messages.getFrom()).child("personImage")
+                            .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                    if(task.isSuccessful()){
+                                        DataSnapshot snapshot=task.getResult();
+                                        Picasso.get().load(snapshot.getValue(String.class)).into(groupChatViewHolder.userAvatarIncomingLook);
+                                    }
+                                }
+                            });
+                    groupChatViewHolder.userAvatarIncomingLook.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            RecentMethods.setCurrentFragment(ProfileFragment.newInstance("other", messages.getFrom(), groupChatFragment,groupChatFragment.userInformation,groupChatFragment.bundle),
+                                    groupChatFragment.getActivity());
                         }
                     });
                 }

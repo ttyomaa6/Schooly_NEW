@@ -150,6 +150,7 @@ public class WardrobeFragment extends Fragment {
         searchText = view.findViewById(R.id.searchClothesWardrobe);
         searchRecycler = view.findViewById(R.id.searchRecycler);
         lockableNestedScrollView=view.findViewById(R.id.lockableNestedScrollView);
+        Log.d("####", type);
         if(bundle.getSerializable("ALLLOADCLOTHESLIST")!=null){
             clothesList= (ArrayList<Clothes>) bundle.getSerializable("ALLLOADCLOTHESLIST");
         }
@@ -160,6 +161,7 @@ public class WardrobeFragment extends Fragment {
             @Override
             public void onItemClick(Clothes clothes,String type,String fragmentString) {
                 if(type.equals("view")){
+                    Log.d("####", type);
                     if(loadValue==0) RecentMethods.setCurrentFragment(ViewingClothesWardrobe.newInstance(type,WardrobeFragment.newInstance(type, fragment, userInformation, bundle),userInformation,bundle), getActivity());
                 }else{
                     if(loadValue==0) checkOnTryOn(clothes);
@@ -412,7 +414,6 @@ public class WardrobeFragment extends Fragment {
 
     public void loadLookClothes(){
         loadValue=1;
-        Log.d("AAAA", "LOAD SIZE  1   "+clothesList.size()+"   "+clothesUid.size());
         if(clothesUid.size()==0) {
             RecentMethods.getMyLookClothesOnce(nick, firebaseModel, new Callbacks.getLookClothes() {
                 @Override
@@ -425,11 +426,9 @@ public class WardrobeFragment extends Fragment {
                                     Clothes clothes=clothesArrayList.get(i);
                                     filamentModel.populateScene(clothes.getBuffer(), clothes);
                                     clothesUid.add(clothes.getUid());
-                                    Log.d("AAAA", "ALOAD V1   "+loadValue+"   "+clothes.getClothesTitle());
                                     if(!allLoadClothesUid.contains(clothes.getUid())) {
                                         clothesList.add(clothes);
                                         allLoadClothesUid.add(clothes.getUid());
-                                        Log.d("AAAA", "ALOAD V   "+loadValue+"   "+clothes.getClothesTitle());
                                     }
                                 }
                                 loadValue=0;
@@ -441,11 +440,9 @@ public class WardrobeFragment extends Fragment {
                 }
             });
         } else{
-            Log.d("AAAA", "LOAD SIZE   "+clothesList.size()+"     "+clothesUid.size());
             loadValue=clothesUid.size();
             for(int i=0;i<clothesList.size();i++ ){
                 Clothes clothes=clothesList.get(i);
-                Log.d("AAAAA",clothes.getClothesTitle());
                 if(clothesUid.contains(clothes.getUid())&&clothes.getBuffer()!=null){
                     filamentModel.populateScene(clothes.getBuffer(), clothes);
                     loadValue--;
@@ -547,6 +544,7 @@ public class WardrobeFragment extends Fragment {
         }  else{
             for(int i=0;i<userInformation.getLookClothes().size();i++){
                 Clothes clothes1=userInformation.getLookClothes().get(i);
+                Log.d("####", "cl   "+clothes1.getUid()+"     "+clothes.getUid());
                 if(clothes1.getUid().equals(clothes.getUid())){
                     loadValue=0;
                     break;
@@ -629,14 +627,12 @@ public class WardrobeFragment extends Fragment {
     public void loadPerson(UserInformation userInformation,LockableNestedScrollView lockableNestedScrollView,SurfaceView surfaceView){
         loadValue=1;
         if(userInformation.getPerson()==null){
-            Log.d("AAAAA", "aaaasssh  "+userInformation.getNick());
             loadPersonBuffer(userInformation,lockableNestedScrollView,surfaceView);
 
         }else{
             if (userInformation.getPerson().getBody().getBuffer()==null){
                 loadPersonBuffer(userInformation,lockableNestedScrollView,surfaceView);
             }else{
-                Log.d("####", "aa    "+userInformation.getPerson());
                 ArrayList<FacePart> facePartArrayList=new ArrayList<>();
                 facePartArrayList.add(userInformation.getPerson().getBody());
                 facePartArrayList.add(userInformation.getPerson().getBrows());
@@ -687,15 +683,13 @@ public class WardrobeFragment extends Fragment {
         RecentMethods.startLoadPerson(userInformation.getNick(), firebaseModel, new Callbacks.loadPerson() {
             @Override
             public void LoadPerson(Person person,ArrayList<FacePart> facePartArrayList) {
-                Log.d("AAA","ss  "+person.getHair().getColorY());
                 LoadBodyParts.loadPersonBuffers(facePartArrayList, new Callbacks.loadFaceParts() {
                     @Override
                     public void LoadFaceParts(ArrayList<FacePart> facePartsArrayList) {
-                        Log.d("AAAAA","ss11  "+facePartsArrayList.get(0).getColorZ()+"   "+facePartsArrayList.get(0).getUid());
+
                         for(int i=0;i<facePartsArrayList.size();i++){
                             FacePart facePart=facePartsArrayList.get(i);
                             com.egormoroz.schooly.Color[] color = {new com.egormoroz.schooly.Color()};
-                            Log.d("AAAAA","ss22  "+facePartsArrayList.get(i).getColorY()+"   "+facePart.getUid()+"   "+i);
                             if(facePart.getColorX()!=-1f && facePart.getColorY()!=-1f && facePart.getColorZ()!=-1f){
                                 color[0] =new com.egormoroz.schooly.Color(facePartsArrayList.get(i).getColorX(),
                                         facePartsArrayList.get(i).getColorY(), facePartsArrayList.get(i).getColorZ()

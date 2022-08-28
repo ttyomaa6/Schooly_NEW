@@ -123,21 +123,21 @@ public class CoinsMainFragment extends Fragment {
 
 //        FirebaseModel appDataBase=new FirebaseModel();
 //        appDataBase.initAppDataDatabase();
-//        String uid8=appDataBase.getReference().child("defaultLook").push().getKey();
-//        String uid7=appDataBase.getReference().child("defaultLook").push().getKey();
-//        String uid9=appDataBase.getReference().child("defaultLook").push().getKey();
-//        appDataBase.getReference().child("defaultLook").child(uid8)
+//        String uid8=appDataBase.getReference().child("defaultClothes").push().getKey();
+//        String uid7=appDataBase.getReference().child("defaultClothes").push().getKey();
+//        String uid9=appDataBase.getReference().child("defaultClothes").push().getKey();
+//        appDataBase.getReference().child("defaultClothes").child("-NAS7gAV2yxE6QvWUJpK")
 //                    .setValue(new Clothes("shoes", "https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/clothes%2Fblack%20sholles.png?alt=media&token=68f288b1-d536-4e37-9d0e-a1e896f113c9"
 //                        , 0, "sholles", 0, 0, "Sholly", "coin", "", "https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/3d%20models%2Fblack%20sholles%20(1).glb?alt=media&token=c275d59e-0ebb-49a6-bd4e-2fbca0775dc7",
-//                        0, "foot", uid8, "no",buffer , x1,y1,z1,transformRatio1));
-//        appDataBase.getReference().child("defaultLook").child(uid9)
+//                        0, "foot", "-NAS7gAV2yxE6QvWUJpK", "no",buffer , x1,y1,z1,transformRatio1));
+//        appDataBase.getReference().child("defaultClothes").child("-NAS7gAWhZc1nE4dNQ1g")
 //                .setValue(new Clothes("clothes", "https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/clothes%2Fblack%20shorts.png?alt=media&token=6dae1f8c-2f68-4396-a3ea-71a1bfd9556f"
 //                        , 0, "black shorts", 0, 0, "Sholly", "coin", "", "https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/3d%20models%2Fblack%20shorts%20(1).glb?alt=media&token=fcfda3a4-2f78-4166-99c7-943d083b06eb",
-//                        0, "leg", uid9, "no",buffer , x1,y1,z1,transformRatio1));
-//        appDataBase.getReference().child("defaultLook").child(uid7)
+//                        0, "leg", "-NAS7gAWhZc1nE4dNQ1g", "no",buffer , x1,y1,z1,transformRatio1));
+//        appDataBase.getReference().child("defaultClothes").child("-NAS7gAWhZc1nE4dNQ1f")
 //                .setValue(new Clothes("clothes", "https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/clothes%2Fwhite%20t-shirt.png?alt=media&token=2e348991-2d6e-4777-b355-65e2c8ee01ef"
 //                        , 0, "white t-shirt", 0, 0, "Sholly", "coin", "", "https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/3d%20models%2Fwhite%20t-shirt.glb?alt=media&token=f9d7524c-b813-428a-afd9-1103d4085673",
-//                        0, "body", uid7, "no",buffer , x1,y1,z1,transformRatio1));
+//                        0, "body","-NAS7gAWhZc1nE4dNQ1f", "no",buffer , x1,y1,z1,transformRatio1));
 //        String uid81=appDataBase.getReference().child("defaultLook").push().getKey();
 //        String uid71=appDataBase.getReference().child("defaultLook").push().getKey();
 //        String uid91=appDataBase.getReference().child("defaultLook").push().getKey();
