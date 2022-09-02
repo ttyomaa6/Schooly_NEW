@@ -198,7 +198,7 @@ public final class MessageFragment extends Fragment {
                                     .child(messageReceiverName).child("unreadMessages").setValue(0);
                             a++;
                         }
-                        messageAdapter.notifyDataSetChanged();
+                        messageAdapter.notifyItemInserted(messagesList.size()-1);
                         userMessagesList.smoothScrollToPosition(userMessagesList.getAdapter().getItemCount());
                     }
 
@@ -383,32 +383,6 @@ public final class MessageFragment extends Fragment {
         firebaseModel.getUsersReference().child(message.getTo()).child("Chats").child(message.getFrom()).child("Messages").child(message.getId()).removeValue();
         firebaseModel.getUsersReference().child(message.getFrom()).child("Chats").child(message.getTo()).child("Messages").child(message.getId()).removeValue();
         Log.d("###", "deleteMessage: " + chat.getLastMessage());
-        firebaseModel.getUsersReference().child(message.getFrom()).child("Chats").child(message.getTo()).child("Messages").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int i = 1;
-                for (DataSnapshot snap : snapshot.getChildren()) {
-                    if (i == snapshot.getChildrenCount()) {
-                        firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs").child(messageReceiverName).child("lastMessage").setValue(snap.child("message").getValue().toString());
-                        firebaseModel.getUsersReference().child(messageReceiverName).child("Dialogs").child(messageSenderName).child("lastMessage").setValue(snap.child("message").getValue().toString());
-                        firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs").child(messageReceiverName).child("lastTime").setValue(snap.child("time").getValue().toString());
-                        firebaseModel.getUsersReference().child(messageReceiverName).child("Dialogs").child(messageSenderName).child("lastTime").setValue(snap.child("time").getValue().toString());
-                    }
-                    i++;
-
-                }
-                if (i == 1){
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-        //addLastMessage("text",);
 
     }
 
@@ -537,7 +511,7 @@ public final class MessageFragment extends Fragment {
     }
 
 
-    private void addLastMessage(String type, String Message) {
+    private void addLastMessage(String type, String Message,String time) {
 
         Log.d("####", type);
         switch (type) {
@@ -559,8 +533,14 @@ public final class MessageFragment extends Fragment {
                 break;
         }
         Calendar calendar = Calendar.getInstance();
-        firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs").child(messageReceiverName).child("lastTime").setValue(RecentMethods.getCurrentTime());
-        firebaseModel.getUsersReference().child(messageReceiverName).child("Dialogs").child(messageSenderName).child("lastTime").setValue(RecentMethods.getCurrentTime());
+        if(time==null){
+            firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs").child(messageReceiverName).child("lastTime").setValue(RecentMethods.getCurrentTime());
+            firebaseModel.getUsersReference().child(messageReceiverName).child("Dialogs").child(messageSenderName).child("lastTime").setValue(RecentMethods.getCurrentTime());
+        }else{
+            firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs").child(messageReceiverName).child("lastTime").setValue(time);
+            firebaseModel.getUsersReference().child(messageReceiverName).child("Dialogs").child(messageSenderName).child("lastTime").setValue(time);
+
+        }
         Map<String, String> map = new HashMap<>();
         map = ServerValue.TIMESTAMP;
         firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs").child(messageReceiverName).child("timeMill").setValue(map);
@@ -592,7 +572,7 @@ public final class MessageFragment extends Fragment {
     }
 
 
-    public void showChatFunc(Message message) {
+    public void showChatFunc(Message message,int position,Message lastMessage) {
         Log.d("###", "1: " + message.getMessage());
         final Dialog dialog = new Dialog(getContext());
         Log.d("###", "2: " + message.getMessage());
@@ -600,7 +580,7 @@ public final class MessageFragment extends Fragment {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         RelativeLayout copyLayout = dialog.findViewById(R.id.Copy_relative_layout);
         RelativeLayout deleteLayout = dialog.findViewById(R.id.Delete_relative_layout);
-
+        messageAdapter.notifyItemRemoved(position);
         copyLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -612,6 +592,10 @@ public final class MessageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 deleteMessage(message);
+                messageAdapter.notifyItemRemoved(position);
+                if (lastMessage!=null){
+                    addLastMessage("text", lastMessage.getText(),message.getTime());
+                }
                 dialog.dismiss();
             }
         });
@@ -681,7 +665,7 @@ public final class MessageFragment extends Fragment {
                                                     .setValue(new Chat(messageSenderName, "", "", "personal", 0, senderMembers, "false", new ArrayList<>(), 0, duration, chat.getChatId(),""));
                                             firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs").child(messageReceiverName)
                                                     .setValue(new Chat(messageReceiverName, "", "", "personal", 0, receiverMembers, "false", new ArrayList<>(), 0, duration, chat.getChatId(),""));
-                                            addLastMessage(type, message);
+                                            addLastMessage(type, message,null);
                                             addUnread();
                                             if (type.equals("image")) {
                                                 String uid = firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs")
@@ -698,7 +682,7 @@ public final class MessageFragment extends Fragment {
                 }
             });
         } else {
-            addLastMessage(type, message);
+            addLastMessage(type, message,null);
             addUnread();
             if (type.equals("image")) {
                 String uid = firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs")

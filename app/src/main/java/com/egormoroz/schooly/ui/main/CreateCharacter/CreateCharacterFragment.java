@@ -156,6 +156,9 @@ public class CreateCharacterFragment extends Fragment {
             body.setPartType("body");
             body.setUid("bodyUID");
             body.setPartTitle("body");
+            body.setColorX(-1f);
+            body.setColorY(-1f);
+            body.setColorZ(-1f);
             body.setModel("https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/3d%20models%2Fhuman.glb?alt=media&token=748c9faa-7187-4bce-a005-e3df979e70cc");
             TaskRunnerCustom taskRunnerCustom=new TaskRunnerCustom();
 

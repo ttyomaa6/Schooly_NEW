@@ -1673,7 +1673,7 @@ public class ProfileFragment extends Fragment {
                         for(int i=0;i<facePartsArrayList.size();i++){
                             FacePart facePart=facePartsArrayList.get(i);
                             com.egormoroz.schooly.Color[] color = {new com.egormoroz.schooly.Color()};
-                            Log.d("####", "dddd  "+facePart);
+                            Log.d("####", "dddd  "+facePart.getPartType());
                             if(facePart.getColorX()!=-1f && facePart.getColorY()!=-1f && facePart.getColorZ()!=-1f){
                                 color[0] =new com.egormoroz.schooly.Color(facePartsArrayList.get(i).getColorX(),
                                         facePartsArrayList.get(i).getColorY(), facePartsArrayList.get(i).getColorZ()

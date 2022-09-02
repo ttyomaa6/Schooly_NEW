@@ -186,12 +186,11 @@ public final class GroupChatFragment extends Fragment {
                         }
                         messagesList.add(messages);
                         if (messagesList.size() > 0 && a == 0 && !messages.getFrom().equals(userInformation.getNick())) {
-                            //Log.d("#####", messageReceiverName);
                             firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs")
                                     .child(chat.getChatId()).child("unreadMessages").setValue(0);
                             a++;
                         }
-                        groupChatAdapter.notifyDataSetChanged();
+                        groupChatAdapter.notifyItemInserted(messagesList.size()-1);
                         userMessagesList.smoothScrollToPosition(userMessagesList.getAdapter().getItemCount());
                     }
 
@@ -270,57 +269,8 @@ public final class GroupChatFragment extends Fragment {
                 MessageInputText.getText().clear();
             }
         });
-//        SendFilesButton.setOnClickListener(new View.OnClickListener() {
-//            @SuppressLint("IntentReset")
-//            @Override
-//            public void onClick(View view) {
-//
-//                checker = "image";
-//                Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//                intent.setAction(Intent.ACTION_GET_CONTENT);
-//                intent.setType("image/*");
-//                startActivityForResult(intent, 443);
-//            }
-//
-//
-//        });
     }
 
-
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == 443 && resultCode == RESULT_OK && data != null && data.getData() != null) {
-//            fileUri = data.getData();
-//            if (checker.equals("image")) {
-//                StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Images");
-//
-//                DatabaseReference userMessageKeyRef = firebaseModel.getReference().child("groups").child(chat.getChatId()).child("Messages").push();
-//                final String messagePushID = userMessageKeyRef.getKey();
-//
-//                final StorageReference filePath = storageReference.child(messagePushID + "." + "jpg");
-//
-//                uploadTask = filePath.putFile(fileUri);
-//                uploadTask.continueWithTask(new Continuation() {
-//                    @Override
-//                    public Object then(@NonNull Task task) throws Exception {
-//                        if (!task.isSuccessful()) {
-//                            throw task.getException();
-//                        }
-//                        return filePath.getDownloadUrl();
-//                    }
-//                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Uri> task) {
-//                        Uri downloadUrl = task.getResult();
-//                        myUrl = downloadUrl.toString();
-//                        Send(myUrl, "image", 0);
-//
-//                    }
-//                });
-//            }
-//        }
-//    }
 
     public void copy(Message message) {
         ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
@@ -328,33 +278,9 @@ public final class GroupChatFragment extends Fragment {
         clipboard.setPrimaryClip(clip);
     }
 
-    public void deleteMessage(Message message) {
+    public void deleteMessage(Message message,int position,Message lastMessage) {
         firebaseModel.getReference().child("groups").child(chat.getChatId()).child("Messages").child(message.getMessageID()).removeValue();
         Log.d("###", "deleteMessage: " + chat.getLastMessage());
-        firebaseModel.getReference().child("groups").child(chat.getChatId()).child("Messages").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int i = 1;
-                for (DataSnapshot snap : snapshot.getChildren()) {
-                    if (i == snapshot.getChildrenCount()) {
-                        firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs").child(chat.getChatId()).child("lastMessage").setValue(snap.child("message").getValue().toString());
-                        firebaseModel.getUsersReference().child(messageReceiverName).child("Dialogs").child(chat.getChatId()).child("lastMessage").setValue(snap.child("message").getValue().toString());
-                        firebaseModel.getUsersReference().child(messageSenderName).child("Dialogs").child(chat.getChatId()).child("lastTime").setValue(snap.child("time").getValue().toString());
-                        firebaseModel.getUsersReference().child(messageReceiverName).child("Dialogs").child(chat.getChatId()).child("lastTime").setValue(snap.child("time").getValue().toString());
-
-                    }
-                    i++;
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-        //addLastMessage("text",);
 
     }
 
@@ -375,7 +301,7 @@ public final class GroupChatFragment extends Fragment {
         deleteLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteMessage(message);
+                //deleteMessage(message);
                 dialog.dismiss();
             }
         });

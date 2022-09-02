@@ -10,7 +10,7 @@
         android:id="@+id/back_coins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/left_arrow"/>
+        android:src="@drawable/left_arrow" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,63 +25,13 @@
 
     <ImageView
         android:id="@+id/coinsImage"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:layout_below="@+id/back_coins"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24sp"
-        android:background="@drawable/corners14appcolor" />
-
-    <TextView
-        android:id="@+id/cutomerText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/coinsImage"
-        android:layout_marginStart="16sp"
-        android:layout_toRightOf="@+id/coinsImage"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="@string/customer"
-        android:textColor="@color/app_grey"
-        android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/customer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:fontFamily="@font/montserrat_extrabold"
-        android:textColor="@color/app_color"
-        android:layout_toRightOf="@+id/coinsImage"
-        android:layout_marginStart="16sp"
-        android:layout_below="@+id/cutomerText"
-        android:layout_marginTop="2dp"
-        />
-
-    <TextView
-        android:id="@+id/purchaseText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/customer"
-        android:layout_marginStart="16sp"
-        android:layout_toRightOf="@+id/coinsImage"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="@string/purchase"
-        android:textColor="@color/app_grey"
-        android:textSize="14sp"
-        android:layout_marginTop="4dp"/>
-
-    <TextView
-        android:id="@+id/purchase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:fontFamily="@font/montserrat_extrabold"
-        android:textColor="@color/app_color"
-        android:layout_toRightOf="@+id/coinsImage"
-        android:layout_marginStart="16sp"
-        android:layout_below="@+id/purchaseText"
-        android:layout_marginTop="2dp"
-        />
+        android:background="@drawable/corners14appcolor"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/cardData"
@@ -91,31 +41,57 @@
         android:layout_marginStart="24sp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="@string/cardData"
+        android:text="@string/price"
+        android:layout_centerHorizontal="true"
         android:textColor="@color/app_grey"
-        android:textSize="16sp" />
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardData"
+        android:layout_marginStart="24sp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="0.99$"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/app_color"
+        android:textSize="24sp" />
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/corners14appcolor">
+        android:background="@drawable/googlepay_button_background_image">
 
-        <TextView
-            android:id="@+id/textAcceptPayment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/montserrat_bold"
-            android:paddingTop="14dp"
-            android:paddingBottom="14dp"
-            android:text="Оплатить  $4.99"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:duplicateParentState="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/buy_with_googlepay_button_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/googlepay_button_overlay" />
     </RelativeLayout>
 
 

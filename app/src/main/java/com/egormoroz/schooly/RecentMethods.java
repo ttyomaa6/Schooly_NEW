@@ -582,6 +582,19 @@ public class RecentMethods {
             }
         });
     }
+    
+    public static void setShollyClothes(ArrayList<Clothes> clothes){
+        FirebaseModel firebaseModel=new FirebaseModel();
+        firebaseModel.initAll();;
+        for(int i=0;i<clothes.size();i++){
+            Clothes  cloth=clothes.get(i);
+            if(cloth.getCreator().equals("Sholly")){
+                firebaseModel.getUsersReference().child("Sholly")
+                        .child("myClothes").child(cloth.getUid())
+                        .setValue(cloth);
+            }
+        }
+    }
 
     public static void GetTimeStampNow(String nick, FirebaseModel firebaseModel,Callbacks.GetTimesTamp callback){
         firebaseModel.initAll();

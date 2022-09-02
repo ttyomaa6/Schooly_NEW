@@ -4,6 +4,7 @@ package com.egormoroz.schooly.ui.chat;
 import static com.google.android.material.transition.MaterialSharedAxis.X;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -199,14 +200,22 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         messageViewHolder.inMessage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                messageFragment.showChatFunc(messages);
+                Message message=null;
+                if(messageViewHolder.getAdapterPosition()==userMessagesList.size()-1){
+                    message=userMessagesList.get(messageViewHolder.getAdapterPosition()-1);
+                }
+                messageFragment.showChatFunc(userMessagesList.get(messageViewHolder.getAdapterPosition()), messageViewHolder.getAdapterPosition(),message);
                 return true;
             }
         });
         messageViewHolder.outMessage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                messageFragment.showChatFunc(messages);
+                Message message=null;
+                if(messageViewHolder.getAdapterPosition()==userMessagesList.size()-1){
+                    message=userMessagesList.get(messageViewHolder.getAdapterPosition()-1);
+                }
+                messageFragment.showChatFunc(userMessagesList.get(messageViewHolder.getAdapterPosition()),messageViewHolder.getAdapterPosition(),message);
                 return true;
             }
         });
