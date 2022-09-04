@@ -596,15 +596,17 @@ public final class MessageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 deleteMessage(message,position);
-                Log.d("AAAA", "    "+lastMessage.getMessage()+"  "+position);
                 if (lastMessage!=null){
                     addLastMessage("text", lastMessage.getMessage(),message.getTime());
                 }else{
-                    firebaseModel.getUsersReference().child(userInformation.getNick())
-                            .child("Dialogs").child(message.getTo()).removeValue();
-                    firebaseModel.getUsersReference().child(message.getTo())
-                            .child("Dialogs").child(userInformation.getNick()).removeValue();
-                    RecentMethods.setCurrentFragment(DialogsFragment.newInstance(userInformation, bundle, MainFragment.newInstance(userInformation, bundle)), getActivity());
+                    if(message.getFrom().equals(userInformation.getNick())){
+                        firebaseModel.getUsersReference().child(userInformation.getNick())
+                                .child("Dialogs").child(message.getTo()).removeValue();
+                        firebaseModel.getUsersReference().child(message.getTo())
+                                .child("Dialogs").child(userInformation.getNick()).removeValue();
+                        RecentMethods.setCurrentFragment(DialogsFragment.newInstance(userInformation, bundle, MainFragment.newInstance(userInformation, bundle)), getActivity());
+
+                    }
                 }
                 dialog.dismiss();
             }
