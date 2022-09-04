@@ -46,6 +46,7 @@ import android.widget.Toast;
 
 import com.egormoroz.schooly.FirebaseModel;
 import com.egormoroz.schooly.R;
+import com.egormoroz.schooly.ui.main.MainFragment;
 import com.egormoroz.schooly.ui.main.Shop.Clothes;
 import com.egormoroz.schooly.ui.main.UserInformation;
 import com.egormoroz.schooly.ui.news.NewsItem;
@@ -379,9 +380,13 @@ public final class MessageFragment extends Fragment {
         clipboard.setPrimaryClip(clip);
     }
 
-    public void deleteMessage(Message message) {
-        firebaseModel.getUsersReference().child(message.getTo()).child("Chats").child(message.getFrom()).child("Messages").child(message.getId()).removeValue();
-        firebaseModel.getUsersReference().child(message.getFrom()).child("Chats").child(message.getTo()).child("Messages").child(message.getId()).removeValue();
+    public void deleteMessage(Message message,int position) {
+        if(message.getFrom().equals(userInformation.getNick())){
+            firebaseModel.getUsersReference().child(message.getTo()).child("Chats").child(message.getFrom()).child("Messages").child(message.getId()).removeValue();
+            firebaseModel.getUsersReference().child(message.getFrom()).child("Chats").child(message.getTo()).child("Messages").child(message.getId()).removeValue();
+            messagesList.remove(position);
+            messageAdapter.notifyItemRemoved(position);
+        }
         Log.d("###", "deleteMessage: " + chat.getLastMessage());
 
     }
@@ -580,7 +585,6 @@ public final class MessageFragment extends Fragment {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         RelativeLayout copyLayout = dialog.findViewById(R.id.Copy_relative_layout);
         RelativeLayout deleteLayout = dialog.findViewById(R.id.Delete_relative_layout);
-        messageAdapter.notifyItemRemoved(position);
         copyLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -591,10 +595,16 @@ public final class MessageFragment extends Fragment {
         deleteLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteMessage(message);
-                messageAdapter.notifyItemRemoved(position);
+                deleteMessage(message,position);
+                Log.d("AAAA", "    "+lastMessage.getMessage()+"  "+position);
                 if (lastMessage!=null){
-                    addLastMessage("text", lastMessage.getText(),message.getTime());
+                    addLastMessage("text", lastMessage.getMessage(),message.getTime());
+                }else{
+                    firebaseModel.getUsersReference().child(userInformation.getNick())
+                            .child("Dialogs").child(message.getTo()).removeValue();
+                    firebaseModel.getUsersReference().child(message.getTo())
+                            .child("Dialogs").child(userInformation.getNick()).removeValue();
+                    RecentMethods.setCurrentFragment(DialogsFragment.newInstance(userInformation, bundle, MainFragment.newInstance(userInformation, bundle)), getActivity());
                 }
                 dialog.dismiss();
             }

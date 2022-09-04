@@ -48,6 +48,7 @@ import com.egormoroz.schooly.RecentMethods;
 import com.egormoroz.schooly.ui.main.Shop.Clothes;
 import com.egormoroz.schooly.ui.main.UserInformation;
 import com.egormoroz.schooly.ui.news.NewsItem;
+import com.egormoroz.schooly.ui.people.PeopleAdapter;
 import com.egormoroz.schooly.ui.people.UserPeopleAdapter;
 import com.egormoroz.schooly.ui.profile.ProfileFragment;
 import com.google.android.gms.tasks.Continuation;
@@ -278,13 +279,18 @@ public final class GroupChatFragment extends Fragment {
         clipboard.setPrimaryClip(clip);
     }
 
-    public void deleteMessage(Message message,int position,Message lastMessage) {
-        firebaseModel.getReference().child("groups").child(chat.getChatId()).child("Messages").child(message.getMessageID()).removeValue();
-        Log.d("###", "deleteMessage: " + chat.getLastMessage());
+    public void deleteMessage(Message message,int position) {
+            if(message.getFrom().equals(userInformation.getNick())){
+                firebaseModel.getReference().child("groups").child(chat.getChatId()).child("Messages")
+                        .child(message.getId()).removeValue();
+                messagesList.remove(position);
+                groupChatAdapter.notifyItemRemoved(position);
+            }
+
 
     }
 
-    public void showChatFunc(Message message) {
+    public void showChatFunc(Message message,int position,Message lastMessage) {
         final Dialog dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.dialog_chat_depnds);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -301,7 +307,13 @@ public final class GroupChatFragment extends Fragment {
         deleteLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //deleteMessage(message);
+                deleteMessage(message,position);
+                if (lastMessage!=null) {
+                    for (int i = 0; i < chat.getMembers().size(); i++) {
+                        String nick = chat.getMembers().get(i).getNick();
+                        addLastMessage("text", lastMessage.getMessage(), nick,lastMessage.getTime());
+                    }
+                }
                 dialog.dismiss();
             }
         });
@@ -404,7 +416,7 @@ public final class GroupChatFragment extends Fragment {
     }
 
 
-    private void addLastMessage(String type, String Message, String name) {
+    private void addLastMessage(String type, String Message, String name,String time) {
 
         Log.d("####", type);
         switch (type) {
@@ -426,7 +438,12 @@ public final class GroupChatFragment extends Fragment {
                 break;
         }
         Calendar calendar = Calendar.getInstance();
-        firebaseModel.getUsersReference().child(name).child("Dialogs").child(chat.getChatId()).child("lastTime").setValue(RecentMethods.getCurrentTime());
+        if(time==null){
+            firebaseModel.getUsersReference().child(name).child("Dialogs").child(chat.getChatId()).child("lastTime").setValue(RecentMethods.getCurrentTime());
+        }else{
+            firebaseModel.getUsersReference().child(name).child("Dialogs").child(chat.getChatId()).child("lastTime").setValue(time);
+
+        }
         Map<String, String> map = new HashMap<>();
         map = ServerValue.TIMESTAMP;
         firebaseModel.getUsersReference().child(name).child("Dialogs").child(chat.getChatId()).child("timeMill").setValue(map);
@@ -486,7 +503,7 @@ public final class GroupChatFragment extends Fragment {
 
         for (int i = 0; i < chat.getMembers().size(); i++) {
             String nick = chat.getMembers().get(i).getNick();
-            addLastMessage(type, message, nick);
+            addLastMessage(type, message, nick,null);
             addUnread(nick);
             if (type.equals("image")) {
                 String uid = firebaseModel.getUsersReference().child(nick).child("Dialogs")

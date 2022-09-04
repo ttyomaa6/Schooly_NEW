@@ -25,6 +25,7 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.egormoroz.schooly.R;
+import com.egormoroz.schooly.RecentMethods;
 import com.egormoroz.schooly.ui.chat.holders.ImageViewerActivity;
 import com.egormoroz.schooly.ui.main.Shop.Clothes;
 import com.egormoroz.schooly.ui.main.Shop.NewClothesAdapter;
@@ -201,8 +202,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             @Override
             public boolean onLongClick(View v) {
                 Message message=null;
-                if(messageViewHolder.getAdapterPosition()==userMessagesList.size()-1){
-                    message=userMessagesList.get(messageViewHolder.getAdapterPosition()-1);
+                if(messageViewHolder.getAdapterPosition()==userMessagesList.size()-1&&userMessagesList.size()>1){
+                        message=userMessagesList.get(messageViewHolder.getAdapterPosition()-1);
+                    Log.d("###", "123: " + message.getMessage());
                 }
                 messageFragment.showChatFunc(userMessagesList.get(messageViewHolder.getAdapterPosition()), messageViewHolder.getAdapterPosition(),message);
                 return true;
@@ -212,7 +214,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             @Override
             public boolean onLongClick(View v) {
                 Message message=null;
-                if(messageViewHolder.getAdapterPosition()==userMessagesList.size()-1){
+                if(messageViewHolder.getAdapterPosition()==userMessagesList.size()-1&&userMessagesList.size()>1){
                     message=userMessagesList.get(messageViewHolder.getAdapterPosition()-1);
                 }
                 messageFragment.showChatFunc(userMessagesList.get(messageViewHolder.getAdapterPosition()),messageViewHolder.getAdapterPosition(),message);

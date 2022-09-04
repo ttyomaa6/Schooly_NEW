@@ -72,6 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-80dp"
+                android:layout_marginLeft="-80dp"
                 android:layout_marginTop="-50dp"
                 android:layout_toRightOf="@+id/textreglong"
                 android:src="@drawable/steve" />
@@ -82,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/steve"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="-178dp"
+                android:layout_marginTop="-192dp"
                 android:layout_marginEnd="40dp"
                 android:background="@drawable/corners30dp"
                 android:elevation="14dp"
@@ -119,7 +120,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="90dp"
                     android:background="@drawable/corners5nickreg"
-                    android:digits="abcdefghijklmnopqrstuvwxyz012345678ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:digits="abcdefghijklmnopqrstuvwxyz012345678ABCDEFGHIJKLMNOPQRSTUVWXYZ._"
                     android:fontFamily="@font/montserrat_bold"
                     android:inputType="text"
                     android:maxLength="24"
@@ -213,34 +214,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/relativephone"
-                android:layout_marginTop="42dp"
                 android:layout_marginStart="40dp"
+                android:layout_marginTop="42dp"
                 android:layout_marginEnd="40dp"
-                android:paddingBottom="24dp"
+                android:background="@drawable/corners30dp"
                 android:elevation="14dp"
-                android:background="@drawable/corners30dp">
+                android:paddingBottom="24dp">
 
                 <TextView
                     android:id="@+id/gothree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/go3"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textColor="@color/app_color"
-                    android:textSize="36sp"
                     android:layout_marginStart="25dp"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/go3"
+                    android:textColor="@color/app_color"
+                    android:textSize="36sp" />
 
                 <TextView
                     android:id="@+id/password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/writepassword"
                     android:layout_below="@id/gothree"
+                    android:layout_marginStart="25dp"
                     android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/writepassword"
                     android:textColor="@color/app_grey"
-                    android:textSize="12sp"
-                    android:layout_marginStart="25dp"/>
+                    android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/editpassword"
@@ -263,12 +264,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/editpassword"
-                    android:layout_marginTop="2dp"
-                    android:textSize="10sp"
                     android:layout_marginStart="24dp"
+                    android:layout_marginTop="2dp"
                     android:layout_marginEnd="8dp"
                     android:fontFamily="@font/montserrat_bold"
-                    android:textColor="@color/app_grey"/>
+                    android:textColor="@color/app_grey"
+                    android:textSize="10sp" />
 
 
             </RelativeLayout>

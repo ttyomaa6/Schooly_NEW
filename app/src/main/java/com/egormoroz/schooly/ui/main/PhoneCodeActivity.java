@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.egormoroz.schooly.ErrorList;
@@ -64,6 +66,20 @@ public class PhoneCodeActivity extends AppCompatActivity {
     public void initElements(){
         resendCode = findViewById(R.id.resendCodeTextView);
         backButton = findViewById(R.id.backfromphonecode);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finish();
+            }
+        };
+
+        getOnBackPressedDispatcher().addCallback(this, callback);
         SMSCode = findViewById(R.id.VerificationCode);
         continueButton = findViewById(R.id.continueButton);
         timerText = findViewById(R.id.time);

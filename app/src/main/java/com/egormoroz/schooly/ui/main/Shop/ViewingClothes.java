@@ -347,7 +347,7 @@ public class ViewingClothes extends Fragment {
         if(snapshot.exists()){
           buyClothesBottom.setText(R.string.purchased);
         }else {
-          buyClothesBottom.setText(getContext().getResources().getText(R.string.buy));
+          buyClothesBottom.setText(R.string.buy);
         }
       }
 

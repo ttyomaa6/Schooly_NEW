@@ -109,17 +109,19 @@ public class RegFragment extends Fragment {
                 }
                 break;
             case Phone_Request_Code:
-                isPhoneValid = data.getExtras().getBoolean("IsPhoneValid");
-                String phone = String.valueOf(phoneEditText.getText()).trim();
-                String password = String.valueOf(passwordEditText.getText()).trim();
-                String nick = String.valueOf(nickNameEditText.getText()).trim();
-                if (isPhoneValid) {
-                    bundle.putString("PHONE", phone);
-                    bundle.putString("NICK", nick);
-                    bundle.putString("PASSWORD", password);
-                    bundle.putString("FRAGMENT", "reg");
-                    UserInformation userInformation = new UserInformation();
-                    RecentMethods.setCurrentFragment(GenderFragment.newInstance(userInformation, bundle, RegFragment.newInstance(userInformation, bundle),"reg"), getActivity());
+                if(data!=null){
+                    isPhoneValid = data.getExtras().getBoolean("IsPhoneValid");
+                    String phone = String.valueOf(phoneEditText.getText()).trim();
+                    String password = String.valueOf(passwordEditText.getText()).trim();
+                    String nick = String.valueOf(nickNameEditText.getText()).trim();
+                    if (isPhoneValid) {
+                        bundle.putString("PHONE", phone);
+                        bundle.putString("NICK", nick);
+                        bundle.putString("PASSWORD", password);
+                        bundle.putString("FRAGMENT", "reg");
+                        UserInformation userInformation = new UserInformation();
+                        RecentMethods.setCurrentFragment(GenderFragment.newInstance(userInformation, bundle, RegFragment.newInstance(userInformation, bundle),"reg"), getActivity());
+                    }
                 }
                 break;
         }
@@ -157,7 +159,7 @@ public class RegFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String nickName = String.valueOf(s);
-                RecentMethods.isNickCorrect(nickName, reference, errorTextnickname);
+                if(reference!=null) RecentMethods.isNickCorrect(nickName, reference, errorTextnickname);
             }
             @Override
             public void afterTextChanged(Editable s) {
@@ -322,6 +324,7 @@ public class RegFragment extends Fragment {
         if (!isPhoneValid(phone))
             return;
     }
+
     public void PasswordAuthorization() {
         continueRegistrationButton.setOnClickListener(new View.OnClickListener() {
             @Override

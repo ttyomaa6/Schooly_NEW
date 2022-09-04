@@ -801,6 +801,7 @@
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/drawable/ic_google.xml" value="0.163" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/activity_chat_group.xml" value="0.2" />
+        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/activity_main.xml" value="0.1671195652173913" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/bottom_sheet_dialog_layout.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/bottom_sheet_dialog_profile.xml" value="0.25407608695652173" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/custom_chat_bar.xml" value="0.24365942028985507" />
@@ -815,10 +816,12 @@
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_create_group.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_createclothes.xml" value="0.2504528985507246" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_editing.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_enter.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_enter.xml" value="0.12" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_groupinfo.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_nickname.xml" value="0.25" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_payment.xml" value="0.24365942028985507" />
-        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_reg.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_phonecode.xml" value="0.1671195652173913" />
+        <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_reg.xml" value="0.12" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_registration.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/fragment_shop.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/User/Downloads/Schooly_NEW18.08true1/app/src/main/res/layout/item_news_image.xml" value="0.25407608695652173" />

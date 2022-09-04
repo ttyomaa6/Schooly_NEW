@@ -267,10 +267,10 @@ public class MainFragment extends Fragment{
                 RecentMethods.setCurrentFragment(CoinsFragmentSecond.newInstance(MainFragment.newInstance(userInformation, bundle), userInformation, bundle), getActivity());
             }
         });
-
-//                       String uid=firebaseModel.getUsersReference().child("tyomaa6").child("myClothes").push().getKey();
+//
 //                firebaseModel.getUsersReference().child("tyomaa6").child("myClothes").child("-N78dSmApk_OlaBoh-LA").setValue(new Clothes("shoes", "https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/clothes%2Funtitled%20(7).png?alt=media&token=3b195cab-df73-4186-925f-88d382270c5b"
-//                               ,270,"Plurixx",344,123,"tyomaa6","coin"," ","",72,"foot","-N78dSmApk_OlaBoh-LA","exclusive",null,0f,0f,0f,0f));
+//                               ,270,"Plurixx",344,123,"tyomaa6","coin"," ","https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/3d%20models%2F%D0%B4%D0%B5%D1%84%D0%BE%D0%BB%D1%82%D0%BD%D1%8B%D0%B5.glb?alt=media&token=da3c2362-cb07-43f2-8cc9-fe842af18b97",
+//                        72,"foot","-N78dSmApk_OlaBoh-LA","exclusive",null,0f,0f,0f,0f));
 ////
 //                firebaseModel.getUsersReference().child("Vladcpp").child("myClothes").child(uid).setValue(new Clothes("shoes", "https://firebasestorage.googleapis.com/v0/b/schooly-47238.appspot.com/o/clothes%2Fjordan.jpg?alt=media&token=823b2a10-1dcd-47c5-8170-b5a4fb155500"
 //                        ,220,"Blazer",344,123,"Vladcpp","coin"," ","",72,"foot",uid,"exclusive"));
@@ -489,6 +489,8 @@ public class MainFragment extends Fragment{
                     for(int i=0;i<clothesArrayList.size();i++){
                         Clothes cl=clothesArrayList.get(i);
                         popularClothesArrayList.add(cl);
+//                        firebaseModel.getUsersReference().child("stanislove")
+//                                .child("clothes").setValue(popularClothesArrayList);
                     }
                     bundle.putSerializable("MAIN_REC_CLOTHES",popularClothesArrayList);
                     if(reverse==0)Collections.reverse(popularClothesArrayList);

@@ -28,7 +28,10 @@
         android:name="com.google.android.gms.ads.APPLICATION_ID"
         android:value="ca-app-pub-5681772686423393~2923473122"/>
     <activity android:name=".ui.chat.holders.ImageViewerActivity" />
-    <activity android:name=".ui.main.PhoneCodeActivity" />
+    <activity
+        android:name=".ui.main.PhoneCodeActivity"
+        android:theme="@style/Theme.Schooly.NoActionBar">
+    </activity>
     <activity
         android:name=".MainActivity"
         android:screenOrientation="portrait"

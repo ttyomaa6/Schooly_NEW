@@ -185,21 +185,14 @@ public class FilamentModel {
         float[] float1 = Colors.cct(5_500.0f);
         new LightManager.Builder(LightManager.Type.DIRECTIONAL)
                 .color(float1[0], float1[1], float1[2])
-                .intensity(120_000.0f)
+                .intensity(110_000.0f)
                 .direction(0.0f, -0.5f, -1.0f)
                 .castShadows(false)
                 .build(engine, light);
-        int light1=EntityManager.get().create();
-        new LightManager.Builder(LightManager.Type.DIRECTIONAL)
-                .color(float1[0], float1[1], float1[2])
-                .intensity(120_000.0f)
-                .direction(0.0f, -0.5f, -1.0f)
-                .castShadows(false)
-                .build(engine, light1);
         int light2=EntityManager.get().create();
         new LightManager.Builder(LightManager.Type.POINT)
                 .color(float1[0], float1[1], float1[2])
-                .intensity(120_000_000.0f)
+                .intensity(80_000_000.0f)
                 .falloff(20)
                 .position(0.0f, 17.0f, 8.0f)
                 .build(engine, light2);
@@ -269,6 +262,7 @@ public class FilamentModel {
 
     public void populateScene(Buffer buffer,Clothes clothes){
         FilamentAsset filamentAsset=assetLoader.createAssetFromBinary(buffer);
+        Log.d("####", "fil  "+filamentAssets.size());
         filamentAssets.add(filamentAsset);
         resourceLoader.asyncBeginLoad(filamentAsset);
         filamentAsset.releaseSourceData();
@@ -303,12 +297,15 @@ public class FilamentModel {
     }
 
     public void setMask(Clothes clothes){
+        Log.d("####", "assets  "+filamentAssets.size());
         for(int i=0;i<filamentAssets.size();i++){
             FilamentAsset filamentAsset=filamentAssets.get(i);
             int[] entities=filamentAsset.getEntitiesByName(clothes.getClothesTitle());
+            Log.d("####", "assets1  "+filamentAssets.size());
             if(entities.length!=0){
                 modelViewer.getScene().removeEntity(entities[0]);
                 filamentAssets.remove(i);
+                Log.d("####", "assets0  "+filamentAssets.size());
             }
         }
     }

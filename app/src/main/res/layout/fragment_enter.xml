@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/schoolyy"
-            android:layout_marginStart="56dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="22dp"
             android:fontFamily="@font/montserratblack"
             android:text="@string/meetearly"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/helloostev"
-            android:layout_marginStart="56dp"
+            android:layout_marginStart="40dp"
             android:fontFamily="@font/montserratblack"
             android:text="@string/enterFast"
             android:textColor="@color/app_grey"
@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-80dp"
             android:layout_marginTop="-50dp"
+            android:layout_marginEnd="16dp"
             android:layout_toRightOf="@+id/textreglong"
             android:src="@drawable/steve" />
 
@@ -68,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/steve"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="-178dp"
+            android:layout_marginTop="-192dp"
             android:layout_marginEnd="40dp"
             android:background="@drawable/corners30dp"
             android:elevation="14dp">
@@ -153,20 +154,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/passsword"
-                android:inputType="textPassword"
-                android:background="@drawable/corners5nickreg"
-                android:textSize="14sp"
-                android:textColor="@color/app_grey"
-                android:padding="4dp"
-                android:maxLength="20"
                 android:layout_marginStart="25dp"
-                android:layout_marginEnd="90dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="90dp"
                 android:layout_marginBottom="23dp"
-                android:fontFamily="@font/montserrat_bold"/>
-
-
-
+                android:background="@drawable/corners5nickreg"
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:padding="4dp"
+                android:textColor="@color/app_grey"
+                android:textSize="14sp" />
 
         </RelativeLayout>
 

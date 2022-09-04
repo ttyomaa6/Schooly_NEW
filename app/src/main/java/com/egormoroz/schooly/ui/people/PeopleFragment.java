@@ -351,7 +351,7 @@ public class PeopleFragment extends Fragment {
                         ArrayList <UserPeopleAdapter> userPeopleAdapters=new ArrayList<>();
                         for(  DataSnapshot snap  :snapshot.getChildren()) {
                             UserPeopleAdapter userPeopleAdapter=snap.getValue( UserPeopleAdapter.class);
-                            if(!userInformation.getSubscription().contains(userPeopleAdapter.getNick()))userPeopleAdapters.add(userPeopleAdapter);
+                            if(!userInformation.getSubscription().contains(userPeopleAdapter.getNick()) && !userInformation.getNick().equals(userPeopleAdapter.getNick()))userPeopleAdapters.add(userPeopleAdapter);
                             if(userPeopleAdapters.size()==49){
                                 break;
                             }

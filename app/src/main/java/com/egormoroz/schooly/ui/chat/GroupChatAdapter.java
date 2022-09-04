@@ -203,14 +203,22 @@ public class GroupChatAdapter extends RecyclerView.Adapter<GroupChatAdapter.Grou
         groupChatViewHolder.inMessage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                groupChatFragment.showChatFunc(messages);
+                Message message=null;
+                if(groupChatViewHolder.getAdapterPosition()==userMessagesList.size()-1&&userMessagesList.size()>1){
+                    message=userMessagesList.get(groupChatViewHolder.getAdapterPosition()-1);
+                }
+                groupChatFragment.showChatFunc(userMessagesList.get(groupChatViewHolder.getAdapterPosition()), groupChatViewHolder.getAdapterPosition(),message);
                 return true;
             }
         });
         groupChatViewHolder.outMessage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                groupChatFragment.showChatFunc(messages);
+                Message message=null;
+                if(groupChatViewHolder.getAdapterPosition()==userMessagesList.size()-1&&userMessagesList.size()>1){
+                    message=userMessagesList.get(groupChatViewHolder.getAdapterPosition()-1);
+                }
+                groupChatFragment.showChatFunc(userMessagesList.get(groupChatViewHolder.getAdapterPosition()), groupChatViewHolder.getAdapterPosition(),message);
                 return true;
             }
         });

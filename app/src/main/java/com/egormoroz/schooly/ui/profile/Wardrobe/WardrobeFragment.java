@@ -477,21 +477,21 @@ public class WardrobeFragment extends Fragment {
                 if(clothes.getUid().equals(clothes1.getUid()) && clothes.getBuffer()!=null){
                     if(maskClothes!=null){
                         filamentModel.setMask(maskClothes);
+                        Log.d("####", "q  "+maskClothes.getUid());
                     }
                     filamentModel.populateScene(clothes.getBuffer(),clothes);
                     clothesUid.add(clothes.getUid());
                     loadValue=0;
-                    Log.d("####", "q  "+loadValue);
                     break;
                 }else if(a==0 && i==clothesList.size()-1){
                     TaskRunner taskRunner=new TaskRunner();
                     taskRunner.executeAsync(new LongRunningTaskClothes(clothes), (data) -> {
                         if(maskClothes!=null){
                             filamentModel.setMask(maskClothes);
+                            Log.d("####", "q11  "+maskClothes.getUid());
                         }
                         filamentModel.populateScene(data.getBuffer(), data);
                         loadValue=0;
-                        Log.d("####", "w  "+loadValue);
                     });
                     break;
                 }
@@ -501,10 +501,10 @@ public class WardrobeFragment extends Fragment {
             taskRunner.executeAsync(new LongRunningTaskClothes(clothes), (data) -> {
                 if(maskClothes!=null){
                     filamentModel.setMask(maskClothes);
+                    Log.d("####", "r222  "+loadValue);
                 }
                 filamentModel.populateScene(data.getBuffer(), data);
                 loadValue=0;
-                Log.d("####", "r  "+loadValue);
             });
             a++;
         }
