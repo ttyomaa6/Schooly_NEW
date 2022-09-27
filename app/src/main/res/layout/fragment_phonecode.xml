@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/backfromphonecode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_arrow___left32dp" />
+
+        <TextView
+            android:id="@+id/codeissended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/codeissended"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:textColor="@color/app_color2"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="17sp"/>
+
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_below="@+id/codeissended"/>
+
+        <TextView
+            android:id="@+id/resendCodeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/codeissended"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/cornersnewcode"
+            android:fontFamily="@font/montserrat_bold"
+            android:padding="7dp"
+            android:text="@string/sendnewcode"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/writecode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/codeissended"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:text="@string/writecode"
+            android:textColor="@color/app_grey"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/VerificationCode"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/writecode"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textColor="@color/app_color"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/errorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/VerificationCode"
+            android:layout_marginTop="100dp"/>
+
+        <ImageView
+            android:id="@+id/continueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/cornersgenderarrow"
+            android:padding="18dp"
+            android:src="@drawable/ic_arrow___right36dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

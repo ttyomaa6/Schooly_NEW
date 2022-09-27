@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back_tochat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@+id/back_tochat"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/add"
+            android:textColor="@color/app_color"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/ready"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:text="@string/ready"
+            android:textColor="@color/app_grey"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/inviteMembers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back_tochat"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/addedInChat"
+            android:textColor="@color/app_grey"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/emptyMembersList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addMembers"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp"
+            android:textColor="@color/app_color"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/inviteMembers"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:overScrollMode="never" />
+
+        <TextView
+            android:id="@+id/dialogueMaterials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerMembers"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:text="@string/suggested"
+            android:textColor="@color/app_grey"
+            android:textSize="16sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSuggested"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialogueMaterials"
+            android:layout_marginTop="8dp"
+            android:overScrollMode="never" />
+
+        <TextView
+            android:id="@+id/emptySubscriptionList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emptySubscriptionList"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp"
+            android:textColor="@color/app_color"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

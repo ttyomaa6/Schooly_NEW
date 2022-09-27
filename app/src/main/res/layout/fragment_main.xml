@@ -1,0 +1,501 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:scrollbars="none"
+    android:overScrollMode="never">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/appname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserratblack"
+        android:paddingBottom="8dp"
+        android:text="@string/app_name"
+        android:textColor="@color/app_color"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/ic_chat" />
+
+    <ImageView
+        android:id="@+id/nontification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="4dp"
+        android:layout_toLeftOf="@+id/chat"
+        android:src="@drawable/ic_notification" />
+
+    <TextView
+        android:id="@+id/circleChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/corners10dpappcolor"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="1dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/circleNontifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="72dp"
+        android:background="@drawable/corners10dpappcolor"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="1dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeshop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appname"
+        android:layout_marginTop="4dp">
+
+      <TextView
+          android:id="@+id/shop"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginBottom="8dp"
+          android:fontFamily="@font/montserratblack"
+          android:text="@string/shop"
+          android:textColor="@color/app_grey"
+          android:textSize="20sp" />
+
+      <ImageView
+          android:id="@+id/arrowShop"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="4dp"
+          android:layout_marginTop="16dp"
+          android:layout_toRightOf="@+id/shop"
+          android:src="@drawable/ic_rightarrowgrey" />
+
+      <LinearLayout
+          android:id="@+id/linearCoins"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:layout_marginEnd="24dp"
+          android:background="@drawable/corners8dpshopmain"
+          android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/schoolycoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="6dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_schoolycoin" />
+
+
+        <TextView
+            android:id="@+id/schoolycoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/montserratblack"
+            android:paddingEnd="12dp"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+
+      </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressIndicator"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:trackCornerRadius="20dp"
+        android:indeterminate="true"
+        app:trackThickness="4dp"
+        android:layout_marginTop="140dp"
+        android:layout_below="@+id/relativeshop"
+        android:layout_centerHorizontal="true"
+        app:indicatorSize="40dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newchlothesinshop"
+        android:layout_width="match_parent"
+        android:layout_height="282dp"
+        android:layout_below="@+id/relativeshop"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <RelativeLayout
+        android:id="@+id/relativeClothes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeshop"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="308dp">
+
+      <TextView
+          android:id="@+id/myClothes"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:fontFamily="@font/montserratblack"
+          android:text="@string/myClothes"
+          android:textColor="@color/app_grey"
+          android:textSize="20sp" />
+
+      <ImageView
+          android:id="@+id/arrowMyClothes"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="4dp"
+          android:layout_marginTop="8dp"
+          android:layout_toRightOf="@+id/myClothes"
+          android:src="@drawable/ic_rightarrowgrey" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mychlothesmain"
+        android:layout_width="match_parent"
+        android:layout_height="276dp"
+        android:layout_below="@+id/relativeClothes"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeFirstClothes"
+        android:layout_width="match_parent"
+        android:layout_height="272dp"
+        android:layout_below="@+id/relativeClothes"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:visibility="gone"
+        android:background="@drawable/gradient14dp">
+
+      <RelativeLayout
+          android:id="@+id/relativeSellClothes"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="12dp"
+          android:layout_marginTop="24dp">
+
+        <View
+            android:id="@+id/smallView"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/corners" />
+
+        <TextView
+            android:id="@+id/sellClothes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="24dp"
+            android:layout_toRightOf="@+id/smallView"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/uniqueClothes"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+
+      </RelativeLayout>
+
+      <RelativeLayout
+          android:id="@+id/relativeSellClothes1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/relativeSellClothes"
+          android:layout_marginStart="12dp"
+          android:layout_marginTop="10dp">
+
+        <View
+            android:id="@+id/smallView1"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/corners" />
+
+        <TextView
+            android:id="@+id/moreMining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_toRightOf="@+id/smallView1"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/eightyPerCent"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+
+      </RelativeLayout>
+
+      <RelativeLayout
+          android:id="@+id/relativeSellClothes2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/relativeSellClothes1"
+          android:layout_marginStart="12dp"
+          android:layout_marginTop="10dp">
+
+        <View
+            android:id="@+id/smallView2"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/corners" />
+
+        <TextView
+            android:id="@+id/eightyPerSent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_toRightOf="@+id/smallView2"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/giveClothes"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+      </RelativeLayout>
+
+      <RelativeLayout
+          android:id="@+id/relativeSellClothes3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/relativeSellClothes2"
+          android:layout_marginStart="12dp"
+          android:layout_marginTop="10dp"
+          android:visibility="gone">
+
+        <View
+            android:id="@+id/smallView3"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/corners" />
+
+        <TextView
+            android:id="@+id/closePremium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_toRightOf="@+id/smallView3"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/closePremium"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+
+      </RelativeLayout>
+
+      <RelativeLayout
+          android:id="@+id/relativeExclusive3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/relativeSellClothes3"
+          android:layout_marginStart="12dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="20dp">
+
+        <View
+            android:id="@+id/smallView4"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/corners" />
+
+        <TextView
+            android:id="@+id/exclusive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_toRightOf="@+id/smallView4"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/earn"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+
+      </RelativeLayout>
+
+      <RelativeLayout
+          android:id="@+id/createClothes"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_marginStart="12dp"
+          android:layout_marginEnd="12dp"
+          android:layout_marginBottom="14dp"
+          android:background="@drawable/corners14dpwhite"
+          android:elevation="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/gotocreate"
+            android:textColor="@color/app_color2"
+            android:textSize="16sp" />
+
+      </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeMining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeClothes"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="24dp">
+
+      <TextView
+          android:id="@+id/mining"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/montserratblack"
+          android:text="@string/mining"
+          android:textColor="@color/app_grey"
+          android:textSize="20sp" />
+
+      <ImageView
+          android:id="@+id/arrowMyMining"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="4dp"
+          android:layout_marginTop="8dp"
+          android:layout_toRightOf="@+id/mining"
+          android:src="@drawable/ic_rightarrowgrey" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeTodayMining"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeMining"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/corners20appcolor">
+
+      <TextView
+          android:id="@+id/today"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="8dp"
+          android:fontFamily="@font/montserrat_bold"
+          android:text="@string/today"
+          android:textColor="@color/white"
+          android:textSize="14sp" />
+
+      <com.google.android.material.progressindicator.CircularProgressIndicator
+          android:id="@+id/miningIndicator"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/today"
+          android:layout_marginStart="30dp"
+          android:layout_marginTop="18dp"
+          android:indeterminate="true"
+          android:visibility="gone"
+          app:indicatorColor="@color/white" />
+
+      <TextView
+          android:id="@+id/todayminingmain"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/today"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginBottom="16dp"
+          android:fontFamily="@font/montserratblack"
+          android:textColor="@color/white"
+          android:textSize="36sp" />
+
+      <TextView
+          android:id="@+id/s"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="2dp"
+          android:layout_marginTop="60dp"
+          android:layout_toRightOf="@+id/todayminingmain"
+          android:fontFamily="@font/montserratblack"
+          android:text="s"
+          android:textColor="@color/white"
+          android:textSize="24sp" />
+
+      <TextView
+          android:id="@+id/getMore"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:layout_marginEnd="16dp"
+          android:background="@drawable/corners14dpwhite"
+          android:elevation="20dp"
+          android:fontFamily="@font/montserrat_extrabold"
+          android:paddingStart="6dp"
+          android:paddingTop="12dp"
+          android:paddingEnd="6dp"
+          android:paddingBottom="12dp"
+          android:text="@string/moremoney"
+          android:textColor="@color/app_color" />
+
+    </RelativeLayout>
+
+  </RelativeLayout>
+</ScrollView>

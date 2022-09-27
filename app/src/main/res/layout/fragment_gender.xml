@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/leftarrowtoreg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_arrow___left32dp" />
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/warning"
+            android:textColor="@color/app_color"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/choosegender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/warning"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:text="@string/choosegender"
+            android:textColor="@color/app_grey"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/choosegender"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
+
+            <RadioButton
+                android:id="@+id/radio_button_1"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="@string/man"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:paddingBottom="14dp"
+                android:paddingTop="14dp"
+                android:layout_gravity="center_horizontal"
+                android:button="@color/app_color"
+                android:background="@drawable/radio_selector"
+                android:textColor="@drawable/radio_botton_text"
+                android:fontFamily="@font/montserrat_extrabold"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_2"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="@string/woman"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="14dp"
+                android:paddingTop="14dp"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:button="@color/app_color2"
+                android:background="@drawable/radio_selector"
+                android:textColor="@drawable/radio_botton_text"
+                android:fontFamily="@font/montserrat_extrabold"/>
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/continueImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/cornersgenderarrow"
+            android:padding="18dp"
+            android:src="@drawable/ic_arrow___right36dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

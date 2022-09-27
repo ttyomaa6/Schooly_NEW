@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="4dp"
+    android:paddingTop="4dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/corners10dpappcolor" />
+
+    <TextView
+        android:id="@+id/nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@+id/image"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:textColor="@color/app_grey"
+        android:textSize="15dp" />
+
+    <View
+        android:id="@+id/roundView"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_marginTop="16.5dp"
+        android:layout_toRightOf="@+id/nick"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/corners10grey" />
+
+    <TextView
+        android:id="@+id/postTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8.7dp"
+        android:layout_toRightOf="@+id/roundView"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_grey"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nick"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="18dp"
+        android:layout_toLeftOf="@+id/relativeLike"
+        android:layout_toRightOf="@+id/image"
+        android:autoLink="all"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_color"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/comment"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@+id/image"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:text="@string/answer"
+        android:textColor="@color/app_grey"
+        android:textSize="14dp"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_heart18dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/likesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/like"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/app_grey" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

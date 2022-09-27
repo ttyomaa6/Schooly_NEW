@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none"
+    android:overScrollMode="never">
+
+  <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:paddingBottom="24dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+
+      <ImageView
+          android:id="@+id/backtomainfrommining"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/left_arrow" />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="14dp"
+          android:layout_marginTop="11dp"
+          android:layout_toRightOf="@+id/backtomainfrommining"
+          android:fontFamily="@font/montserrat_bold"
+          android:text="@string/mining"
+          android:textColor="@color/app_color"
+          android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/myminers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp"
+        android:paddingEnd="24dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:text="@string/myminersallcars"
+        android:textColor="@color/app_grey"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:id="@+id/relativetoday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myminers"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/corners20appcolor">
+
+      <TextView
+          android:id="@+id/today"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="8dp"
+          android:fontFamily="@font/montserrat_bold"
+          android:text="@string/today"
+          android:textColor="@color/white"
+          android:textSize="14sp" />
+
+      <TextView
+          android:id="@+id/todaymining"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/today"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginBottom="16dp"
+          android:fontFamily="@font/montserratblack"
+          android:textColor="@color/white"
+          android:textSize="36sp" />
+
+      <TextView
+          android:id="@+id/s"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="2dp"
+          android:layout_marginTop="60dp"
+          android:layout_toRightOf="@+id/todaymining"
+          android:fontFamily="@font/montserratblack"
+          android:text="s"
+          android:textColor="@color/white"
+          android:textSize="24sp" />
+
+      <TextView
+          android:id="@+id/getMore"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:layout_marginEnd="16dp"
+          android:background="@drawable/corners14dpwhite"
+          android:elevation="20dp"
+          android:fontFamily="@font/montserrat_extrabold"
+          android:paddingStart="6dp"
+          android:paddingTop="12dp"
+          android:paddingEnd="6dp"
+          android:paddingBottom="12dp"
+          android:text="@string/moremoney"
+          android:textColor="@color/app_color" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/workingminerstext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativetoday"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:text="@string/workingminers"
+        android:textColor="@color/app_grey"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/numbersactiveminers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativetoday"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:textColor="@color/app_grey"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/emptyMiners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/workingminerstext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:textColor="@color/app_grey"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/addActiveMiner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emptyMiners"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/corners14appcolor"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:text="@string/add"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activeminersrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/workingminerstext"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/allminersrelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/workingminerstext"
+        android:layout_marginTop="300dp">
+
+      <TextView
+          android:id="@+id/allminers"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/miners"
+          android:layout_marginStart="24dp"
+          android:layout_centerVertical="true"
+          android:fontFamily="@font/montserrat_extrabold"
+          android:textColor="@color/app_grey"
+          android:textSize="16sp"/>
+
+      <LinearLayout
+          android:id="@+id/linearCoins"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentEnd="true"
+          android:orientation="horizontal"
+          android:layout_centerVertical="true"
+          android:layout_marginEnd="24dp"
+          android:background="@drawable/corners8dpshopmain">
+
+        <ImageView
+            android:id="@+id/schoolycoinimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="6dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingEnd="14dp"
+            android:src="@drawable/ic_schoolycoin"/>
+
+
+        <TextView
+            android:id="@+id/schoolycoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratblack"
+            android:paddingEnd="12dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+      </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/weak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weak"
+        android:layout_below="@+id/allminersrelative"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:textColor="@color/app_grey"
+        android:textSize="14sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/allminersrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weak"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <TextView
+        android:id="@+id/average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allminersrecyclerview"
+        android:text="@string/average"
+        android:textColor="@color/app_grey"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/averageminersrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/average"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <TextView
+        android:id="@+id/strong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/averageminersrecyclerview"
+        android:text="@string/strong"
+        android:textColor="@color/app_grey"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/strongminersrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/strong"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+  </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/allIncomingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_alignBottom="@+id/textMessageIncoming">
+
+            <ImageView
+                android:id="@+id/userAvatarIncomingText"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@color/darkblack" />
+        </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/textMessageIncoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_toRightOf="@+id/card"
+        android:background="@drawable/cornerstextmessagesfromother">
+
+        <TextView
+            android:id="@+id/receiver_message_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="2dp"
+            android:autoLink="all"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/receiver_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/receiver_message_text"
+            android:layout_alignEnd="@+id/receiver_message_text"
+            android:layout_marginEnd="6dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingBottom="4dp"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/textMessageOutcoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/cornerstextmessagesfromme">
+
+        <TextView
+            android:id="@+id/sender_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sender_message_text"
+            android:layout_alignEnd="@+id/sender_message_text"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingBottom="4dp"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/sender_message_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="2dp"
+            android:autoLink="all"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/allImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_alignBottom="@+id/message_receiver_image_view">
+
+            <ImageView
+                android:id="@+id/userAvatarIncomingImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@color/darkblack" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/message_receiver_image_view"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/cardImage"
+            android:background="@drawable/cornerstextmessagesfromother"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/message_sender_image_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/cornerstextmessagesfromme"
+        android:scaleType="centerCrop"
+        tools:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/clothesFrom"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/cornerstextmessagesfromme"
+        tools:visibility="gone">
+
+        <TextView
+            android:id="@+id/clothesTitleAndCreator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="280dp"
+            android:layout_height="1dp"
+            android:layout_below="@+id/clothesTitleAndCreator"
+            android:layout_marginTop="8dp"
+            android:background="@color/white" />
+
+        <ImageView
+            android:id="@+id/clothesImage"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_below="@+id/viewTop" />
+
+        <View
+            android:id="@+id/viewBottom"
+            android:layout_width="280dp"
+            android:layout_height="1dp"
+            android:layout_below="@+id/clothesImage"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/sender_time_clothes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sender_message_text_clothes"
+            android:layout_alignEnd="@+id/sender_message_text_clothes"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingBottom="4dp"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/sender_message_text_clothes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewBottom"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="2dp"
+            android:autoLink="all"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/allClothesIncoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardClothes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_alignBottom="@+id/clothesFromOther">
+
+            <ImageView
+                android:id="@+id/userAvatarIncomingClothes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@color/darkblack"/>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/clothesFromOther"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/cardClothes"
+            android:background="@drawable/cornerstextmessagesfromother"
+            >
+
+            <TextView
+                android:id="@+id/clothesTitleAndCreatorOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/viewTopOther"
+                android:layout_width="280dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/clothesTitleAndCreatorOther"
+                android:layout_marginTop="8dp"
+                android:background="@color/white" />
+
+            <ImageView
+                android:id="@+id/clothesImageOther"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_below="@+id/viewTopOther" />
+
+            <View
+                android:id="@+id/viewBottomOther"
+                android:layout_width="280dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/clothesImageOther"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/receiver_message_text_clothes_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewBottomOther"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:autoLink="all"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/white"
+                android:textColorLink="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/receiver_time_clothes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/receiver_message_text_clothes_other"
+                android:layout_alignEnd="@+id/receiver_message_text_clothes_other"
+                android:layout_marginEnd="6dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingBottom="4dp"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLook"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/cornerstextmessagesfromme"
+        tools:visibility="gone">
+
+        <TextView
+            android:id="@+id/lookFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/watchLook"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/watchLook"
+            android:layout_width="280dp"
+            android:layout_height="340dp"
+            android:layout_below="@+id/lookFrom"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:background="@color/darkblack"/>
+
+        <TextView
+            android:id="@+id/sender_time_look"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sender_message_text_look"
+            android:layout_alignEnd="@+id/sender_message_text_look"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingBottom="4dp"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/sender_message_text_look"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/watchLook"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="2dp"
+            android:autoLink="all"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/allLookIncoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_alignBottom="@+id/relativeLookOther">
+
+            <ImageView
+                android:id="@+id/userAvatarIncomingLook"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@color/darkblack" />
+        </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLookOther"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@+id/cardLook"
+        android:background="@drawable/cornerstextmessagesfromother"
+        >
+
+        <TextView
+            android:id="@+id/lookFromOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/watchLookOther"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/watchLookOther"
+            android:layout_width="280dp"
+            android:layout_height="340dp"
+            android:layout_below="@+id/lookFromOther"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:background="@color/darkblack"
+            android:padding="24dp" />
+
+        <TextView
+            android:id="@+id/receiver_message_text_look_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/watchLookOther"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="2dp"
+            android:autoLink="all"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/receiver_time_look_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/receiver_message_text_look_other"
+            android:layout_marginEnd="6dp"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingBottom="4dp"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

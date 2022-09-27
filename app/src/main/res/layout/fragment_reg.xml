@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/schooly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:fontFamily="@font/montserratblack"
+        android:textColor="@color/app_color"
+        android:textSize="24sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="40dp"/>
+
+
+
+    <TextView
+        android:id="@+id/helloostev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/schooly"
+        android:text="@string/hellosteve"
+        android:fontFamily="@font/montserratblack"
+        android:textColor="@color/app_color"
+        android:textSize="12sp"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="56dp"/>
+
+        <TextView
+            android:id="@+id/longtextreg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/helloostev"
+            android:layout_marginStart="56dp"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/virtualSteve"
+            android:textColor="@color/app_grey"
+            android:textSize="9sp" />
+
+
+        <ImageView
+            android:id="@+id/steve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-80dp"
+            android:layout_marginTop="-70dp"
+            android:layout_toRightOf="@+id/longtextreg"
+            android:src="@drawable/steve" />
+
+        <TextView
+            android:id="@+id/regtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/steve"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-192dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/corners20white2dpwhitestroke"
+            android:elevation="4dp"
+            android:fontFamily="@font/montserratblack"
+            android:paddingStart="26dp"
+            android:paddingTop="21dp"
+            android:paddingBottom="22dp"
+            android:text="@string/regOrEnter"
+            android:textColor="@color/app_grey"
+            android:textSize="10dp" />
+
+
+        <Button
+            android:id="@+id/registr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/regtext"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/corners18appcolor"
+            android:fontFamily="@font/montserratblack"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/registration"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/enter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/enter"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/montserratblack"
+        android:textColor="@color/white"
+        android:layout_below="@+id/registr"
+        android:background="@drawable/corners18appcolor"
+        android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/montserratblack"
+            android:text="by AL and the best team)"
+            android:textColor="@color/app_grey"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

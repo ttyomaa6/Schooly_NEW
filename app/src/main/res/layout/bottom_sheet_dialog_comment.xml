@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="540dp">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/corners10lightgrey" />
+
+    <TextView
+        android:id="@+id/comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_grey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/emptyCommentsList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emptyCommentsList"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="350dp"
+        android:textColor="@color/app_color"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/commentEdit"
+        android:layout_below="@+id/comments"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/noComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/noComment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="16sp"
+        android:textColor="@color/app_grey"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/commentEdit"
+        android:background="@color/tl_color"/>
+
+    <EditText
+        android:id="@+id/commentEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_toLeftOf="@+id/send"
+        android:autoLink="all"
+        android:background="@null"
+        android:fontFamily="@font/montserrat_bold"
+        android:hint="@string/writeComment"
+        android:maxLines="4"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:textColor="@color/app_grey"
+        android:textColorHint="@color/app_grey"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/sendComment"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/corners8dpshopmain"
+        android:textColor="@color/white"
+        android:layout_marginEnd="18dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textSize="13sp"
+        android:fontFamily="@font/montserratblack"
+        android:visibility="gone"/>
+
+</RelativeLayout>

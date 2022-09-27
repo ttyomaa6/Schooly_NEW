@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:id="@+id/relativeMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp">
+
+        <ImageView
+            android:id="@+id/back_tomyclothes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-4dp"
+            android:src="@drawable/left_arrow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@+id/back_tomyclothes"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/creatingClothes"
+            android:textColor="@color/app_color"
+            android:textSize="22sp" />
+
+        <RelativeLayout
+            android:id="@+id/beforeShareRelative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back_tomyclothes"
+            android:layout_marginStart="24dp"
+            >
+
+            <TextView
+                android:id="@+id/qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:text="!"
+                android:textColor="@color/app_grey"
+                android:textSize="80sp" />
+
+            <TextView
+                android:id="@+id/before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="60dp"
+                android:layout_toRightOf="@+id/qq"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:text="@string/before"
+                android:textColor="@color/app_grey"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/criteria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/before"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="60dp"
+                android:layout_toRightOf="@+id/qq"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:text="@string/criteria"
+                android:textColor="@color/app_color"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/enterTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/beforeShareRelative"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/enterTitleText"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/noEnterTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/enterTitleText"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/noClothesTitle"
+            android:textColor="#EA4646"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/editTextClothes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noEnterTitleText"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/corners14dpappcolor2dpstroke"
+            android:fontFamily="@font/montserrat_bold"
+            android:maxLines="1"
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/app_grey"
+            android:textColorHint="@color/app_grey"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:id="@+id/modelFileRelative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextClothes"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:id="@+id/addModelFileText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/addModelFile"
+                android:textColor="@color/app_grey"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/noFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addModelFileText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="-1dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/noFile"
+                android:textColor="#EA4646"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/addModelFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addModelFileText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_addfile" />
+
+            <TextView
+                android:id="@+id/modelFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addModelFile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:textColor="@color/app_color"
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:text="@string/fileAdded"
+                 />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/photoRelative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/modelFileRelative"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:id="@+id/addImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/addModelImage"
+                android:textColor="@color/app_grey"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/noPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="-1dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/noPhoto"
+                android:textColor="#EA4646"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/addModelImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_addfile" />
+
+            <ImageView
+                android:id="@+id/modelPhoto"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_below="@+id/addModelImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/clothesType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/photoRelative"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/clothesType"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:checkedButton="@+id/radio_button_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clothesType"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp">
+            <RadioButton
+                android:id="@+id/radio_button_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/shoes"/>
+            <RadioButton
+                android:id="@+id/radio_button_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/pants"/>
+            <RadioButton
+                android:id="@+id/radio_button_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/shorts"/>
+            <RadioButton
+                android:id="@+id/radio_button_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/belt"/>
+            <RadioButton
+                android:id="@+id/radio_button_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/tshirt"/>
+            <RadioButton
+                android:id="@+id/radio_button_6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/shirt"/>
+            <RadioButton
+                android:id="@+id/radio_button_7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/longsleeve"/>
+            <RadioButton
+                android:id="@+id/radio_button_8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/glasses"/>
+            <RadioButton
+                android:id="@+id/radio_button_9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/cap"/>
+            <RadioButton
+                android:id="@+id/radio_button_10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/panama"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/skirt"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/top"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/bag"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/exclusive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioGroup"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/exclusiveText"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupExclusive"
+            android:checkedButton="@+id/radioButtonExclusiveNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/exclusive"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp">
+            <RadioButton
+                android:id="@+id/radioButtonExclusiveNo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/no"/>
+            <RadioButton
+                android:id="@+id/radioButtonExclusiveYes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/yes"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/exclusivePremium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioGroupExclusive"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/exclusivePremium"
+            android:textColor="@color/app_grey"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/currencyType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/exclusivePremium"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/currencyType"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupCurrency"
+            android:checkedButton="@+id/schoolyCoinRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/currencyType"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp">
+            <RadioButton
+                android:id="@+id/schoolyCoinRadio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/schoolyCoin"/>
+            <RadioButton
+                android:id="@+id/dollarRadio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/dollar"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/clothesPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioGroupCurrency"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/clothesPrice"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/noSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clothesPrice"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/noSum"
+            android:textColor="#EA4646"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/editClothesPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noSum"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/corners14dpappcolor2dpstroke"
+            android:fontFamily="@font/montserrat_bold"
+            android:maxLines="1"
+            android:inputType="numberSigned"
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/app_grey"
+            android:textColorHint="@color/app_grey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editClothesPrice"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/descriptipon"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/addDescriptionEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/description"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16sp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/corners14dpappcolor2dpstroke"
+            android:fontFamily="@font/montserrat_bold"
+            android:hint="@string/addDesk"
+            android:maxLines="8"
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="100dp"
+            android:textColor="@color/app_grey"
+            android:textColorHint="@color/app_grey"
+            android:textSize="14sp"
+            android:autoLink="all"/>
+
+        <RelativeLayout
+            android:id="@+id/publish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addDescriptionEdit"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/corners14appcolor">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/sendApplication"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

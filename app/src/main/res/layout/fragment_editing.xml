@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+
+            <ImageView
+                android:id="@+id/back_toprofile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/left_arrow"/>
+
+            <TextView
+                android:id="@+id/changeface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="14dp"
+                android:layout_toRightOf="@+id/back_toprofile"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/editing"
+                android:textColor="@color/app_color"
+                android:textSize="22sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/changeface"
+                android:background="@color/darkblack"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/personImage"
+                    android:layout_width="150dp"
+                    android:layout_height="146dp"
+                    android:background="@color/darkblack"
+                    />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/editing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="243dp"
+                android:background="@drawable/corners15dpappcolor"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
+                android:text="@string/changeface"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/usernameediting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="368dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/usernameediting"
+                android:textColor="@color/grey"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edittextnickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/usernameediting"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/corners12_2dpstrokeappcolor"
+                android:editable="false"
+                android:fontFamily="@font/montserrat_bold"
+                android:maxLength="24"
+                android:paddingStart="16sp"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:textColor="@color/app_color"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/biography"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edittextnickname"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/bio"
+                android:textColor="@color/grey"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edittextbio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/biography"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="86dp"
+                android:autoLink="all"
+                android:background="@drawable/corners12_2dpstrokeappcolor"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingStart="16sp"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:textColor="@color/app_color"
+                android:textSize="19sp" />
+
+
+            <RelativeLayout
+                android:id="@+id/agree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/corners14appcolor">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="@string/agree"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

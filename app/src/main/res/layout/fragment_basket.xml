@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/back_toshopfrombasket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginStart="14dp"
+            android:layout_toRightOf="@+id/back_toshopfrombasket"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/shop"
+            android:textColor="@color/app_color"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:id="@+id/linearCoinsBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/corners8dpshopmain"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/schoolycoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="6dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/ic_schoolycoin" />
+
+
+            <TextView
+                android:id="@+id/schoolycoinbasketfrag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/montserratblack"
+                android:paddingEnd="12dp"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/numberofclothes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/back_toshopfrombasket"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/app_grey"
+        android:fontFamily="@font/montserrat_bold"/>
+
+    <LinearLayout
+        android:id="@+id/searchclothes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/numberofclothes"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/corners12_2dpstrokeappcolor"
+        android:orientation="horizontal"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp">
+
+        <EditText
+            android:id="@+id/searchClothes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginStart="16dp"
+            android:layout_weight="10"
+            android:maxLines="1"
+            android:background="@null"
+            android:fontFamily="@font/montserrat_bold"
+            android:hint="@string/searchiteminbasket"
+            android:textColor="@color/greysearch"
+            android:textColorHint="@color/greysearch"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/notFound"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="360dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="16sp"
+        android:textColor="@color/app_grey"
+        android:text="@string/noClothesInBasket"
+        android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/basketrecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/searchclothes"
+            android:layout_marginTop="10dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:paddingStart="16dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="16dp"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

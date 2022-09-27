@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:src="@drawable/ic_arrow___left_2"
+                android:text="@string/whriteyournick"
+                android:textColor="@color/greysteve"
+                android:textSize="12sp" />
+
+
+            <TextView
+                android:id="@+id/schoolyy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="22dp"
+                android:layout_toRightOf="@id/arrow"
+                android:fontFamily="@font/montserratblack"
+                android:text="@string/app_name"
+                android:textColor="@color/app_color"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/helloostev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/schoolyy"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/montserratblack"
+                android:text="@string/startregtext"
+                android:textColor="@color/app_color"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/textreglong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/helloostev"
+                android:layout_marginStart="56dp"
+                android:fontFamily="@font/montserratblack"
+                android:text="@string/regSteps"
+                android:textColor="@color/app_grey"
+                android:textSize="10sp" />
+
+
+            <ImageView
+                android:id="@+id/steve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-80dp"
+                android:layout_marginLeft="-80dp"
+                android:layout_marginTop="-50dp"
+                android:layout_toRightOf="@+id/textreglong"
+                android:src="@drawable/steve" />
+
+            <RelativeLayout
+                android:id="@+id/relativenick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/steve"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="-192dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/corners30dp"
+                android:elevation="14dp"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    android:id="@+id/goone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/go1"
+                    android:textColor="@color/app_color"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:id="@+id/nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/goone"
+                    android:layout_marginStart="25dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/whriteyournick"
+                    android:textColor="@color/app_grey"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/editnickregistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nick"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="90dp"
+                    android:background="@drawable/corners5nickreg"
+                    android:digits="abcdefghijklmnopqrstuvwxyz012345678ABCDEFGHIJKLMNOPQRSTUVWXYZ._"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:inputType="text"
+                    android:maxLength="24"
+                    android:padding="4dp"
+                    android:textColor="@color/app_grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/errornickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editnickregistration"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="@color/app_grey"
+                    android:textSize="10sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativenick"
+                android:layout_marginTop="42dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:paddingBottom="24dp"
+                android:elevation="14dp"
+                android:background="@drawable/corners30dp">
+
+                <TextView
+                    android:id="@+id/gotwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/go2"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="@color/app_color"
+                    android:textSize="36sp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/writephone"
+                    android:layout_below="@id/gotwo"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="@color/app_grey"
+                    android:textSize="12sp"
+                    android:layout_marginStart="25dp"/>
+
+                <EditText
+                    android:id="@+id/editphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/phone"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="90dp"
+                    android:background="@drawable/corners5nickreg"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:inputType="phone"
+                    android:maxLength="20"
+                    android:padding="4dp"
+                    android:textColor="@color/app_grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/errorphone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editphone"
+                    android:layout_marginTop="2dp"
+                    android:textSize="10sp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="@color/app_grey"/>
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativepassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativephone"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/corners30dp"
+                android:elevation="14dp"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    android:id="@+id/gothree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/go3"
+                    android:textColor="@color/app_color"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/gothree"
+                    android:layout_marginStart="25dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/writepassword"
+                    android:textColor="@color/app_grey"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/editpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/password"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="90dp"
+                    android:background="@drawable/corners5nickreg"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:padding="4dp"
+                    android:textColor="@color/app_grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/errorpassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editpassword"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="@color/app_grey"
+                    android:textSize="10sp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/next"
+                android:onClick="ContinueRegistartion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/next"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/app_color"
+                android:layout_below="@+id/relativepassword"
+                android:background="@drawable/corners20white2dpwhitestroke"
+                android:elevation="14dp"
+                android:gravity="center" />
+
+            <RelativeLayout
+                android:id="@+id/GoogleEnter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/next"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/cornersgoogleplay"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/googleicon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="11dp"
+                    android:src="@drawable/ic_google" />
+
+                <TextView
+                    android:id="@+id/rreg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toRightOf="@+id/googleicon"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/reg"
+                    android:textColor="#00A0FF" />
+
+                <TextView
+                    android:id="@+id/from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_toRightOf="@+id/rreg"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/from"
+                    android:textColor="#FF3A44" />
+
+                <TextView
+                    android:id="@+id/googleplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_toRightOf="@+id/from"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/googleplay"
+                    android:textColor="#15CF74" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

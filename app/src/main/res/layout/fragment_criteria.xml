@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/criteria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@+id/back"
+            android:text="@string/criterias"
+            android:textColor="@color/app_color"
+            android:textSize="22sp"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <TextView
+            android:id="@+id/correctType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/correctType"
+            android:textColor="@color/app_grey"
+            android:textSize="18sp" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/incorrectImageClothesType"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/correctType"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginStart="24dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginEnd="24dp"-->
+<!--            android:src="@drawable/incorrecttype" />-->
+
+        <TextView
+            android:id="@+id/correctPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/correctType"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:text="@string/correctPhoto"/>
+
+
+        <TextView
+            android:id="@+id/correctFormat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/correctPhoto"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:text="@string/correctFormat"/>
+
+        <TextView
+            android:id="@+id/appStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/correctFormat"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:text="@string/appStyle"/>
+
+        <TextView
+            android:id="@+id/model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/appStyle"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:text="@string/model"/>
+
+        <TextView
+            android:id="@+id/pricePolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/model"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:text="@string/pricePolicy"/>
+
+        <TextView
+            android:id="@+id/plagiarism"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/pricePolicy"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:text="@string/plagiarism"/>
+
+        <TextView
+            android:id="@+id/clothesText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/plagiarism"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:text="@string/textOnClothes"/>
+
+        <TextView
+            android:id="@+id/exclusiveClothes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/clothesText"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:text="@string/exclusiveClothes"/>
+
+        <TextView
+            android:id="@+id/paidClothes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/exclusiveClothes"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:text="@string/paidClothes"/>
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

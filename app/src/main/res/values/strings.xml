@@ -1,0 +1,557 @@
+<resources>
+    <string name="app_name">Sholly</string>
+    <string name="virtualSteve">Your Virtual Assistant  in\nSholly. There are a few simple\n steps to get started\n with the app. \nLet\'s do it!</string>
+    <string name="hellosteve">Hello, I\'m Steve!</string>
+    <string name="regOrEnter">Are you already at Sholly? If yes, then log \ninto your account, if not, then \nregister!</string>
+    <string name="regSteps">Follow a few simple\nregistration steps or\nuse your Google account</string>
+    <string name="belarus">from Belarus, with love)</string>
+    <string name="enterFast">Hurry, sign in to the\napplication, and I need\nto remember for a little while\nwhere we could see each other</string>
+    <string name="startregtext">Let\'s start registration!</string>
+    <string name="go1">Step 1</string>
+    <string name="whriteyournick">Come up with a nickname</string>
+    <string name="go2">Step 2</string>
+    <string name="writephone">Enter your phone number</string>
+    <string name="go3">Step 3</string>
+    <string name="copy">copy</string>
+    <string name="delete">delete</string>
+    <string name="writepassword">Create a password</string>
+    <string name="writepasswordenter">Enter password</string>
+    <string name="meetearly">Are we already familiar?</string>
+    <string name="phone">Phone number</string>
+    <string name="password">Password</string>
+    <string name="next">Continue</string>
+    <string name="ent">login</string>
+    <string name="from">via</string>
+    <string name="googleplay">Google</string>
+    <string name="reg">registration</string>
+    <string name="redact">Edit</string>
+
+    <string name="main">Home</string>
+
+    <string name="createnickname">Come up with a nickname</string>
+
+    <string name="searchfriends">Find friends!</string>
+
+    <string name="send">Send</string>
+
+    <string name="add">Add</string>
+    <string name="mes">Message</string>
+
+    <string name="codeissended">Code sent to phone number</string>
+    <string name="writecode">Enter code</string>
+    <string name="sendnewcode">Resend</string>
+
+    <string name="warning">Important!</string>
+    <string name="choosegender">Specify your gender:</string>
+    <string name="man">MALE</string>
+    <string name="woman">FEMALE</string>
+
+    <string name="subscribers">Subscribers</string>
+    <string name="friends">Friends</string>
+    <string name="looks">Looks</string>
+    <string name="wardrobe">Wardrobe</string>
+    <string name="newlook">New look +</string>
+
+    <string name="settings">Settings</string>
+
+    <string name="action_delete">Delete</string>
+    <string name="action_copy">Copy</string>
+
+    <string name="exclusive1">Exclusive</string>
+    <string name="clothes">Clothes</string>
+    <string name="shoes">Shoes</string>
+    <string name="pants">Pants</string>
+    <string name="shorts">Shorts</string>
+    <string name="belt">Belt</string>
+    <string name="tshirt">T-shirt</string>
+    <string name="shirt">Shirt</string>
+    <string name="longsleeve">Longsleeve</string>
+    <string name="glasses">Glasses</string>
+    <string name="cap">Cap</string>
+    <string name="panama">Panama</string>
+    <string name="skirt">Skirt</string>
+    <string name="top">Top</string>
+    <string name="bag">Shoulder bag</string>
+    <string name="hats">Hats</string>
+    <string name="accessories">Accessories</string>
+    <string name="inbasket">Add to cart</string>
+
+    <string name="toolbar_news">News</string>
+    <string name="toolbar_people">People</string>
+    <string name="toolbar_profile">Profile</string>
+    <string name="recomindation">Recommendations</string>
+    <string name="marks">Recent grades</string>
+    <string name="plus">+</string>
+
+    <string name="registration">REGISTRATION</string>
+    <string name="enter">SIGN IN</string>
+    <string name="zitats">Quotes</string>
+    <string name="search">Search</string>
+    <string name="susriders">Subscribers</string>
+
+    <string name="editing">Edit</string>
+    <string name="changeface">Change face</string>
+    <string name="usernameediting">Nickname (change unavailable)</string>
+    <string name="bio">Bio</string>
+    <string name="agree">Confirm</string>
+
+    <string name="nontifications">Notifications</string>
+    <string name="lichnyechats">Private messages</string>
+    <string name="group">Group chats</string>
+    <string name="profilereact">Profile actions (likes, comments, etc.)</string>
+    <string name="likeandsubs">(Лайки, подписки и т.д.)</string>
+    <string name="privacypolicy">Privacy policy</string>
+    <string name="closeaccount">Closed account</string>
+    <string name="support">Support</string>
+    <string name="error">Report a problem</string>
+    <string name="soobchi">Please, write to us,
+         if you notice any bug</string>
+    <string name="personaldatastring">Личные данные</string>
+    <string name="nickstring">Nickname</string>
+    <string name="aboutapp">О приложении</string>
+    <string name="emailstring">E-mail</string>
+    <string name="passwordstrind">Пароль</string>
+    <string name="message">Messages</string>
+    <string name="id">id</string>
+
+    <string name="privatemessages">Private</string>
+    <string name="groupmessages">Group</string>
+
+
+    <string name="start_typing_status">Typing</string>
+    <string name="stop_typing_status">...</string>
+
+    <string name="messages">Message...</string>
+
+    <string name="shop">Shop</string>
+    <string name="tests">Тесты</string>
+    <string name="popular">Popular</string>
+
+
+    <string name="searchtests">Поиск тестов</string>
+    <string name="mytests">МОИ ТЕСТЫ</string>
+    <string name="schoolytests">Тесты Sholly</string>
+
+    <string name="chanel_name">tyomaa</string>
+
+
+    <string name="num">318</string>
+    <string name="newnew">New</string>
+    <string name="searchitem">Search for clothes</string>
+    <string name="searchiteminbasket">Search for clothes in the shopping cart</string>
+    <string name="mining">Mining</string>
+    <string name="myminersallcars">MY MINERS</string>
+    <string name="myminers">My miners</string>
+    <string name="today">Today:</string>
+    <string name="moremoney">Mine more</string>
+    <string name="workingminers">Active miners</string>
+    <string name="miners">Miners</string>
+    <string name="weak">Weak</string>
+    <string name="buy">Buy</string>
+    <string name="inhour">/hour</string>
+    <string name="noactiveminers">No active miners</string>
+    <string name="use">Use</string>
+    <string name="upgrade">Improve</string>
+    <string name="average">Average</string>
+    <string name="strong">Powerful</string>
+    <string name="getminer">Buy a miner?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="price">Price:</string>
+    <string name="measure">Try on</string>
+
+    <string name="addFr">Add </string>
+    <string name="rejectFriend">Refuse</string>
+    <string name="subscribeyou"> subscribed to you</string>
+
+    <string name="account">ACCOUNT</string>
+    <string name="nontsBig">NOTIFICATIONS</string>
+
+    <string name="rules">Terms of use</string>
+    <string name="change">Change</string>
+    <string name="fromBrest">For you with love</string>
+
+    <string name="deleteFriend">Delete</string>
+
+    <string name="subscriptions">Subscriptions</string>
+    <string name="subscride">Subscribe</string>
+    <string name="unsubscride">Unsubscribe</string>
+
+    <string name="changepassword">Password change</string>
+    <string name="textEnterUsePassword">Please enter a valid password</string>
+    <string name="errortext">Invalid password</string>
+    <string name="сreate">Create</string>
+    <string name="сreateNewPassword">Think of a new password</string>
+    <string name="repeatPassword">Repeat password</string>
+    <string name="passwordNotEquals">Passwords do not match</string>
+
+    <string name="myClothes">My clothes</string>
+
+    <string name="firstSubscribe">Subscribe to</string>
+    <string name="closeAccount">This user has a closed account(</string>
+
+    <string name="createFirstClothes">Design clothes</string>
+    <string name="getSchoolyCoin">and get Sholly-coin!</string>
+    <string name="create">Create</string>
+
+    <string name="noClothes">No clothes in wardrobe(</string>
+
+    <string name="noLooksOther">The user has no images(</string>
+
+    <string name="block">Block</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
+    <string name="complain">Complain</string>
+    <string name="deleteSubscriber">Delete subscriber</string>
+
+    <string name="blackList">Black list</string>
+
+    <string name="putAway">Put away</string>
+    <string name="putAwayDone">Removed</string>
+    <string name="emptyBlackList">Blacklist is empty</string>
+    <string name="noSaved">No saved looks</string>
+    <string name="emptySubscribersList">No followers :(</string>
+    <string name="writeComment">Write a comment...</string>
+    <string name="sendComment">SEND</string>
+    <string name="emptyCommentsList">No followers</string>
+    <string name="emptySubscriptionList">No subscriptions :(</string>
+    <string name="emptySearchSubscriptionList">In order to transfer coins to another user, you must be subscribed to him</string>
+    <string name="emptySubscriptionListOther">No subscriptions:(</string>
+    <string name="emptySubscribersListOther">No followers:(</string>
+
+    <string name="toComplain">Complain</string>
+    <string name="complainReason">The reason for the complaint against</string>
+
+    <string name="noClothesWardrobe">No clothes in wardrobe:(</string>
+
+    <string name="exitAccount">Sign out</string>
+
+    <string name="textReason">Reason for complaint:</string>
+
+    <string name="addDescription">Add description</string>
+    <string name="addDescription2">Add description:</string>
+
+    <string name="notFound">Nothing found:(</string>
+
+    <string name="newLook">New look</string>
+
+    <string name="character">Character</string>
+    <string name="ready">READY</string>
+    <string name="acceptCharacter">Save character</string>
+    <string name="tryOnClothes">Try on</string>
+    <string name="descriptipon">Description:</string>
+    <string name="noDescriptipon">No description :(</string>
+
+    <string name="oneTh">1000</string>
+    <string name="twoTh">2000</string>
+    <string name="fiveTh">5000</string>
+    <string name="sevenTh">7500</string>
+    <string name="tenTh">10000</string>
+    <string name="twentyTh">20000</string>
+    <string name="oneD">$1.99</string>
+    <string name="twoD">$2.99</string>
+    <string name="fiveD">$8.99</string>
+    <string name="sevenD">$11.99</string>
+    <string name="tenD">$14.99</string>
+    <string name="twentyD">$19.99</string>
+
+    <string name="payment">Payment</string>
+    <string name="customer">Buyer:</string>
+    <string name="purchase">Purchase:</string>
+    <string name="cardData">Bank card details:</string>
+
+    <string name="messageLimit">Sending messages is limited</string>
+
+    <string name="schoolyPremium">Sholly Premium</string>
+    <string name="buyPremium">Buy a subscription</string>
+    <string name="publish">Publish</string>
+
+    <string name="purchases">Sales</string>
+    <string name="today1">today:</string>
+    <string name="purchasestoday">Sales today:</string>
+    <string name="profittoday">Profit for today:</string>
+    <string name="allpurchases">General sales:</string>
+    <string name="allprofit">Total profit:</string>
+    <string name="profit">Profit(24h):</string>
+    <string name="total">Total:</string>
+    <string name="lookPrice">Image cost:</string>
+    <string name="addDesk">Add description...</string>
+
+    <string name="sellClothesByDollars">Sell clothes for real money</string>
+    <string name="moreCoinsMining">Increase earnings from mining</string>
+    <string name="eightyPerSentFromClothes">Get 80% from the sale of clothes</string>
+    <string name="closePremium">Cancel subscription at any time</string>
+    <string name="exclusive">Buy exclusive clothes</string>
+
+    <string name="createClothes">Create clothes</string>
+
+    <string name="creatingClothes">Making clothes</string>
+
+    <string name="statistics">Statistics:</string>
+
+    <string name="info">Information</string>
+    <string name="disconnectNonts">Disable notifications</string>
+    <string name="deleteHistory">Clear the history</string>
+    <string name="material">Dialogue materials</string>
+
+    <string name="createAndGet">Design your clothes and earn coins</string>
+    <string name="getMoney">Get from 60% from model sales</string>
+
+    <string name="before">Before publishing the model, you should familiarize yourself with</string>
+    <string name="criteria">criteria</string>
+    <string name="enterTitleText">Enter the name of the clothing:</string>
+    <string name="addModelFile">Add model file:</string>
+    <string name="modelFile">Model file:</string>
+    <string name="addModelImage">Add model photo:</string>
+    <string name="clothesType">Choose the type of clothing:</string>
+    <string name="clothesTypeText">Clothing type:</string>
+    <string name="currencyType">Currency type:</string>
+    <string name="clothesPrice">Enter the price of clothes:</string>
+    <string name="wayToFile">The path to the file</string>
+    <string name="sendApplication">Submit an application</string>
+
+    <string name="fitting">Fitting</string>
+
+    <string name="resale">Sell</string>
+    <string name="present">Give</string>
+
+    <string name="schoolyCoin">Sholly Coin</string>
+    <string name="dollar">Dollar (requires Premium)</string>
+
+    <string name="transferCoins">Transfer coins</string>
+
+    <string name="sendCoins">Coin transfer</string>
+
+    <string name="toWhom">To whom:</string>
+    <string name="toWhomTransfer">To whom transfer:</string>
+    <string name="sum">Sum:</string>
+    <string name="transfer">Translate</string>
+    <string name="transferHistory">Translation history</string>
+    <string name="plusCoins">Admission</string>
+    <string name="notransfer">No perfect translations</string>
+
+    <string name="gotocreate">Go to creation</string>
+
+    <string name="coins">Coins</string>
+
+    <string name="uniqueClothes">Create unique and inimitable models and publish them to the Sholly store</string>
+    <string name="eightyPerCent">Get up to 80% of the sale price of your clothes</string>
+    <string name="giveClothes">Give clothes to friends</string>
+    <string name="earn">Earn real money and Sholly coins from selling clothes</string>
+
+    <string name="ten">+10%</string>
+    <string name="twenty">+20%</string>
+    <string name="fifty">+50%</string>
+    <string name="toSum">to the amount mined</string>
+    <string name="forDay">per day</string>
+
+    <string name="buyfor1">Buy for 1.99$</string>
+    <string name="buyfor2">Buy for 2.99$</string>
+    <string name="buyfor5">Buy for 4.99$</string>
+
+    <string name="criterias">Criteria</string>
+
+    <string name="noClothesTitle">Title not entered</string>
+
+    <string name="noFile">Add model file</string>
+    <string name="fileAdded">File added</string>
+    <string name="noPhoto">Add model photo</string>
+    <string name="noSum">Enter the price of the clothes</string>
+
+    <string name="presentClothes">Give</string>
+    <string name="presentClothesText">Donate clothes</string>
+
+    <string name="requestAnswerMain">Application response</string>
+    <string name="title">Name:</string>
+
+    <string name="totalProfitText">Total profit for today:</string>
+    <string name="totalPurchaseText">Total sales for today:</string>
+    <string name="clothes2">Clothing:</string>
+
+    <string name="help">HELP</string>
+
+    <string name="requestAnswer">Application response:</string>
+    <string name="reasonAnswer">Rejection reason:</string>
+    <string name="answer">Reply</string>
+    <string name="adding">Addendum:</string>
+    <string name="clothesCreators">Look components</string>
+    <string name="clothesCreators2">Look components:</string>
+
+    <string name="lookConstituents">Components of the image:</string>
+
+    <string name="good">Good</string>
+    <string name="allFields">All fields must be filled in :)</string>
+    <string name="searchMyClothes">Searching for my clothes</string>
+    <string name="noMyClothes">Can\'t find clothes:(</string>
+    <string name="share">Share</string>
+    <string name="balance">Balance:</string>
+    <string name="shareProfile">Share this profile</string>
+    <string name="exclusiveText">Exclusive clothes:</string>
+    <string name="noExclusive">To view premium clothes, you must be a subscriber to Sholly Premium</string>
+    <string name="noClothesInBasket">No clothes in cart :(</string>
+    <string name="writeMessage">Enter a message...</string>
+    <string name="instagram">Instagram</string>
+    <string name="story">Story</string>
+    <string name="telegram">Telegram</string>
+    <string name="elseways">More</string>
+    <string name="noComment">No comments yet:(</string>
+    <string name="correctType">1. The type of clothing chosen must match the model provided</string>
+    <string name="correctPhoto">2. The photo of the model must match the provided file</string>
+    <string name="correctFormat">3. Photo format is only png. The application for the publication of clothing may be rejected
+     when providing a photo in poor quality</string>
+    <string name="appStyle">4. Important! The declared clothes must adhere to the style
+     applications. Clothing should not be too realistic or unrealistic.</string>
+    <string name="model">5. The weight of the model should not exceed 10mb</string>
+    <string name="pricePolicy">6. Stick to the price policy of the clothing store. Do not claim models with very
+     high price, in which case the application will be rejected</string>
+    <string name="plagiarism">7. Submissions of clothing similar to previously published clothing of other users
+     are not approved</string>
+    <string name="textOnClothes">8. You can not depict prohibited signs and other people\'s trademarks, write the names of prohibited
+     organizations and offensive texts on clothes</string>
+    <string name="exclusiveClothes">9. If you mark clothes as exclusive, it means that they can be seen.
+     and buy only Schooly Premium owners</string>
+    <string name="paidClothes">10. When choosing the currency type "dollar", users will be able to
+     buy the declared clothes only for real money. Your profit from the sale of this clothing
+     will also be in real currency</string>
+    <string name="cantSellClothes">Unfortunately, this feature is currently not available. It will appear in the next updates :)</string>
+    <string name="buyClothes">Buy item?</string>
+    <string name="buyFirstMiner">Buy your first miner!</string>
+    <string name="exclusivePremium">Only users with a Sholly Premium subscription will be able to buy these clothes</string>
+    <string name="sendClothesApplication">Submit an application</string>
+    <string name="clothesApplication">An application for clothes can be processed for several days. After processing, we will send you a response.</string>
+    <string name="loading">Loading...</string>
+    <string name="userNotsearch">User is not found:(</string>
+    <string name="pay">Pay</string>
+    <string name="wrongamountentered">Wrong amount entered</string>
+    <string name="specifythetransferamount">Specify the transfer amount</string>
+    <string name="transferamountmustbegreaterthanzero">Transfer amount must be greater than zero</string>
+    <string name="insufficientfundstotransfer">Not enough coins to transfer</string>
+    <string name="translationdone">Translation done</string>
+    <string name="receipt">Receipt</string>
+    <string name="translation">Translation</string>
+    <string name="nose">Nose</string>
+    <string name="lips">Mouth</string>
+    <string name="eyes">Eyes</string>
+    <string name="brows">Brows</string>
+    <string name="skincolour">Skin colour</string>
+    <string name="faceshape">Face shape</string>
+    <string name="body">Body</string>
+    <string name="hairstyle">Hairstyle</string>
+    <string name="browsColor">Brows color</string>
+    <string name="hairstyleColor">Hairstyle color</string>
+    <string name="notactive">Not active</string>
+    <string name="purchased">Purchased</string>
+    <string name="minerpurchased">Miner purchased</string>
+    <string name="notenoughcoins">Not enough coins</string>
+    <string name="addactiveminers">Add active miners!</string>
+    <string name="used">Used</string>
+    <string name="fiveminersarealreadyactive">Three miners are already active</string>
+    <string name="incorrectlyenteredclothingprice">Incorrectly entered clothing price</string>
+    <string name="applicationsent">Application sent</string>
+    <string name="givetext"> to </string>
+    <string name="givealreadytext"></string>
+    <string name="alreadнhasthisgift"> already has this gift</string>
+    <string name="giftsent">Gift sent </string>
+    <string name="themodelhasbeenadded">The model has been added to the Sholly clothing store</string>
+    <string name="addrequestdenied">Add request denied</string>
+    <string name="gaveyou"> gave you </string>
+    <string name="moveto">Move to</string>
+    <string name="applicationreceivedru"></string>
+    <string name="applicationreceiveden">\'s application received a response</string>
+    <string name="translatedtoyou"> translated to you </string>
+    <string name="boughtfromyou">bought from you</string>
+    <string name="added">Added</string>
+    <string name="wantstofollowyou"> wants to follow you</string>
+    <string name="nonotificationyet">No notification yet :)</string>
+    <string name="itemsincart">Items in cart:</string>
+    <string name="itempurchased">Item purchased</string>
+    <string name="itemalreadypurchased">Item already purchased</string>
+    <string name="mustselectagender">You must select a gender to continue</string>
+    <string name="nicknamenotentered">Nickname not entered</string>
+    <string name="youcanresendafter">You can resend SMS after: </string>
+    <string name="youcanresend">You can resend SMS</string>
+    <string name="authenticationfailed">Authentication failed</string>
+    <string name="lookpublishedsuccessfully">Look published successfully!</string>
+    <string name="nolookcomponents">No look components</string>
+    <string name="addlookcomponents">Add look components</string>
+    <string name="itemisequipped">Item is equipped</string>
+    <string name="designyourclothes">Design your clothes!</string>
+    <string name="didnotdesign"> didn\'t create their clothes :(</string>
+    <string name="complaintsent">Complaint sent</string>
+    <string name="changessaved">Changes saved</string>
+    <string name="changenotavailable">Change not available</string>
+    <string name="createyourfirstlook">Create your first look!</string>
+    <string name="nolooks1"></string>
+    <string name="nolooks2"> has no looks :(</string>
+    <string name="addadescription">Add a description!</string>
+    <string name="blockUser">Block </string>
+    <string name="unlock">Unlock</string>
+    <string name="useraddedtoblacklist">User added to blacklist</string>
+    <string name="subscribeto">Subscribe to</string>
+    <string name="requested">Requested</string>
+    <string name="blockedyou"> blocked you</string>
+    <string name="theuserhasblockedyou">The user has blocked you</string>
+    <string name="userremovedfromsubscribers">User removed from subscribers</string>
+    <string name="theuserisnotfollowingyou">The user is not following you</string>
+    <string name="openchat">Open chat</string>
+    <string name="loginwithGoogle">Login with Google</string>
+    <string name="looksaved">Look saved</string>
+    <string name="youarenotsubscribedtoSchoolyPremium">Sorry, you are not subscribed to Sholly Premium</string>
+    <string name="coins1"> coins</string>
+    <string name="comments">Comments:</string>
+    <string name="submitcomplaint">Submit a complaint</string>
+    <string name="thereasonforthecomplaintisnotentered">The reason for the complaint is not entered</string>
+    <string name="fraud">Fraud</string>
+    <string name="violenceordangerousorganizations">Violence or dangerous organizations</string>
+    <string name="hostilesayingsorsymbols">Hostile sayings or symbols</string>
+    <string name="saleofillegalgoods">Sale of illegal goods</string>
+    <string name="violationofintellectualpropertyrights">Violation of intellectual property rights</string>
+    <string name="profiledescriptioncannotbemorethan200characters">Profile description cannot be more than 200 characters</string>
+    <string name="nochangeshavebeenintroduced">No changes have been introduced</string>
+    <string name="deletelook">Delete look</string>
+    <string name="lookwasdeleted">Look was deleted</string>
+    <string name="dontsave">Don\'t save</string>
+    <string name="lookwasdeletedfromsaved">Look was deleted from saved</string>
+    <string name="thepublicationwasnotfound">The publication was not found. Most likely the user deleted the look</string>
+    <string name="usernotfound">User not found</string>
+    <string name="personal">Personal</string>
+    <string name="talks">Talks</string>
+    <string name="noChats">No chats:(</string>
+    <string name="noChatsFound">No chats found:(</string>
+    <string name="createNewTalk">Create a new talk +</string>
+    <string name="dialogueMembers">Dialogue members</string>
+    <string name="deleteChat">Delete chat</string>
+    <string name="chatDeleted">Chat is deleted</string>
+    <string name="creatingTalk">Creating a talk</string>
+    <string name="addedInChat">Added:</string>
+    <string name="suggested">Suggested:</string>
+    <string name="addMembers">Add members</string>
+    <string name="talkTitle">Talk title</string>
+    <string name="addMoreUsers">Add more members</string>
+    <string name="enterTalkTitle">Enter the title of the conversation</string>
+    <string name="leaveTalk">Leave talk</string>
+    <string name="leaveTalkQuestion">Leave talk?</string>
+    <string name="talkIsCreated">The talk is created</string>
+    <string name="watchcommercial">Watch the ad and get 25 coins</string>
+    <string name="watch5ad">You can only watch 5 ads per day for a fee</string>
+    <string name="coinsreceived">Received 25 coins!</string>
+    <string name="noMaterials">No materials</string>
+    <string name="goToView">Go to view</string>
+    <string name="by">by</string>
+    <string name="lookby">Look by</string>
+    <string name="looksover">The new looks are over:( </string>
+    <string name="cantchange">You can\'t take these clothes off. You can replace it with</string>
+    <string name="clothesoff">Clothes off</string>
+    <string name="clothesputon">The clothes are put on</string>
+    <string name="cantofftryonclothes">You can\'t take off the clothes you\'re trying on</string>
+    <string name="closeAccountToast">Other users won\'t be able to write to you or see your posts without approval to subscribe to your account</string>
+    <string name="privacyPolicyReg">By continuing, you agree that you have read and agree to the privacy policy and terms of use</string>
+    <string name="continue1">Continue</string>
+
+
+
+
+
+
+</resources>

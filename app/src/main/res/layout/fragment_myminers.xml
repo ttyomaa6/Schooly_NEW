@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:scrollbars="none"
+    android:overScrollMode="never">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativemyminers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+
+        <ImageView
+            android:id="@+id/back_tomining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@+id/back_tomining"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/myminers"
+            android:textColor="@color/app_color"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/emptyMyMiners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_grey"
+        android:textSize="18sp"
+        android:text="@string/buyFirstMiner"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/buyMiner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buy"
+        android:textSize="18sp"
+        android:layout_below="@+id/emptyMyMiners"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/corners14appcolor"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="130dp"
+        android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewmyminers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/relativemyminers"
+            android:layout_marginTop="16dp"
+            android:overScrollMode="never"
+            android:paddingBottom="24dp"/>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

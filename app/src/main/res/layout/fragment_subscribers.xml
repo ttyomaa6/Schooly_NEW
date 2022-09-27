@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:overScrollMode="never"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/back_toprofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/subscribers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginStart="14dp"
+            android:layout_toRightOf="@+id/back_toprofile"
+            android:text="@string/susriders"
+            android:textColor="@color/app_color"
+            android:textSize="22sp"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <EditText
+            android:id="@+id/searchuser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subscribers"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:maxLines="1"
+            android:background="@drawable/corners12_2dpstrokeappcolor"
+            android:fontFamily="@font/montserrat_bold"
+            android:hint="@string/search"
+            android:paddingStart="16sp"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:textColor="@color/app_color"
+            android:textColorHint="@color/greysearch"
+            android:textSize="15sp" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/subscribersRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchuser"
+            android:layout_marginTop="12dp"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <TextView
+            android:id="@+id/emptySubscribersList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emptySubscribersList"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp"
+            android:textColor="@color/app_color"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

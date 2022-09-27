@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/backtocoins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/left_arrow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="11dp"
+        android:layout_toRightOf="@+id/backtocoins"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/sendCoins"
+        android:textColor="@color/app_color"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backtocoins"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textSize="13sp"
+        android:text="@string/balance"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_grey"/>
+
+
+    <TextView
+        android:id="@+id/balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/balanceText"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:textColor="@color/app_color"/>
+
+    <TextView
+        android:id="@+id/toWhomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/app_grey"
+        android:text="@string/toWhomTransfer"
+        android:layout_below="@+id/balance"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginStart="24dp"/>
+
+    <TextView
+        android:id="@+id/toWhomTransfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:textColor="@color/app_color"
+        android:layout_marginStart="24sp"
+        android:layout_below="@+id/toWhomText"/>
+
+    <TextView
+        android:id="@+id/sumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_grey"
+        android:text="@string/sum"
+        android:layout_below="@+id/toWhomTransfer"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="24dp"/>
+
+    <EditText
+        android:id="@+id/sum"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sumText"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:inputType="numberSigned"
+        android:maxLength="10"
+        android:textColor="@color/app_color"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sumText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ic_schoolycoin22dppurple" />
+
+    <RelativeLayout
+        android:id="@+id/createBigButtonRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sum"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/corners14appcolor">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="@string/transfer"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

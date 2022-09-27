@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkblack"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/noLooks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/app_color"
+        android:text="@string/looksover"
+        android:visibility="gone"
+        android:fontFamily="@font/montserrat_extrabold"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeAll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_color"
+        android:elevation="0.1dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/lookPriceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/lookPrice"
+        android:elevation="0.1dp"
+        android:textColor="@color/app_grey" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lookPriceText"
+        android:elevation="0.1dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp">
+
+        <TextView
+            android:id="@+id/lookPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textColor="@color/app_color"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/schoolyCoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@+id/lookPrice"
+            android:src="@drawable/ic_schoolycoin22dppurple" />
+
+        <TextView
+            android:id="@+id/lookPriceDollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/schoolyCoin"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textColor="@color/app_color"
+            android:textSize="22sp" />
+
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/relativeLike"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="26dp"
+            android:elevation="0.1dp"
+            android:src="@drawable/ic_playlook" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/comment"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="14dp">
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_heart40dp" />
+
+        <TextView
+            android:id="@+id/likesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/like"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textColor="@color/app_grey" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/send"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="26dp"
+        android:src="@drawable/ic_chat40dp" />
+
+    <ImageView
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/options"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="26dp"
+        android:src="@drawable/ic_send40dp" />
+
+    <ImageView
+        android:id="@+id/options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="130dp"
+        android:src="@drawable/ic_options" />
+
+
+    <TextView
+        android:id="@+id/clothesCreator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/description"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/corners10dpappcolor"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
+        android:text="@string/clothesCreators"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="130dp"
+        android:layout_toLeftOf="@+id/send"
+        android:autoLink="all"
+        android:elevation="0.1dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_grey" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/left_arrow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="14dp"
+        android:layout_toRightOf="@+id/back"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/moremoney"
+        android:textColor="@color/app_color"
+        android:textSize="22sp" />
+
+    <RelativeLayout
+        android:id="@+id/bigRelative1"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:layout_below="@+id/back"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/corners20appcolor">
+
+        <TextView
+            android:id="@+id/ten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/ten"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/toSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:layout_toRightOf="@+id/ten"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/toSum"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/forDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toSum"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-4dp"
+            android:layout_toRightOf="@+id/ten"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/forDay"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/buy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/corners14dpwhite"
+            android:elevation="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/buyfor1"
+                android:textColor="@color/app_color"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bigRelative2"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:layout_below="@+id/bigRelative1"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/corners20appcolor">
+
+        <TextView
+            android:id="@+id/twenty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/twenty"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/toSum2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:layout_toRightOf="@+id/twenty"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/toSum"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/forDay2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toSum2"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-4dp"
+            android:layout_toRightOf="@+id/twenty"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/forDay"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/buy2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/corners14dpwhite"
+            android:elevation="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/buyfor2"
+                android:textColor="@color/app_color"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bigRelative3"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:layout_below="@+id/bigRelative2"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/corners20appcolor">
+
+        <TextView
+            android:id="@+id/fifty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/fifty"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/toSum3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:layout_toRightOf="@+id/fifty"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/toSum"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/forDay3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toSum3"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-4dp"
+            android:layout_toRightOf="@+id/fifty"
+            android:fontFamily="@font/montserratblack"
+            android:text="@string/forDay"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/buy3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/corners14dpwhite"
+            android:elevation="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/buyfor5"
+                android:textColor="@color/app_color"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

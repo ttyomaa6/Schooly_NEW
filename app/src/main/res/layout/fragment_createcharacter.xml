@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/leftarrowtoreg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/left_arrow"/>
+
+    <TextView
+        android:id="@+id/character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="11dp"
+        android:layout_toRightOf="@+id/leftarrowtoreg"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/character"
+        android:textColor="@color/app_color"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/ready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:text="@string/ready"
+        android:textColor="@color/app_grey"
+        android:textSize="16sp" />
+
+    <SurfaceView
+        android:id="@+id/surfaceViewCreateCharacter"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_below="@+id/character"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabsCharacter"
+        style="@style/AppTabLayoutShop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/surfaceViewCreateCharacter"
+        android:layout_marginTop="8dp"
+        app:tabMode="scrollable"
+        android:clipToPadding="false"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabTextAppearance="@style/AppTabTextAppearanceShop"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerCharacter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabsCharacter"
+        android:layout_marginTop="4dp"
+        android:saveEnabled="true"/>
+
+</RelativeLayout>

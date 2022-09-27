@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backtoalldialogs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/ic_arrow___rightwhite" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:background="@color/white"
+            android:layout_toRightOf="@id/backtoalldialogs">
+
+            <ImageView
+                android:id="@+id/custom_profile_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/darkblack" />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/custom_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@+id/card"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/custom_user_last_seen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/custom_profile_name"
+        android:layout_marginStart="16dp"
+        android:textColor="@android:color/background_light"
+        android:layout_toEndOf="@+id/card"
+        android:textSize="12sp"
+        android:fontFamily="@font/montserrat_bold" />
+
+        <ImageView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_info" />
+
+    </RelativeLayout>
+
+
+
+</androidx.appcompat.widget.Toolbar>

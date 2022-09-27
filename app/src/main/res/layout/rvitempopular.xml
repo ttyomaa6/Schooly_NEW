@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    android:paddingStart="14dp"
+    android:paddingEnd="14dp"
+    android:paddingTop="4dp"
+    android:layout_marginBottom="23dp"
+    android:background="@drawable/corners_clothes"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginTop="-7dp"
+    android:elevation="8dp">
+
+  <TextView
+      android:id="@+id/clothesTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/montserrat_extrabold"
+      android:textSize="18sp"
+      android:textColor="@color/app_color"
+      android:layout_marginTop="8dp"
+      />
+
+  <ImageView
+      android:id="@+id/ifBuy"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/clothesTitle"
+      android:src="@drawable/ic_smallifbuy"
+      android:layout_alignParentEnd="true"
+      android:layout_marginEnd="8dp"
+      android:visibility="gone"
+      />
+
+
+  <TextView
+      android:id="@+id/price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/clothesTitle"
+      android:fontFamily="@font/montserrat_bold"
+      android:textSize="12sp"
+      android:text="@string/price"
+      android:textColor="@color/app_grey" />
+
+  <TextView
+      android:id="@+id/clothesPrice"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/price"
+      android:textSize="16sp"
+      android:layout_toRightOf="@+id/coinsImage"
+      android:layout_marginStart="2dp"
+      android:textColor="@color/app_color"
+      android:fontFamily="@font/montserrat_extrabold"
+      />
+
+  <ImageView
+      android:id="@+id/coinsImage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/price"
+      android:layout_marginTop="5dp"
+      android:src="@drawable/ic_schoolycoinpurple" />
+
+  <ImageView
+      android:id="@+id/dollarImage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/price"
+      android:layout_marginTop="-2dp"
+      android:src="@drawable/ic_dollarpurple"
+      android:visibility="gone"/>
+
+  <ImageView
+      android:id="@+id/clothesImage"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:layout_below="@+id/price"
+      android:layout_marginTop="24dp"
+      android:layout_marginBottom="16dp" />
+
+  <TextView
+      android:id="@+id/creator"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="16sp"
+      android:layout_marginBottom="3dp"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentEnd="true"
+      android:textColor="@color/app_color"
+      android:fontFamily="@font/montserrat_extrabold"/>
+
+  <TextView
+      android:id="@+id/purchaseNumber"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:layout_marginBottom="4dp"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentStart="true"
+      android:textColor="@color/app_grey"
+      android:fontFamily="@font/montserrat_extrabold"/>
+
+  <ImageView
+      android:id="@+id/purchaseImage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="6dp"
+      android:layout_toRightOf="@id/purchaseNumber"
+      android:src="@drawable/ic_bag" />
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/backtocoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@+id/backtocoins"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/presentClothesText"
+            android:textColor="@color/app_color"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/searchuser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/backtocoins"
+            android:background="@drawable/corners12_2dpstrokeappcolor"
+            android:fontFamily="@font/montserrat_bold"
+            android:hint="@string/search"
+            android:maxLines="1"
+            android:paddingStart="16sp"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:textColor="@color/app_color"
+            android:textColorHint="@color/greysearch"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/toWhom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toWhom"
+            android:layout_below="@+id/searchuser"
+            android:textSize="26sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textColor="@color/app_grey"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/peoplerecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toWhom"
+            android:layout_marginTop="4dp"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <TextView
+            android:id="@+id/emptySubscriptionList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emptySubscriptionList"
+            android:layout_centerInParent="true"
+            android:textColor="@color/app_grey"
+            android:layout_marginTop="680dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

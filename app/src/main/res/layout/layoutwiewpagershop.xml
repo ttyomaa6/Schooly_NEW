@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/newnew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/newnew"
+        android:textColor="@color/app_grey"
+        android:textSize="18dp" />
+
+    <com.egormoroz.schooly.NestedScrollableHost
+        android:id="@+id/nestedHost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newnew"
+        android:layout_marginTop="12dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newchlothesinshop"
+            android:layout_width="match_parent"
+            android:layout_height="282dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </com.egormoroz.schooly.NestedScrollableHost>
+
+    <TextView
+        android:id="@+id/popular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newnew"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="298dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/popular"
+        android:textColor="@color/app_grey"
+        android:textSize="18dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popularchlothesinshop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/popular"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/noPremium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:textSize="15sp"
+        android:textColor="@color/app_grey"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/noExclusive"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/premium"
+        android:layout_width="match_parent"
+        android:layout_height="282dp"
+        android:layout_below="@+id/noPremium"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/gradient14dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/montserratblack"
+                android:text="$4.99"
+                android:textColor="@color/white"
+                android:textSize="28dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserratblack"
+                android:text="@string/schoolyPremium"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeSellClothes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp">
+
+            <View
+                android:id="@+id/smallView"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/corners" />
+
+            <TextView
+                android:id="@+id/sellClothes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@+id/smallView"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/sellClothesByDollars"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeSellClothes1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeSellClothes"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp">
+
+            <View
+                android:id="@+id/smallView1"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/corners" />
+
+            <TextView
+                android:id="@+id/moreMining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@+id/smallView1"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/moreCoinsMining"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeSellClothes2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeSellClothes1"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp">
+
+            <View
+                android:id="@+id/smallView2"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/corners" />
+
+            <TextView
+                android:id="@+id/eightyPerSent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@+id/smallView2"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/eightyPerSentFromClothes"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeSellClothes3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeSellClothes2"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp">
+
+            <View
+                android:id="@+id/smallView3"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/corners" />
+
+            <TextView
+                android:id="@+id/closePremium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@+id/smallView3"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/closePremium"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeExclusive3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeSellClothes3"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp">
+
+            <View
+                android:id="@+id/smallView4"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/corners" />
+
+            <TextView
+                android:id="@+id/exclusive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@+id/smallView4"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/exclusive"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buyPremium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/corners14dpwhite"
+            android:elevation="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/buyPremium"
+                android:textColor="@color/app_color2"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.egormoroz.schooly.LockableNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:overScrollMode="never"
+    android:id="@+id/lockableNestedScrollView">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:id="@+id/back_toprofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginStart="14dp"
+            android:layout_toRightOf="@+id/back_toprofile"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/newLook"
+            android:textColor="@color/app_color"
+            android:textSize="22sp" />
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/back_toprofile"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp" />
+
+        <TextView
+            android:id="@+id/lookPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/surfaceView"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/lookPrice"
+            android:textColor="@color/app_grey" />
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lookPriceText"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:id="@+id/lookPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratblack"
+                android:textColor="@color/app_color"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/schoolyCoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="7dp"
+                android:layout_toRightOf="@+id/lookPrice"
+                android:src="@drawable/ic_schoolycoin24dp" />
+
+            <TextView
+                android:id="@+id/lookPriceDollar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratblack"
+                android:layout_toRightOf="@+id/schoolyCoin"
+                android:textColor="@color/app_color"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/lookConstituentsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/lookConstituents"
+            android:textColor="@color/app_grey" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/constituentsRecycler"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lookConstituentsText" />
+
+        <EditText
+            android:id="@+id/addDescriptionEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/constituentsRecycler"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/corners14dpappcolor2dpstroke"
+            android:fontFamily="@font/montserrat_bold"
+            android:hint="@string/addDesk"
+            android:maxLines="8"
+            android:autoLink="all"
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="60dp"
+            android:textColor="@color/app_grey"
+            android:textColorHint="@color/app_grey"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:id="@+id/publish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addDescriptionEdit"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/corners14appcolor">
+
+            <TextView
+                android:id="@+id/publishText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/publish"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:trackCornerRadius="22dp"
+                android:indeterminate="true"
+                app:trackColor="@color/white"
+                android:visibility="gone"
+                android:padding="10dp"
+                android:layout_centerInParent="true"
+                app:trackThickness="3dp"
+                app:indicatorSize="22dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</com.egormoroz.schooly.LockableNestedScrollView>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:overScrollMode="never">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+
+            <ImageView
+                android:id="@+id/back_toprofile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/left_arrow"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="11dp"
+                android:layout_toRightOf="@+id/back_toprofile"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/shop"
+                android:textColor="@color/app_color"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:id="@+id/linearCoins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/corners8shopmain">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="6dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="14dp"
+                    android:src="@drawable/ic_schoolycoin"/>
+
+
+                <TextView
+                    android:id="@+id/schoolycoinshopfrag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratblack"
+                    android:paddingEnd="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/notFound"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="350dp"
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:textColor="@color/app_grey"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/notFound" />
+
+
+            <LinearLayout
+                android:id="@+id/searchclothes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toLeftOf="@id/basket"
+                android:background="@drawable/corners12_2dpstrokeappcolor"
+                android:orientation="horizontal"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp">
+
+                <EditText
+                    android:id="@+id/searchClothes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="10"
+                    android:background="@null"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:hint="@string/searchitem"
+                    android:maxLines="1"
+                    android:textColor="@color/greysearch"
+                    android:textColorHint="@color/greysearch"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_basket" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/searchclothes"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutShop"
+                style="@style/AppTabLayoutShop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchclothes"
+                android:layout_marginTop="8dp"
+                android:clipToPadding="false"
+                android:paddingStart="12dp"
+                android:paddingEnd="14dp"
+                app:tabMode="scrollable"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabTextAppearance="@style/AppTabTextAppearanceShop" />
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/frcontshop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tabLayoutShop"
+                android:layout_marginTop="8dp"
+                android:saveEnabled="true"/>
+        </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+
+

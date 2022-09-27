@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_arrow___left32dp" />
+
+        <ImageView
+            android:id="@+id/news_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/add_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/news_enter"
+            android:layout_marginLeft="-33dp"
+            android:layout_marginTop="-99dp"
+
+            android:layout_toRightOf="@+id/news_enter"
+            android:background="@drawable/corners14appcolor"
+            android:src="@drawable/plus_icon" />
+
+        <TextView
+            android:id="@+id/newscreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="180dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Добавь новость"
+            android:textColor="@color/app_color2"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/news_enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newscreate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="452dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:hint="Описание..."
+            android:inputType="text"
+            android:maxLength="24"
+            android:maxLines="1"
+            android:textColor="@color/app_color"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/cornersgenderarrow"
+            android:padding="18dp"
+            android:src="@drawable/ic_arrow___right36dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

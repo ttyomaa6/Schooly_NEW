@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back_tosettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/blackList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginStart="14dp"
+            android:layout_toRightOf="@+id/back_tosettings"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/blackList"
+            android:textColor="@color/app_color"
+            android:textSize="22sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/blackListRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blackList"
+            android:scrollbars="none"
+            android:overScrollMode="never"/>
+        <TextView
+            android:id="@+id/emptyBlackList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emptyBlackList"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="270dp"
+            android:textColor="@color/app_grey"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:visibility="gone"/>
+
+        </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

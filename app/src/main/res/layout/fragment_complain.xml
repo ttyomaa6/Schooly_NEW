@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/backtoOtherUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/left_arrow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="11dp"
+        android:layout_toRightOf="@+id/backtoOtherUser"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/toComplain"
+        android:textColor="@color/app_color"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textReasonComplain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/complainReason"
+        android:textColor="@color/app_grey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/complainOtherUserText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textReasonComplain"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_grey"
+        android:textSize="18sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reasonsRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/complainOtherUserText"
+        android:layout_marginTop="36dp"
+        android:overScrollMode="never" />
+
+
+</RelativeLayout>

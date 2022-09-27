@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.egormoroz.schooly.LockableNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/nestedScrollView"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="130dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/otherusernick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginStart="14dp"
+            android:layout_toRightOf="@+id/back"
+            android:textSize="22sp"
+            android:textColor="@color/app_color"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <ImageView
+            android:id="@+id/moresquare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more_square"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="18dp"/>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/profileIndicator"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            app:indicatorColor="@color/white" />
+
+
+        <TextView
+            android:id="@+id/otheruserbiography"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_below="@+id/otherusernick"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="24dp"
+            android:autoLink="all"
+            android:layout_marginEnd="24dp"/>
+
+        <TextView
+            android:id="@+id/subscribeClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/corners10dpappcolor"
+            android:paddingStart="120dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="120dp"
+            android:paddingBottom="8dp"
+            android:layout_below="@id/otheruserbiography"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:text="@string/subscride"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/addandmessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/otheruserbiography"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="48dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:background="@drawable/corners10dpappcolor"
+                android:visibility="gone"
+                android:text="@string/mes"/>
+
+            <TextView
+                android:id="@+id/addFriend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="48dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_extrabold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bigLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/otheruserbiography"
+            android:layout_marginTop="84dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linearLooks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/looksCountOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratblack"
+                    android:textColor="@color/app_color"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/Other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/looks"
+                    android:textColor="@color/app_grey"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/subscribersLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/subsCountOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratblack"
+                    android:textColor="@color/app_color"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/subscribers"
+                    android:textColor="@color/app_grey"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/subscriptionLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/subscriptionCountOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratblack"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/app_color"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:text="@string/subscriptions"
+                    android:textColor="@color/app_grey"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <SurfaceView
+            android:id="@+id/mainlookview"
+            android:layout_width="match_parent"
+            android:layout_height="384dp"
+            android:layout_below="@+id/bigLinear"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="24dp" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:trackCornerRadius="20dp"
+            android:indeterminate="true"
+            android:elevation="0.1dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/bigLinear"
+            android:layout_marginTop="190dp"
+            app:trackThickness="5dp"
+            android:visibility="gone"
+            app:indicatorSize="50dp"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabsprofileother"
+            style="@style/AppTabLayoutProfile"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/mainlookview"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabTextAppearance="@style/AppTabTextAppearance"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerOther"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tabsprofileother" />
+
+
+        <TextView
+            android:id="@+id/SubscribeFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainlookview"
+            android:textSize="14sp"
+            android:textColor="@color/app_grey"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/closeAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SubscribeFirst"
+            android:textSize="14sp"
+            android:text="@string/closeAccount"
+            android:textColor="@color/app_grey"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/blockedAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainlookview"
+            android:textSize="14sp"
+            android:textColor="@color/app_grey"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/youBlocked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainlookview"
+            android:textSize="14sp"
+            android:textColor="@color/app_grey"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</com.egormoroz.schooly.LockableNestedScrollView>

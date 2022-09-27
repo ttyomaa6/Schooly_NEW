@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginStart="14dp"
+            android:layout_toRightOf="@+id/back"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/requestAnswerMain"
+            android:textColor="@color/app_color"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/clothesImagecv"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_below="@+id/back"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/clothesTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@+id/clothesImagecv"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/title"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/clothesTitlecv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clothesTitleText"
+            android:layout_toRightOf="@+id/clothesImagecv"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/montserratblack"
+            android:textColor="@color/app_color"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/clothesPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clothesTitlecv"
+            android:layout_toRightOf="@+id/clothesImagecv"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/price"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"/>
+
+    <RelativeLayout
+        android:id="@+id/priceRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clothesPriceText"
+        android:layout_toRightOf="@+id/clothesImagecv"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:id="@+id/clothesPricecv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratblack"
+            android:textColor="@color/app_color"
+            android:layout_centerVertical="true"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/coinImagePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/clothesPricecv"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/ic_schoolycoinpurple"/>
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/clothesTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clothesImagecv"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/clothesTypeText"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/clothesType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clothesTypeText"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textColor="@color/app_color"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clothesType"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/requestAnswer"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultText"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/reasonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/result"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/reasonAnswer"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/reason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reasonText"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/app_grey"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/addText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reason"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/adding"
+            android:textColor="@color/app_grey"
+            android:textSize="14sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addText"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/app_grey"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
+

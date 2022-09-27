@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back_tomain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/left_arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="11dp"
+                android:layout_toRightOf="@+id/back_tomain"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/myClothes"
+                android:textColor="@color/app_color"
+                android:textSize="22sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/totalProfitText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeMenu"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/totalProfitText"
+            android:textColor="@color/app_grey" />
+
+        <RelativeLayout
+            android:id="@+id/relativeTotalProfit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalProfitText"
+            android:layout_marginStart="24dp">
+
+
+         <TextView
+            android:id="@+id/totalProfit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:fontFamily="@font/montserratblack" />
+
+            <ImageView
+                android:id="@+id/schoolycoinGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/totalProfit"
+                android:src="@drawable/ic_schoolycoin38dpgreen" />
+
+            <TextView
+                android:id="@+id/totalProfitDollar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/totalProfit"
+                android:fontFamily="@font/montserratblack"
+                android:textColor="@color/green"
+                android:textSize="40sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/totalPurchaseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeTotalProfit"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/totalPurchaseText"
+            android:textColor="@color/app_grey" />
+
+        <TextView
+            android:id="@+id/totalPurchase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/app_color"
+            android:textSize="26sp"
+            android:layout_marginStart="24dp"
+            android:layout_below="@id/totalPurchaseText"
+            android:fontFamily="@font/montserratblack" />
+
+        <RelativeLayout
+            android:id="@+id/createClothesButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalPurchase"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/corners14appcolor"
+            android:elevation="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/createClothes"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/clothes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/createClothesButton"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/app_grey"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:id="@+id/linearsearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clothes"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/corners12_2dpstrokeappcolor"
+            android:orientation="horizontal"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp">
+
+            <EditText
+                android:id="@+id/searchMyClothes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginStart="16dp"
+                android:layout_weight="10"
+                android:background="@null"
+                android:fontFamily="@font/montserrat_bold"
+                android:hint="@string/searchMyClothes"
+                android:maxLines="1"
+                android:textColor="@color/app_grey"
+                android:textColorHint="@color/greysearch"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/noClothes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearsearch"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="66dp"
+            android:textSize="15sp"
+            android:textColor="@color/app_grey"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/noMyClothes"
+            android:visibility="gone"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMyClothes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/linearsearch"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <RelativeLayout
+            android:id="@+id/relativeFirstClothes"
+            android:layout_width="match_parent"
+            android:layout_height="252dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/gradient14dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/relativeSellClothes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp">
+
+                <View
+                    android:id="@+id/smallView"
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/corners" />
+
+                <TextView
+                    android:id="@+id/sellClothes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_toRightOf="@+id/smallView"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/uniqueClothes"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeSellClothes1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeSellClothes"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp">
+
+                <View
+                    android:id="@+id/smallView1"
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/corners" />
+
+                <TextView
+                    android:id="@+id/moreMining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_toRightOf="@+id/smallView1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/eightyPerCent"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeSellClothes2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeSellClothes1"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp">
+
+                <View
+                    android:id="@+id/smallView2"
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/corners" />
+
+                <TextView
+                    android:id="@+id/eightyPerSent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_toRightOf="@+id/smallView2"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/giveClothes"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeSellClothes3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeSellClothes2"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <View
+                    android:id="@+id/smallView3"
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/corners" />
+
+                <TextView
+                    android:id="@+id/closePremium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_toRightOf="@+id/smallView3"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/closePremium"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeExclusive3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeSellClothes3"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp">
+
+                <View
+                    android:id="@+id/smallView4"
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/corners" />
+
+                <TextView
+                    android:id="@+id/exclusive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_toRightOf="@+id/smallView4"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/earn"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/createBigButtonRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/corners14dpwhite"
+                android:elevation="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="@string/gotocreate"
+                    android:textColor="@color/app_color2"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back_tochat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@+id/back_tochat"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/info"
+            android:textColor="@color/app_color"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/relativeDisconnect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back_tochat"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:id="@+id/closeAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/disconnectNonts"
+                android:textColor="@color/app_grey"
+                android:textSize="16sp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/nontsSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="24dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/leaveTalk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeDisconnect"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/leaveTalk"
+            android:textColor="@color/rednonts"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dialogueMembers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/leaveTalk"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:text="@string/dialogueMembers"
+            android:textColor="@color/app_grey"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/addNewMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialogueMembers"
+            android:layout_marginStart="24dp"
+            android:text="@string/addMembers"
+            android:textSize="14sp"
+            android:textColor="@color/app_color"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:layout_marginTop="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addNewMember"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:overScrollMode="never" />
+
+        <TextView
+            android:id="@+id/dialogueMaterials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerMembers"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:text="@string/material"
+            android:textColor="@color/app_grey"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/noMaterials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/dialogueMaterials"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="100dp"
+            android:visibility="gone"
+            android:text="@string/noMaterials"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textColor="@color/app_grey"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMaterials"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialogueMaterials"
+            android:layout_marginTop="8dp"
+            android:overScrollMode="never" />
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

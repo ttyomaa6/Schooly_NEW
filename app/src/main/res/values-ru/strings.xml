@@ -1,0 +1,554 @@
+<resources>
+    <string name="app_name">Sholly</string>
+
+    <string name="hellosteve">Привет, я Стив!</string>
+    <string name="virtualSteve">Твой виртуальный помощник \nSholly. Чтобы начать работу с\nприложением, нужно пройти\nнесколько простых шагов.\nПриступим!</string>
+    <string name="regOrEnter">Ты уже есть в Sholly? Если да, то войди \nв свой аккаунт, если нет, то \nрегистрируйся!</string>
+    <string name="regSteps">Пройди несколько простых \nшагов регистрации или\nиспользуй свой аккаунт \nв Google</string>
+    <string name="belarus">from Belarus, with love)</string>
+    <string name="enterFast">Скорее производи вход в\nприложение, а мне нужно\nнемного времени, вспомнить,\nгде мы могли видеться</string>
+    <string name="startregtext">Начнем регистрацию!</string>
+    <string name="go1">Шаг 1</string>
+    <string name="whriteyournick">Придумай никнейм</string>
+    <string name="go2">Шаг 2</string>
+    <string name="writephone">Укажи свой номер телефона</string>
+    <string name="go3">Шаг 3</string>
+    <string name="copy">copy</string>
+    <string name="delete">delete</string>
+    <string name="writepassword">Придумай пароль</string>
+    <string name="writepasswordenter">Введи пароль</string>
+    <string name="meetearly">Мы уже знакомы?</string>
+    <string name="phone">Номер</string>
+    <string name="password">Пароль</string>
+    <string name="next">Продолжить</string>
+    <string name="ent">войти</string>
+    <string name="from">через</string>
+    <string name="googleplay">Google</string>
+    <string name="reg">регистрация</string>
+    <string name="redact">Редактировать</string>
+
+    <string name="main">Главная</string>
+
+    <string name="createnickname">Придумай никнейм</string>
+
+    <string name="searchfriends">Найди друзей!</string>
+
+    <string name="send">Отправить</string>
+
+    <string name="add">Добавить</string>
+    <string name="mes">Сообщение</string>
+
+    <string name="codeissended">Код отправлен на номер телефона</string>
+    <string name="writecode">Введи код</string>
+    <string name="sendnewcode">Отправить повторно</string>
+
+    <string name="warning">Важно!</string>
+    <string name="choosegender">Укажи свой пол:</string>
+    <string name="man">МУЖСКОЙ</string>
+    <string name="woman">ЖЕНСКИЙ</string>
+
+    <string name="subscribers">Подписчики</string>
+    <string name="friends">Друзья</string>
+    <string name="looks">Образы</string>
+    <string name="wardrobe">Гардероб</string>
+    <string name="newlook">Новый образ +</string>
+
+    <string name="settings">Настройки</string>
+
+    <string name="action_delete">Delete</string>
+    <string name="action_copy">Copy</string>
+
+    <string name="exclusive1">Эксклюзивная</string>
+    <string name="clothes">Одежда</string>
+    <string name="shoes">Обувь</string>
+    <string name="pants">Штаны</string>
+    <string name="shorts">Шорты</string>
+    <string name="belt">Ремень</string>
+    <string name="tshirt">Майка</string>
+    <string name="shirt">Рубашка</string>
+    <string name="longsleeve">Лонгслив</string>
+    <string name="glasses">Очки</string>
+    <string name="cap">Кепка</string>
+    <string name="panama">Панама</string>
+    <string name="skirt">Юбка</string>
+    <string name="top">Топ</string>
+    <string name="bag">Сумка через плечо</string>
+    <string name="hats">Головные уборы</string>
+    <string name="accessories">Аксессуары</string>
+    <string name="inbasket">В корзину</string>
+
+    <string name="toolbar_news">Новости</string>
+    <string name="toolbar_people">Люди</string>
+    <string name="toolbar_profile">Профиль</string>
+    <string name="recomindation">Рекомендации</string>
+    <string name="marks">Недавние оценки</string>
+    <string name="plus">+</string>
+
+    <string name="registration">РЕГИСТРАЦИЯ</string>
+    <string name="enter">ВОЙТИ</string>
+    <string name="zitats">Цитаты</string>
+    <string name="search">Поиск</string>
+    <string name="susriders">Подписчики</string>
+
+    <string name="editing">Редактиовать</string>
+    <string name="changeface">Изменить лицо</string>
+    <string name="usernameediting">Никнейм(смена недоступна)</string>
+    <string name="bio">Описание</string>
+    <string name="agree">Подтвердить</string>
+
+    <string name="nontifications">Уведомления</string>
+    <string name="lichnyechats">Личные сообщения</string>
+    <string name="group">Групповые чаты</string>
+    <string name="profilereact">Действия с профилем(лайки, комментарии и т.д.)</string>
+    <string name="likeandsubs">(Лайки, подписки и т.д.)</string>
+    <string name="privacypolicy">Политика конфиденциальности</string>
+    <string name="closeaccount">Закрытый аккаунт</string>
+    <string name="support">Поддержка</string>
+    <string name="error">Сообщить о проблеме</string>
+    <string name="soobchi">Пожалуйста, напиши нам,
+        если ты заметил какую-то недоработку</string>
+    <string name="personaldatastring">Личные данные</string>
+    <string name="nickstring">Никнейм</string>
+    <string name="aboutapp">О приложении</string>
+    <string name="emailstring">E-mail</string>
+    <string name="passwordstrind">Пароль</string>
+    <string name="message">Сообщения</string>
+    <string name="id">id</string>
+
+    <string name="privatemessages">Личные</string>
+    <string name="groupmessages">Беседы</string>
+
+
+    <string name="start_typing_status">Пишет</string>
+    <string name="stop_typing_status">...</string>
+
+    <string name="messages">Сообщение...</string>
+
+    <string name="shop">Магазин</string>
+    <string name="tests">Тесты</string>
+    <string name="popular">Популярные</string>
+
+
+    <string name="searchtests">Поиск тестов</string>
+    <string name="mytests">МОИ ТЕСТЫ</string>
+    <string name="schoolytests">Тесты Schooly</string>
+
+    <string name="chanel_name">tyomaa</string>
+
+
+    <string name="num">318</string>
+    <string name="newnew">Новое</string>
+    <string name="searchitem">Поиск одежды</string>
+    <string name="searchiteminbasket">Поиск одежды в корзине</string>
+    <string name="mining">Майнинг</string>
+    <string name="myminersallcars">МОИ МАЙНЕРЫ</string>
+    <string name="myminers">Мои майнеры</string>
+    <string name="today">Сегодня:</string>
+    <string name="moremoney">Майнить больше</string>
+    <string name="workingminers">Активные майнеры</string>
+    <string name="miners">Майнеры</string>
+    <string name="weak">Слабые</string>
+    <string name="buy">Купить</string>
+    <string name="inhour"> в час</string>
+    <string name="noactiveminers">Нет активных майнеров</string>
+    <string name="use">Использовать</string>
+    <string name="upgrade">Улучшить</string>
+    <string name="average">Средние</string>
+    <string name="strong">Сильные</string>
+    <string name="getminer">Приобрести майнер?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+
+    <string name="price">Цена:</string>
+    <string name="measure">Примерить</string>
+
+    <string name="addFr">Добавить </string>
+    <string name="rejectFriend">Отказать</string>
+    <string name="subscribeyou"> подписался на тебя</string>
+
+    <string name="account">АККАУНТ</string>
+    <string name="nontsBig">УВЕДОМЛЕНИЯ</string>
+    <string name="rules">Условия пользования</string>
+    <string name="change">Изменить</string>
+    <string name="fromBrest">For you with love</string>
+
+    <string name="deleteFriend">Удалить</string>
+
+    <string name="subscriptions">Подписки</string>
+    <string name="subscride">Подписаться</string>
+    <string name="unsubscride">Отписаться</string>
+
+    <string name="changepassword">Смена пароля</string>
+    <string name="textEnterUsePassword">Введи действующий пароль</string>
+    <string name="errortext">Неверный пароль</string>
+    <string name="сreate">Создать</string>
+    <string name="сreateNewPassword">Придумай новый пароль</string>
+    <string name="repeatPassword">Повтори пароль</string>
+    <string name="passwordNotEquals">Пароли не совпадают</string>
+
+    <string name="myClothes">Моя одежда</string>
+
+    <string name="firstSubscribe">Подпишись на</string>
+    <string name="closeAccount">У этого пользователя закрытый аккаунт(</string>
+
+    <string name="createFirstClothes">Создавай одежду</string>
+    <string name="getSchoolyCoin">и получай Sholly-coin!</string>
+    <string name="create">Создать</string>
+
+    <string name="noClothes">Нет одежды в гардеробе(</string>
+
+    <string name="noLooksOther">У пользователя нет образов(</string>
+
+    <string name="block">Заблокировать</string>
+    <string name="save">Сохранить</string>
+    <string name="saved">Сохраненное</string>
+    <string name="complain">Пожаловаться</string>
+    <string name="deleteSubscriber">Удалить подписчика</string>
+
+    <string name="blackList">Черный список</string>
+
+    <string name="putAway">Убрать</string>
+    <string name="putAwayDone">Убран</string>
+    <string name="emptyBlackList">Черный список пуст</string>
+    <string name="noSaved">Нет сохраненных образов</string>
+    <string name="emptySubscribersList">Нет подписчиков:(</string>
+    <string name="writeComment">Напиши комментарий...</string>
+    <string name="sendComment">ОТПР.</string>
+    <string name="emptyCommentsList">Нет подписчиков</string>
+    <string name="emptySubscriptionList">Нет подписок:(</string>
+    <string name="emptySearchSubscriptionList">Для того, чтобы перевести коины другому пользователю, необходимо быть на него подписаным</string>
+    <string name="emptySubscriptionListOther">Нет подписок:(</string>
+    <string name="emptySubscribersListOther">Нет подписчиков:(</string>
+
+    <string name="toComplain">Пожаловаться</string>
+    <string name="complainReason">Причина жалобы на</string>
+
+    <string name="noClothesWardrobe">Нет одежды в гардеробе:(</string>
+
+    <string name="exitAccount">Выйти из аккаунта</string>
+
+    <string name="textReason">Причина жалобы:</string>
+
+    <string name="addDescription">Добавить описание</string>
+    <string name="addDescription2">Добавить описание:</string>
+
+    <string name="notFound">Ничего не найдено:(</string>
+
+    <string name="newLook">Новый образ</string>
+
+    <string name="character">Персонаж</string>
+    <string name="ready">ГОТОВО</string>
+    <string name="acceptCharacter">Сохранить персонажа</string>
+    <string name="tryOnClothes">Примерить</string>
+    <string name="descriptipon">Описание:</string>
+    <string name="noDescriptipon">Нет описания:(</string>
+
+    <string name="oneTh">1000</string>
+    <string name="twoTh">2000</string>
+    <string name="fiveTh">5000</string>
+    <string name="sevenTh">7500</string>
+    <string name="tenTh">10000</string>
+    <string name="twentyTh">20000</string>
+    <string name="oneD">$1.99</string>
+    <string name="twoD">$2.99</string>
+    <string name="fiveD">$8.99</string>
+    <string name="sevenD">$11.99</string>
+    <string name="tenD">$14.99</string>
+    <string name="twentyD">$19.99</string>
+
+    <string name="payment">Оплата</string>
+    <string name="customer">Покупатель:</string>
+    <string name="purchase">Покупка:</string>
+    <string name="cardData">Данные банковской карты:</string>
+
+    <string name="messageLimit">Отправка сообщений ограничена</string>
+
+    <string name="schoolyPremium">Sholly Premium</string>
+    <string name="buyPremium">Купить подписку</string>
+    <string name="publish">Опубликовать</string>
+
+    <string name="purchases">Продажи</string>
+    <string name="today1">сегодня:</string>
+    <string name="purchasestoday">Продажи сегодня:</string>
+    <string name="profittoday">Прибыль за сегодня:</string>
+    <string name="allpurchases">Общие продажи:</string>
+    <string name="allprofit">Общая прибыль:</string>
+    <string name="profit">Прибыль(24h):</string>
+    <string name="total">Всего:</string>
+    <string name="lookPrice">Стоимость образа:</string>
+    <string name="addDesk">Добавить описание...</string>
+
+    <string name="sellClothesByDollars">Продавай одежду за реальные деньги</string>
+    <string name="moreCoinsMining">Увеличь заработок с майнинга</string>
+    <string name="eightyPerSentFromClothes">Получай 80% с продажи одежды</string>
+    <string name="closePremium">Отмена подписки в любой момент</string>
+    <string name="exclusive">Покупай эксклюзивную одежду</string>
+
+    <string name="createClothes">Создать одежду</string>
+
+    <string name="creatingClothes">Создание одежды</string>
+
+    <string name="statistics">Статистика:</string>
+
+    <string name="info">Информация</string>
+    <string name="disconnectNonts">Отключить уведомления</string>
+    <string name="deleteHistory">Очистить историю</string>
+    <string name="material">Материалы диалога</string>
+
+    <string name="createAndGet">Создавай свою одежду и зарабатывай коины</string>
+    <string name="getMoney">Получай от 60% с продаж модели</string>
+
+    <string name="before">Перед публикацией модели следует ознакимиться с</string>
+    <string name="criteria">критериями</string>
+    <string name="enterTitleText">Введи название одежды:</string>
+    <string name="addModelFile">Добавь файл модели:</string>
+    <string name="modelFile">Файл модели:</string>
+    <string name="addModelImage">Добавь фото модели:</string>
+    <string name="clothesType">Выбери тип одежды:</string>
+    <string name="clothesTypeText">Тип одежды:</string>
+    <string name="currencyType">Тип валюты:</string>
+    <string name="clothesPrice">Введи цену одежды:</string>
+    <string name="wayToFile">Путь к файлу</string>
+    <string name="sendApplication">Отправить заявку</string>
+
+    <string name="fitting">Примерка</string>
+
+    <string name="resale">Продать</string>
+    <string name="present">Подарить</string>
+
+    <string name="schoolyCoin">Sholly Coin</string>
+    <string name="dollar">Dollar (необходим Premium)</string>
+
+    <string name="transferCoins">Перевести коины</string>
+
+    <string name="sendCoins">Перевод коинов</string>
+
+    <string name="toWhom">Кому:</string>
+    <string name="toWhomTransfer">Кому перевод:</string>
+    <string name="sum">Сумма:</string>
+    <string name="transfer">Перевести</string>
+    <string name="transferHistory">История переводов</string>
+    <string name="plusCoins">Поступление</string>
+    <string name="notransfer">Нет совершенных переводов</string>
+
+    <string name="gotocreate">Перейти к созданию</string>
+
+    <string name="coins">Коины</string>
+
+    <string name="uniqueClothes">Создавай уникальные и неповторимые модели</string>
+    <string name="eightyPerCent">Получай до 80% от стоимости одежды с продажи</string>
+    <string name="giveClothes">Дари одежду друзьям</string>
+    <string name="earn">Зарабатывай реальные деньги и Sholly-коины</string>
+
+    <string name="ten">+10%</string>
+    <string name="twenty">+20%</string>
+    <string name="fifty">+50%</string>
+    <string name="toSum">к сумме, намайненной</string>
+    <string name="forDay">за день</string>
+
+    <string name="buyfor1">Купить за 1.99$</string>
+    <string name="buyfor2">Купить за 2.99$</string>
+    <string name="buyfor5">Купить за 4.99$</string>
+
+    <string name="criterias">Критерии</string>
+
+    <string name="noClothesTitle">Название не введено</string>
+
+    <string name="noFile">Добавь файл модели</string>
+    <string name="fileAdded">Файл добавлен</string>
+
+    <string name="noPhoto">Добавь фото модели</string>
+    <string name="noSum">Введи цену одежды</string>
+
+    <string name="presentClothes">Подарить</string>
+    <string name="presentClothesText">Подарить одежду</string>
+
+    <string name="requestAnswerMain">Ответ на заявку</string>
+    <string name="title">Название:</string>
+
+    <string name="totalProfitText">Общая прибыль за сегодня:</string>
+    <string name="totalPurchaseText">Общие продажи за сегодня:</string>
+    <string name="clothes2">Одежда:</string>
+
+    <string name="help">ПОМОЩЬ</string>
+
+    <string name="requestAnswer">Ответ на заявку:</string>
+    <string name="reasonAnswer">Причина отказа:</string>
+    <string name="answer">Ответить</string>
+    <string name="adding">Добавление:</string>
+    <string name="clothesCreators">Составляющие образа</string>
+    <string name="clothesCreators2">Составляющие образа:</string>
+
+    <string name="lookConstituents">Составляющие образа:</string>
+
+    <string name="good">Хорошо</string>
+    <string name="allFields">Необходимо заполнить все поля:)</string>
+    <string name="searchMyClothes">Поиск моей одежды</string>
+    <string name="noMyClothes">Не удалось найти одежду:(</string>
+    <string name="share">Поделиться</string>
+    <string name="balance">Баланс:</string>
+    <string name="shareProfile">Поделиться этим профилем</string>
+    <string name="exclusiveText">Эксклюзивная одежда:</string>
+    <string name="noExclusive">Для просмотра премиум одежды необходимо быть подписанным на Sholly Premium</string>
+    <string name="noClothesInBasket">Нет одежды в корзине:(</string>
+    <string name="writeMessage">Введи сообщение...</string>
+    <string name="instagram">Инстаграм</string>
+    <string name="story">Story</string>
+    <string name="telegram">Телеграм</string>
+    <string name="elseways">Еще</string>
+    <string name="noComment">Нет комментариев:(</string>
+    <string name="correctType">1. Выбранный тип одежды должен соответствовать предоставленной модели</string>
+    <string name="correctPhoto">2. Фото модели должно соответствовать предоставленному файлу</string>
+    <string name="correctFormat">3. Формат фото только png. Заявка на публикацию одежды может быть отклонена
+    при предоставлении фото в плохом качестве</string>
+    <string name="appStyle">4. Важно! Заявляемая одежда должна придерживаться стилистике
+    приложения. Одежда не должна быть слишком реалистичной или малореалистичной</string>
+    <string name="model">5. Вес модели не должен превышать 10мб</string>
+    <string name="pricePolicy">6. Придерживайтесь ценовой политике магазина одежды. Не заявляйте модели с очень
+    высокой ценой, в таком случае заявка будет отклонена</string>
+    <string name="plagiarism">7. Заявки одежды, схожей с ранее опубликованной одеждой других пользователей
+    , не одобряются</string>
+    <string name="textOnClothes">8. Нельзя изображать запрещенные знаки и чужие товарные знаки, писать названия запрещенных
+    организаций и оскорбительные тексты на одежде</string>
+    <string name="exclusiveClothes">9. Если вы помечаете одежду как эксклюзивную, это значит, что ее смогут видеть
+    и покупать только обладатели Sholly Premium</string>
+    <string name="paidClothes">10. При выборе типа валюты "доллар" пользователи смогут
+    покупать заявляемую одежду только за реальные деньги. Ваша прибыть с продажи данной одежды
+    будет тоже в реальной валюте</string>
+    <string name="cantSellClothes">К сожалению, в данный момент эта функция недоступна. Она появится в следующих обновлениях:)</string>
+    <string name="buyClothes">Купить предмет?</string>
+    <string name="buyFirstMiner">Купи свой первый майнер!</string>
+    <string name="exclusivePremium">Только пользователи с подпиской Sholly Premium смогут купить эту одежду</string>
+    <string name="sendClothesApplication">Отправить заявку</string>
+    <string name="clothesApplication">Заявка на одежду может обрабатываться несколько дней. После обработки мы пришлем вам ответ.</string>
+    <string name="loading">Загрузка...</string>
+    <string name="userNotsearch">Пользователь не найден:(</string>
+    <string name="pay">Оплатить</string>
+    <string name="wrongamountentered">Неправильно введена сумма</string>
+    <string name="specifythetransferamount">Укажите сумму перевода</string>
+    <string name="transferamountmustbegreaterthanzero">Сумма перевода должна быть больше нуля</string>
+    <string name="insufficientfundstotransfer">Недостаточно средств для перевода</string>
+    <string name="translationdone">Перевод выполнен</string>
+    <string name="receipt">Поступление</string>
+    <string name="translation">Перевод</string>
+    <string name="nose">Нос</string>
+    <string name="lips">Рот</string>
+    <string name="eyes">Глаза</string>
+    <string name="brows">Брови</string>
+    <string name="skincolour">Цвет кожи</string>
+    <string name="faceshape">Форма лица</string>
+    <string name="body">Тело</string>
+    <string name="browsColor">Цвет бровей</string>
+    <string name="hairstyleColor">Цвет прически</string>
+    <string name="hairstyle">Прическа</string>
+    <string name="notactive">Не активен</string>
+    <string name="purchased">Куплено</string>
+    <string name="minerpurchased">Майнер куплен</string>
+    <string name="notenoughcoins">Не хватает коинов</string>
+    <string name="addactiveminers">Добавь активные майнеры!</string>
+    <string name="used">Используется</string>
+    <string name="fiveminersarealreadyactive">Три майнера уже активны</string>
+    <string name="incorrectlyenteredclothingprice">Неправильно введена цена одежды</string>
+    <string name="applicationsent">Заявка отправлена</string>
+    <string name="givetext"></string>
+    <string name="givealreadytext">У</string>
+    <string name="alreadнhasthisgift"> уже есть этот предмет одежды</string>
+    <string name="giftsent">Подарок отправлен</string>
+    <string name="themodelhasbeenadded">Модель добавлена в магазин одежды Sholly</string>
+    <string name="addrequestdenied">Запрос на добавление отказан</string>
+    <string name="gaveyou"> подарил тебе </string>
+    <string name="moveto">Перейти</string>
+    <string name="applicationreceivedru">Пришел ответ на заявку </string>
+    <string name="applicationreceiveden"></string>
+    <string name="translatedtoyou"> перевел тебе </string>
+    <string name="boughtfromyou"> купил у тебя </string>
+    <string name="added">Добавлен</string>
+    <string name="wantstofollowyou"> хочет подписаться на тебя</string>
+    <string name="nonotificationyet">Пока нет уведомлений :)</string>
+    <string name="itemsincart">Элементов в корзине:</string>
+    <string name="itempurchased">Предмет куплен</string>
+    <string name="itemalreadypurchased">Предмет уже куплен</string>
+    <string name="mustselectagender">Для продолжения необходимо выбрать пол</string>
+    <string name="nicknamenotentered">Никнейм не введён</string>
+    <string name="youcanresendafter">Отправить SMS повторно через:</string>
+    <string name="youcanresend">Повторно полуть SMS</string>
+    <string name="authenticationfailed">Ошибка аутентификации</string>
+    <string name="lookpublishedsuccessfully">Образ успешно опубликован!</string>
+    <string name="nolookcomponents">Нет составляющих образа</string>
+    <string name="addlookcomponents">Добавь составляющие образа</string>
+    <string name="itemisequipped">Предмет надет</string>
+    <string name="designyourclothes">Создай свою одежду!</string>
+    <string name="didnotdesign"> не создавал свою одежду :(</string>
+    <string name="complaintsent">Жалоба отправлена</string>
+    <string name="changessaved">Изменения сохранены</string>
+    <string name="changenotavailable">Смена недоступна</string>
+    <string name="createyourfirstlook">Создай свой первый образ!</string>
+    <string name="nolooks1">У </string>
+    <string name="nolooks2"> нет образов :(</string>
+    <string name="addadescription">Добавь описание!</string>
+    <string name="blockUser">Заблокировать </string>
+    <string name="unlock">Разблокировать</string>
+    <string name="useraddedtoblacklist">Пользователь добавлен в черный список</string>
+    <string name="subscribeto">Подпишись на </string>
+    <string name="requested">Запрошено</string>
+    <string name="blockedyou"> заблокировал тебя</string>
+    <string name="theuserhasblockedyou">Пользователь заблокировал тебя</string>
+    <string name="userremovedfromsubscribers">Пользователь удален из подписчиков</string>
+    <string name="theuserisnotfollowingyou">Пользователь не подписан на тебя</string>
+    <string name="openchat">Открыть чат</string>
+    <string name="loginwithGoogle">Вход через Google</string>
+    <string name="looksaved">Образ сохранен</string>
+    <string name="youarenotsubscribedtoSchoolyPremium">К сожалению, вы не подписаны на Sholly Premium</string>
+    <string name="coins1"> коинов</string>
+    <string name="comments">Комментарии:</string>
+    <string name="submitcomplaint">Отправить жалобу</string>
+    <string name="thereasonforthecomplaintisnotentered">Причина жалобы не введена</string>
+    <string name="fraud">Мошенничество</string>
+    <string name="violenceordangerousorganizations">Насилие или опасные организации</string>
+    <string name="hostilesayingsorsymbols">Враждебные высказывания или символы</string>
+    <string name="saleofillegalgoods">Продажа незаконных товаров</string>
+    <string name="violationofintellectualpropertyrights">Нарушение прав на интеллектуальную собственность</string>
+    <string name="profiledescriptioncannotbemorethan200characters">Описание профиля не может быть более 200 символов</string>
+    <string name="nochangeshavebeenintroduced">Изменения не введены</string>
+    <string name="deletelook">Удалить образ</string>
+    <string name="lookwasdeleted">Образ удален</string>
+    <string name="dontsave">Не сохранять</string>
+    <string name="lookwasdeletedfromsaved">Образ удалён из сохранённых</string>
+    <string name="thepublicationwasnotfound">Публикация не найдена. Вероятнее всего пользователь удалил образ</string>
+    <string name="usernotfound">Пользователь не найден</string>
+    <string name="personal">Личные</string>
+    <string name="talks">Беседы</string>
+    <string name="noChats">Нет чатов:(</string>
+    <string name="noChatsFound">Чаты не найдены:(</string>
+    <string name="createNewTalk">Создай новую беседу +</string>
+    <string name="dialogueMembers">Участники диалога</string>
+    <string name="deleteChat">Удалить чат</string>
+    <string name="chatDeleted">Чат удален</string>
+    <string name="creatingTalk">Создание беседы</string>
+    <string name="addedInChat">Добавленные:</string>
+    <string name="suggested">Предлагаемые:</string>
+    <string name="addMembers">Добавь участников</string>
+    <string name="talkTitle">Название беседы</string>
+    <string name="addMoreUsers">Добавь больше участников</string>
+    <string name="enterTalkTitle">Введи название беседы</string>
+    <string name="leaveTalk">Покинуть беседу</string>
+    <string name="leaveTalkQuestion">Покинуть буседу?</string>
+    <string name="talkIsCreated">Беседа создана</string>
+    <string name="watchcommercial">Посмотри рекламу и получи 25 коинов</string>
+    <string name="watch5ad">В день вы можете смотреть только 5 реклам за вознаграждение</string>
+    <string name="coinsreceived">Получено 25 коинов!</string>
+    <string name="noMaterials">Нет материалов</string>
+    <string name="goToView">Перейти к просмотру</string>
+    <string name="by">от</string>
+    <string name="lookby">Образ от</string>
+    <string name="looksover">Новые образы закончились:(</string>
+    <string name="cantchange">Нельзя снимать эту одежду. Вы можете заменить ее</string>
+    <string name="clothesoff">Одежда снята</string>
+    <string name="clothesputon">Одежда одевается</string>
+    <string name="cantofftryonclothes">Нельзя снимать одежду, которую примеряешь</string>
+    <string name="closeAccountToast">Другие пользователи не смогут писать тебе и смотреть твои публикации без одобрения подписки на твой аккаунт</string>
+    <string name="privacyPolicyReg">Продолжая, вы соглашаетесь с тем, что ознакомлены и согласны с политикой конфиденциальности и правилами пользования</string>
+    <string name="continue1">Продолжть</string>
+
+
+</resources>
